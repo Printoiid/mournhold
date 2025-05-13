@@ -1,10 +1,11 @@
-## Changes
+# Changes
+<!-- Overview of what changed. -->
 
 - [] Keymap Change(s)
 - [] Plugin(s) Added/Removed
 
-### Key(s) changed
+## Key(s) changed
 <!-- Which keys changed? EG: `X` key(s) changed to `Y` key(s) for <action> -->
 
-### Plugin(s) modified
+## Plugin(s) modified
 <!-- Did we remove or add any plugins? What about settings? -->
