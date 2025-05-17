@@ -24,9 +24,6 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
@@ -53,7 +50,7 @@ vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.opt.splitbelow = false
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -107,16 +104,24 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- NOTE: Navigation - Normal Mode
 vim.keymap.set('n', '<PageUp>', 'Hzz', { desc = '"Normal" PageUp' })
 vim.keymap.set('n', '<PageDown>', 'Lzz', { desc = '"Normal" PageDown' })
+
+-- NOTE: Navigation - Iteractive Mode
 vim.keymap.set('i', '<PageUp>', '<C-o>^', { desc = 'Move to the start of the line' })
 vim.keymap.set('i', '<PageDown>', '<C-o>$', { desc = 'Move to the end of the line' })
 
--- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+-- NOTE: Manipulation - Normal Mode
+vim.keymap.set('n', '<C-Up>', 'ddkP', { desc = 'Move line up' })
+vim.keymap.set('n', '<C-Down>', 'ddp', { desc = 'Move line down' })
+vim.keymap.set('n', '<C-M-Up>', 'yyP', { desc = 'Duplicate line up' })
+vim.keymap.set('n', '<C-M-Down>', 'yyp', { desc = 'Duplicate line down' })
+
+-- NOTE: Versioning - Save File
+vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save File in Normal Mode' })
+vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>i', { desc = 'Save File in Interactive Mode' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
