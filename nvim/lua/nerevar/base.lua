@@ -104,22 +104,24 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
--- :
 
 -- NOTE: Navigation - Normal Mode
 vim.keymap.set('n', '<PageUp>', 'Hzz', { desc = '"Normal" PageUp' })
 vim.keymap.set('n', '<PageDown>', 'Lzz', { desc = '"Normal" PageDown' })
 
--- NOTE: Navigation - Interactive Mode
+-- NOTE: Navigation - Iteractive Mode
 vim.keymap.set('i', '<PageUp>', '<C-o>^', { desc = 'Move to the start of the line' })
 vim.keymap.set('i', '<PageDown>', '<C-o>$', { desc = 'Move to the end of the line' })
 
--- NOTE: Manipulation - Interactive Mode
-vim.keymap.set('i', '<a-up>', '<ESC>ddkPi', { desc = 'Move line up in Interactive Mode' })
-vim.keymap.set('i', '<a-down>', '<ESC>ddpi', { desc = 'Move line down in Interactive Mode' })
+-- NOTE: Manipulation - Normal Mode
+vim.keymap.set('n', '<C-Up>', 'ddkP', { desc = 'Move line up' })
+vim.keymap.set('n', '<C-Down>', 'ddp', { desc = 'Move line down' })
+vim.keymap.set('n', '<C-M-Up>', 'yyP', { desc = 'Duplicate line up' })
+vim.keymap.set('n', '<C-M-Down>', 'yyp', { desc = 'Duplicate line down' })
 
--- NOTE: Version Control:
-vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save File' })
+-- NOTE: Versioning - Save File
+vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save File in Normal Mode' })
+vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>i', { desc = 'Save File in Interactive Mode' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
