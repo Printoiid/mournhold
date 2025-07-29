@@ -3,7 +3,8 @@
 
 // REMEMBER THAT YOUR KNOB TURNING KEYCODE DEFINITIONS ARE
 // AT THE END OF THE FILE YOU SILLY GOOSE!
-
+#include <stdbool.h>
+#include <stdint.h>
 // Animation Variables ------------------------------------
 // This is used later in the OLED Screensaver
 bool oled_screensaver_active = false;
@@ -70,28 +71,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   KC_F6,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LALT(KC_F4),
   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LCTL, KC_ALT,  XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_LCTL, KC_LALT, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                     XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_LCTL, KC_RALT, KC_DEL
 ),
 /* Numpad
- * ,------------------------------------------.                     ,-------------------------------------------.
- * | PT   |       |      |      |      |      |                     |       | NLOCK | /    | *    | -    |      |
- * |------+-------+------+------+------+------|                     |-------+-------+------+------+------+------|
- * | PT   | PREV  | P/P  | NEXT | VOLU |      |                     |       | 7     | 8    | 9    | +    |      |
- * |------+-------+------+------+------+------|                     |-------+-------+------+------+------+------|
- * | PT   | INSRT | HOME | PGUP | VOLD |      |--------.    ,-------|       | 4     | 5    | 6    |      |      |
- * |------+-------+------+------+------+------| TOGRGB |    |       |-------+-------+------+------+------+------|
- * | PT   | DEL   | END  | PGDN |      |      |--------|    |-------|       | 1     | 2    | 3    |      |      |
- * `------------------------------------------/       /      \      \-------------------------------------------'
- *             | PT   | PT   |      | PT   | / PT    /        \      \  |      | 0    | .    |      |
- *             |      |      |      |      |/       /          \      \ |      |      |      |      |
- *             '---------------------------''------'            '------''---------------------------'        */
+ * ,-----------------------------------------.                     ,-------------------------------------------.
+ * | PT   |      |      |      |      |      |                     |       | NLOCK | /    | *    | -    |      |
+ * |------+------+------+------+------+------|                     |-------+-------+------+------+------+------|
+ * | PT   |      |      |      |      |      |                     |       | 7     | 8    | 9    | +    |      |
+ * |------+------+------+------+------+------|                     |-------+-------+------+------+------+------|
+ * | PT   |      |      |      |      |      |--------.    ,-------| DEL   | 4     | 5    | 6    |      |      |
+ * |------+------+------+------+------+------| TOGRGB |    |       |-------+-------+------+------+------+------|
+ * | PT   |      |      |      |      |      |--------|    |-------|       | 1     | 2    | 3    |      |      |
+ * `-----------------------------------------/       /      \      \-------------------------------------------'
+ *            | PT   | PT   |      | PT   | / PT    /        \      \  |      | 0    | .    |      |
+ *            |      |      |      |      |/       /          \      \ |      |      |      |      |
+ *            '---------------------------''------'            '------''---------------------------'        */
 [_NUMPAD] = LAYOUT(
-  KC_TRNS, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS, XXXXXXX,
-  KC_TRNS, KC_MPRV,   KC_MPLY, KC_MNXT, KC_VOLU, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, XXXXXXX,
-  KC_TRNS, KC_INSERT, KC_HOME, KC_PGUP, KC_VOLD, XXXXXXX,                   XXXXXXX, KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
-  KC_TRNS, KC_DELETE, KC_END,  KC_PGDN, XXXXXXX, XXXXXXX, UG_TOGG, XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, XXXXXXX,
-                      KC_TRNS, KC_TRNS, XXXXXXX, KC_TRNS, KC_TRNS, XXXXXXX, XXXXXXX, KC_P0,   KC_PDOT, XXXXXXX 
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS, XXXXXXX,
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, XXXXXXX,
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_DEL,  KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, UG_TOGG, XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, XXXXXXX,
+                    KC_TRNS, KC_TRNS, XXXXXXX, KC_TRNS, KC_TRNS, XXXXXXX, XXXXXXX, KC_P0,   KC_PDOT, XXXXXXX 
 ),
 /* Characters
  * ,-----------------------------------------.                    ,-------------------------------------------.
@@ -179,9 +180,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                     |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
- * |      |      |      |      |      |      |--------.    ,-------|      |      |      |      |      |      |
+ * |      | Z    | X    | Y    |      |      |--------.    ,-------|      |      |      |      |      |      |
  * |------+------+------+------+------+------|        |    |       |------+------+------+------+------+------|
- * |      | Z    | X    | Y    |      |      |--------|    |-------|      |      |      |      |      |      |
+ * |      |      |      |      |      |      |--------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /      \      \-----------------------------------------'
  *            |      |      |      |      | /       /        \      \  |      |      |      |      |
  *            |      |      |      |      |/       /          \      \ |      |      |      |      |
@@ -267,47 +268,47 @@ bool oled_task_user(void) {
         switch (get_highest_layer(layer_state)) {
             // Layer states, displays on the OLED
             case _BASE:
-                oled_write_P("----\nMain\nLayer\n----\n", false);
+                oled_write_P("-==-\nMain\nLayer\n-==-\n", false);
                 rgblight_mode(11);
                 rgblight_sethsv(127, 255, 255);
                 break;
             case _FUNC:
-                oled_write_P("----\nFunc\nLayer\n----\n", false);
+                oled_write_P("-==-\nFunc\nLayer\n-==-\n", false);
                 rgblight_mode(16);
                 rgblight_sethsv(85, 255, 255);
                 break;
             case _CHARACTERS:
-                oled_write_P("----\nChar\nLayer\n----\n", false);
+                oled_write_P("-==-\nChar\nLayer\n-==-\n", false);
                 rgblight_mode(1);
                 rgblight_sethsv(190, 255, 255);
                 break;
             case _NUMPAD:
-                oled_write_P("----\nNum\nLayer\n----\n", false);
+                oled_write_P("-==-\nNum\nLayer\n-==-\n", false);
                 rgblight_mode(11);
                 rgblight_sethsv(148, 255, 255);
                 break;
             case _GAMES:
-                oled_write_P("----\nGame\nLayer\n----\n", false);
+                oled_write_P("-==-\nGame\nLayer\n-==-\n", false);
                 rgblight_mode(26);
                 rgblight_sethsv(200, 255, 255);
                 break;
             case _BLENDER:
-                oled_write_P("----\nBlnd\nLayer\n----\n", false);
+                oled_write_P("-==-\nBlnd\nLayer\n-==-\n", false);
                 rgblight_mode(1);
                 rgblight_sethsv(20, 255, 255);
                 break;
             case _BLENDNUM:
-                oled_write_P("----\nBNum\nLayer\n----\n", false);
+                oled_write_P("-==-\nBNum\nLayer\n-==-\n", false);
                 rgblight_mode(7);
                 rgblight_sethsv(10, 255, 255);
                 break;
             case _BLENDCMD:
-                oled_write_P("----\nBcmd\nLayer\n----\n", false);
+                oled_write_P("-==-\nBcmd\nLayer\n-==-\n", false);
                 rgblight_mode(7);
                 rgblight_sethsv(15, 255, 255);
                 break;
             case _LAYERSWITCH:
-                oled_write_P("----\nSwch\nLayer\n----\n", false);
+                oled_write_P("-==-\nSwch\nLayer\n-==-\n", false);
                 rgblight_mode(20);
                 rgblight_sethsv(1, 255, 255);
                 break;
