@@ -3,8 +3,6 @@
 
 // REMEMBER THAT YOUR KNOB TURNING KEYCODE DEFINITIONS ARE
 // AT THE END OF THE FILE YOU SILLY GOOSE!
-#include <stdbool.h>
-#include <stdint.h>
 // Animation Variables ------------------------------------
 // This is used later in the OLED Screensaver
 bool oled_screensaver_active = false;
@@ -16,6 +14,8 @@ uint8_t current_frame = 0;
 // --------------------------------------------------------
 
 #include QMK_KEYBOARD_H
+#include <stdint.h>
+#include <stdbool.h>
 #include "ivy.h"
 #include "triforce.h"
 
@@ -98,9 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-------------------------------------------.
  * |      |      |      | [    | ]    | *    |                    |       |      |      |       |      |      |
  * |------+------+------+------+------+------|                    |-------+------+------+-------+------+------|
- * | `    | '    | "    | (    | )    | -    |                    |       |      | Up   |       | PGUP |      |
+ * | `    | '    | "    | (    | )    | +    |                    |       |      | Up   |       | PGUP |      |
  * |------+------+------+------+------+------|                    |-------+------+------+-------+------+------|
- * | PT   | ~    | $    | {    | }    | +    |--------.   ,-------| DEL   | Left | Down | Right | PGDN | |    |
+ * | PT   | ~    | $    | {    | }    | -    |--------.   ,-------| DEL   | Left | Down | Right | PGDN | |    |
  * |------+------+------+------+------+------|        |   |       |-------+------+------+-------+------+------|
  * | PT   | :    | @    | <    | >    | =    |--------|   |-------|       |      |      |       |      |      |
  * `-----------------------------------------/       /     \      \-------------------------------------------'
@@ -109,8 +109,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            '-----------------------------------'           '------''-----------------------------'         */
 [_CHARACTERS] = LAYOUT(
    XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_ASTR,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
-   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_MINS,                     XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  KC_PGUP, XXXXXXX,
-   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_PLUS,                     KC_DEL,  KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, KC_PIPE,
+   KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  KC_PGUP, XXXXXXX,
+   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     KC_DEL,  KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, KC_PIPE,
    KC_TRNS, KC_COLN, KC_AT,   KC_LABK, KC_RABK, KC_EQUAL, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
                      KC_TRNS, KC_TRNS, XXXXXXX, KC_TRNS,  KC_TRNS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
