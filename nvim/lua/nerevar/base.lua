@@ -103,14 +103,17 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- NOTE: Template keymap
 -- vim.keymap.set('n', '' , '', { desc = '' })
 
--- NOTE: Split/Tab Manipulation - Normal Mode
+-- NOTE: Split/Tab Manipulation
+vim.keymap.set('n', '<C-n>q', ':close<CR>', { desc = 'Close current Split/Tabpage' })
 vim.keymap.set('n', '<C-n>t', ':tabnew<CR>', { desc = 'Create a new tab' })
-vim.keymap.set('n', '<leader>ku', ':-tabnext<CR>', { desc = 'Go to previous tab page' })
-vim.keymap.set('n', '<leader>ko', ':+tabnext<CR>', { desc = 'Go to next tab page' })
-
--- NOTE: Split Navigation and Manipulation
 vim.keymap.set('n', '<C-n>v', ':vsplit<CR>', { desc = 'Create a new vertical split' })
 vim.keymap.set('n', '<C-n>s', ':split<CR>', { desc = 'Create a new horizontal split' })
+
+-- NOTE: Tab Manipulation
+vim.keymap.set('n', '<leader>ku', ':-tabnext<CR>', { desc = 'Go to previous Tabpage' })
+vim.keymap.set('n', '<leader>ko', ':+tabnext<CR>', { desc = 'Go to next Tabpage' })
+
+-- NOTE: Split Navigation and Manipulation
 vim.keymap.set('n', '<leader>kj', '<C-W>h', { desc = 'Move <Left> of relative split' })
 vim.keymap.set('n', '<leader>kl', '<C-W>l', { desc = 'Move <Right> of relative split' })
 vim.keymap.set('n', '<leader>ki', '<C-W>k', { desc = 'Move <Up> of relative split' })
