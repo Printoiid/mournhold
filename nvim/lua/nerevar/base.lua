@@ -101,6 +101,9 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --
 --  See `:help wincmd` for a list of all window commands
 
+-- NOTE: Window Split Navigation - Normal Mode
+-- vim.keymap.set('n', '', '', { desc = '' })
+
 -- NOTE: Window Navigation - Normal Mode
 vim.keymap.set('n', '<leader><C-f>', ':Ex<CR>', { desc = 'Browse current working directory' })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
