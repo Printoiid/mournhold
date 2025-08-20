@@ -100,22 +100,28 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
+-- NOTE: Template keymap
+-- vim.keymap.set('n', '' , '', { desc = '' })
 
--- NOTE: Window Split Navigation - Normal Mode
--- vim.keymap.set('n', '', '', { desc = '' })
+-- NOTE: Split/Tab Manipulation - Normal Mode
+vim.keymap.set('n', '<C-n>t', ':tabnew<CR>', { desc = 'Create a new tab' })
+vim.keymap.set('n', '<leader>ku', ':-tabnext<CR>', { desc = 'Go to previous tab page' })
+vim.keymap.set('n', '<leader>ko', ':+tabnext<CR>', { desc = 'Go to next tab page' })
 
--- NOTE: Window Navigation - Normal Mode
-vim.keymap.set('n', '<leader><C-f>', ':Ex<CR>', { desc = 'Browse current working directory' })
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- NOTE: Split Navigation and Manipulation
+vim.keymap.set('n', '<C-n>v', ':vsplit<CR>', { desc = 'Create a new vertical split' })
+vim.keymap.set('n', '<C-n>s', ':split<CR>', { desc = 'Create a new vertical split' })
+vim.keymap.set('n', '<leader>kj', '<C-W>h', { desc = 'Move <Left> of relative split' })
+vim.keymap.set('n', '<leader>kl', '<C-W>l', { desc = 'Move <Right> of relative split' })
+vim.keymap.set('n', '<leader>ki', '<C-W>k', { desc = 'Move <Up> of relative split' })
+vim.keymap.set('n', '<leader>kk', '<C-W>j', { desc = 'Move <Down> of relative split' })
 
 -- NOTE: File Navigation - Normal Mode
+vim.keymap.set('n', '<leader><C-f>', ':Ex<CR>', { desc = 'Browse current working directory' })
 vim.keymap.set('n', '<PageUp>', 'Hzz', { desc = '"Normal" PageUp' })
 vim.keymap.set('n', '<PageDown>', 'Lzz', { desc = '"Normal" PageDown' })
 
--- NOTE: File Navigation - Iteractive Mode
+-- NOTE: File Navigation - Interactive Mode
 vim.keymap.set('i', '<PageUp>', '<C-o>^', { desc = 'Move to the start of the line' })
 vim.keymap.set('i', '<PageDown>', '<C-o>$', { desc = 'Move to the end of the line' })
 
