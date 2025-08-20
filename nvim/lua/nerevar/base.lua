@@ -110,7 +110,7 @@ vim.keymap.set('n', '<leader>ko', ':+tabnext<CR>', { desc = 'Go to next tab page
 
 -- NOTE: Split Navigation and Manipulation
 vim.keymap.set('n', '<C-n>v', ':vsplit<CR>', { desc = 'Create a new vertical split' })
-vim.keymap.set('n', '<C-n>s', ':split<CR>', { desc = 'Create a new vertical split' })
+vim.keymap.set('n', '<C-n>s', ':split<CR>', { desc = 'Create a new horizontal split' })
 vim.keymap.set('n', '<leader>kj', '<C-W>h', { desc = 'Move <Left> of relative split' })
 vim.keymap.set('n', '<leader>kl', '<C-W>l', { desc = 'Move <Right> of relative split' })
 vim.keymap.set('n', '<leader>ki', '<C-W>k', { desc = 'Move <Up> of relative split' })
