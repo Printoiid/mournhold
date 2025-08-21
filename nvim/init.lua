@@ -1,2 +1,2 @@
-require('nerevar.base')
-require('nerevar.lazy')
+require 'nerevar.base'
+require 'nerevar.lazy'

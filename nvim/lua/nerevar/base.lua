@@ -103,6 +103,9 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- NOTE: Template keymap
 -- vim.keymap.set('n', '' , '', { desc = '' })
 
+-- NOTE: Modes
+vim.keymap.set('n', '<leader>mt', ':terminal<CR>', { desc = '' })
+
 -- NOTE: Split/Tab Manipulation
 vim.keymap.set('n', '<C-n>q', ':close<CR>', { desc = 'Close current Split/Tabpage' })
 vim.keymap.set('n', '<C-n>t', ':tabnew<CR>', { desc = 'Create a new tab' })
@@ -117,7 +120,7 @@ vim.keymap.set('n', '<leader>ko', ':+tabnext<CR>', { desc = 'Go to next Tabpage'
 vim.keymap.set('n', '<leader>kj', '<C-W>h', { desc = 'Move <Left> of relative split' })
 vim.keymap.set('n', '<leader>kl', '<C-W>l', { desc = 'Move <Right> of relative split' })
 vim.keymap.set('n', '<leader>ki', '<C-W>k', { desc = 'Move <Up> of relative split' })
-vim.keymap.set('n', '<leader>kk', '<C-W>j', { desc = 'Move <Down> of relative split' })
+vim.keymap.set('n', '<leader>kk', '<C-W>j', { desc = 'Move <Down> of relative :split' })
 
 -- NOTE: File Navigation - Normal Mode
 vim.keymap.set('n', '<leader><C-f>', ':Ex<CR>', { desc = 'Browse current working directory' })
