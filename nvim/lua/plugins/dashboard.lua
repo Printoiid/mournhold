@@ -62,17 +62,6 @@ return {
                         key_format = ' [%s]',
                         action = 'Mason',
                     },
-                    {
-                        icon = ' ',
-                        icon_hl = 'Group',
-                        desc = 'Open [P]rojects directory',
-                        desc_hl = 'String',
-                        key = 'p',
-                        keymap = ':Ex ~/../MyGitHubRepos',
-                        key_hl = 'Number',
-                        key_format = ' [%s]',
-                        action = 'cd /media/nerevar/Projects/MyGitHubRepos/',
-                    },
                 },
                 footer = {
                     '╔════════════════════════════════════════════════════════════════════════════════════════════════════╗',
