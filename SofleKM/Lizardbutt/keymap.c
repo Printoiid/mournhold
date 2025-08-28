@@ -1,3 +1,9 @@
+#include QMK_KEYBOARD_H
+#include <stdint.h>
+#include <stdbool.h>
+#include "ivy.h"
+#include "triforce.h"
+
 // Copyright 2023 QMK
 // SPDX-License-Identifier: GPL-2.0-or-later
 
@@ -12,12 +18,6 @@ bool oled_screensaver_active = false;
 uint32_t timer = 0;
 uint8_t current_frame = 0;
 // --------------------------------------------------------
-
-#include QMK_KEYBOARD_H
-#include <stdint.h>
-#include <stdbool.h>
-#include "ivy.h"
-#include "triforce.h"
 
 // Current KB Layers and their names
 enum sofle_layers {
@@ -75,24 +75,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_LCTL, KC_RALT, KC_DEL
 ),
 /* Numpad
- * ,-----------------------------------------.                     ,-------------------------------------------.
- * | PT   |      |      |      |      |      |                     |       | NLOCK | /    | *    | -    |      |
- * |------+------+------+------+------+------|                     |-------+-------+------+------+------+------|
- * | PT   |      |      |      |      |      |                     |       | 7     | 8    | 9    | +    |      |
- * |------+------+------+------+------+------|                     |-------+-------+------+------+------+------|
- * | PT   |      |      |      |      |      |--------.    ,-------| DEL   | 4     | 5    | 6    |      |      |
- * |------+------+------+------+------+------| TOGRGB |    |       |-------+-------+------+------+------+------|
- * | PT   |      |      |      |      |      |--------|    |-------|       | 1     | 2    | 3    |      |      |
- * `-----------------------------------------/       /      \      \-------------------------------------------'
- *            | PT   | PT   |      | PT   | / PT    /        \      \  |      | 0    | .    |      |
- *            |      |      |      |      |/       /          \      \ |      |      |      |      |
- *            '---------------------------''------'            '------''---------------------------'        */
+ * ,------------------------------------------.                     ,-------------------------------------------.
+ * | PT   |      |      |      |      |       |                     |       | NLOCK | /    | *    |      |      |
+ * |------+------+------+------+------+-------|                     |-------+-------+------+------+------+------|
+ * | PT   |      |      |      |      |       |                     |       | 7     | 8    | 9    | -    |      |
+ * |------+------+------+------+------+-------|                     |-------+-------+------+------+------+------|
+ * | PT   |      |      |      |      |       |--------.    ,-------| DEL   | 4     | 5    | 6    | +    |      |
+ * |------+------+------+------+------+-------| TOGRGB |    |       |-------+-------+------+------+------+------|
+ * | PT   |      |      |      |      |       |--------|    |-------|       | 1     | 2    | 3    |      |      |
+ * `------------------------------------------/       /      \      \-------------------------------------------'
+ *            | PT   | PT   |      | Space | / BKSPC /        \      \  | ENTER | 0    | .    |      |
+ *            |      |      |      |       |/       /          \      \ |       |      |      |      |
+ *            '----------------------------''------'            '------''----------------------------'        */
 [_NUMPAD] = LAYOUT(
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS, XXXXXXX,
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, XXXXXXX,
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   KC_DEL,  KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, UG_TOGG, XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, XXXXXXX,
-                    KC_TRNS, KC_TRNS, XXXXXXX, KC_TRNS, KC_TRNS, XXXXXXX, XXXXXXX, KC_P0,   KC_PDOT, XXXXXXX 
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, KC_NUM,  KC_PSLS, KC_PAST, XXXXXXX, XXXXXXX,
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, KC_P7,   KC_P8,   KC_P9,   KC_PMNS, XXXXXXX,
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         KC_DEL,  KC_P4,   KC_P5,   KC_P6,   KC_PPLS, XXXXXXX,
+  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  UG_TOGG,      XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, XXXXXXX,
+                    KC_TRNS, KC_TRNS, XXXXXXX, KC_SPACE, KC_BACKSPACE, XXXXXXX, KC_ENT,  KC_P0,   KC_PDOT, XXXXXXX 
 ),
 /* Characters
  * ,-----------------------------------------.                    ,-------------------------------------------.

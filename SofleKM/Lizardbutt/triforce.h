@@ -1,3 +1,4 @@
+#define FRAME_DURATION 75
 static void render_triforce_animation(void) {
     // 'frame_00_delay-0', 32x32px
     const char epd_bitmap_frame_00_delay_0 [] PROGMEM = {
@@ -102,7 +103,7 @@ static void render_triforce_animation(void) {
         timer = timer_read();
 
         // Increment frame
-        current_frame = (current_frame + 1) % (sizeof(epd_bitmap_allArray) / sizeof(epd_bitmap_allArray[0]));
+        uint8_t current_frame = (current_frame + 1) % (sizeof(epd_bitmap_allArray) / sizeof(epd_bitmap_allArray[0]));
 
         // Draw to OLED
         oled_write_raw_P(epd_bitmap_allArray[current_frame], frame_sizes[current_frame]);

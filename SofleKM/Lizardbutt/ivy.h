@@ -1,3 +1,4 @@
+#define FRAME_DURATION 75
 static void render_ivy_animation(void) {
     // Frames
     const char epd_bitmap_frame_093_delay_0 [] PROGMEM = {
@@ -370,10 +371,10 @@ static void render_ivy_animation(void) {
 
     if (timer_elapsed(timer) > FRAME_DURATION) {
         // Set timer to updated time
-        timer = timer_read();
+        timer = timer_read32();
 
         // Increment frame
-        current_frame = (current_frame + 1) % (sizeof(epd_bitmap_allArray) / sizeof(epd_bitmap_allArray[0]));
+        uint8_t current_frame = (current_frame + 1) % (sizeof(epd_bitmap_allArray) / sizeof(epd_bitmap_allArray[0]));
 
         // Draw to OLED
         oled_write_raw_P(epd_bitmap_allArray[current_frame], frame_sizes[current_frame]);
