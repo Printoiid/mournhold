@@ -10,7 +10,7 @@ sudo apt update
 cd ~/Downloads
 
 # Get Steam and Nvidia drivers installed (The basics of course)
-yes | sudo apt-get install steam nvidia-driver-575 git tree spotify-client keepassxc
+yes | sudo apt-get install steam nvidia-driver-575 git tree spotify-client keepassxc npm
 
 # Download Discord and Vivaldi deb packages
 wget "https://downloads.vivaldi.com/stable/vivaldi-stable_7.5.3735.66-1_amd64.deb"
