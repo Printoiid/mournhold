@@ -1,8 +1,10 @@
 ## neovim
-- Used plugins:
+
+- My used plugins:
     - [conform](https://github.com/stevearc/conform.nvim)
     - [dashboard](https://github.com/nvimdev/dashboard-nvim)
     - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+    - [lazy](https://github.com/folke/lazy.nvim)
     - [mason](https://github.com/mason-org/mason.nvim)
     - [mason-install-tools](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
     - [telescope](https://github.com/nvim-telescope/telescope.nvim)
