@@ -4,6 +4,15 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "html",
+	callback = function()
+		vim.opt_local.tabstop = 4
+	end,
+})
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
@@ -102,6 +111,9 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 --  See `:help wincmd` for a list of all window commands
 -- NOTE: Template keymap
 -- vim.keymap.set('n', '' , '', { desc = '' })
+
+-- NOTE: Modes
+vim.keymap.set("n", "<leader>mt", ":terminal<CR>", { desc = "" })
 
 -- NOTE: Split/Tab Manipulation
 vim.keymap.set("n", "<C-n>q", ":close<CR>", { desc = "Close current Split/Tabpage" })
