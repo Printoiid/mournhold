@@ -4,13 +4,13 @@
 username=$(whoami)
 
 # We should always update apt repos
-sudo apt update
+sudo apt-get update
 
 # Change to Downloads for Deb package downloads
 cd ~/Downloads
 
 # Get Steam and Nvidia drivers installed (The basics of course)
-yes | sudo apt-get install steam nvidia-driver-575 git tree spotify-client keepassxc npm
+yes | sudo apt-get install steam nvidia-driver-575 git tree spotify-client keepassxc npm wget
 
 # Download Discord and Vivaldi deb packages
 wget "https://downloads.vivaldi.com/stable/vivaldi-stable_7.5.3735.66-1_amd64.deb"
@@ -37,8 +37,10 @@ brew install gcc
 # Install Neovim and configure the local repo
 brew install neovim
 
-# Set up my Neovim configuration from Git
-cd ../Documents
-git clone https://github.com/Printoiid/Mournhold.git
-ln -s ~/Documents/Mournhold/nvim ~/.config/nvim
+# Setup PowerShell
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell_7.5.2-1.deb_amd64.deb
+sudo dpkg -i powershell_7.5.2-1.deb_amd64.deb
+sudo apt-get install -f
+rm powershell_7.5.2-1.deb_amd64.deb
+
 

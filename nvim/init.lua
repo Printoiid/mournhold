@@ -1,2 +1,2 @@
-require 'nerevar.base'
-require 'nerevar.lazy'
+require 'plugins.keymaps'
+require 'plugins.lazy'
