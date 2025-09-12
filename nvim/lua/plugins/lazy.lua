@@ -16,9 +16,9 @@ require("lazy").setup({
 		{ import = "plugins.lsp" },
 		{ import = "plugins.ui" },
 		{ import = "plugins.util" },
-		{ import = "plugins.formatters" },
 		{ import = "plugins.autocompletion" },
 		{ import = "plugins.treesitter" },
+		{ import = "plugins.formatters" },
 	},
 }, {
 	ui = {

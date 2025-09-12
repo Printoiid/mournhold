@@ -6,21 +6,11 @@ vim.g.maplocalleader = " "
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "html",
-	callback = function()
-		vim.opt_local.tabstop = 4
-	end,
-})
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
-
+cmdheight = 0
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
