@@ -4,36 +4,39 @@ return {
 	config = function()
 		local colors = {
 			cyan = "#00FFFF",
+			black = "#000000",
 		}
-
 		local hyper_theme = {
 			normal = {
-				a = { fg = colors.cyan, bg = colors.cyan },
-				b = { fg = colors.cyan, bg = colors.cyan },
-				c = { fg = colors.cyan },
+				a = { fg = colors.cyan, bg = colors.black, gui = "bold" },
+				b = { fg = colors.cyan, bg = colors.black },
+				c = { fg = colors.cyan, bg = colors.black },
 			},
-			insert = { a = { fg = colors.cyan, bg = colors.cyan } },
-			visual = { a = { fg = colors.cyan, bg = colors.cyan } },
-			replace = { a = { fg = colors.cyan, bg = colors.cyan } },
+			insert = {
+				a = { fg = colors.cyan, bg = colors.black },
+				b = { fg = colors.cyan, bg = colors.black },
+				c = { fg = colors.cyan, bg = colors.black },
+			},
+			visual = {
+				a = { fg = colors.cyan, bg = colors.black },
+			},
+			replace = {
+				a = { fg = colors.cyan, bg = colors.black },
+			},
 		}
-
 		require("lualine").setup({
 			options = {
 				theme = "hyper_theme",
 				component_separators = "",
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 			},
 			sections = {
-				lualine_a = { { "mode", separator = { left = "" }, right_padding = 3 } },
-				lualine_b = { "filename", "branch" },
-				lualine_c = {
-					"%=", --[[ add your center compoentnts here in place of this comment ]]
-				},
-				lualine_x = {},
-				lualine_y = { "filetype", "progress" },
-				lualine_z = {
-					{ "location", separator = { right = "" }, left_padding = 2 },
-				},
+				lualine_a = { { "mode", separator = { left = "" } } },
+				lualine_b = { { "branch", separator = { left = "" } } },
+				lualine_c = { { "filename", separator = { left = "" } } },
+				lualine_x = { { "filetype", separator = { right = "" } } },
+				lualine_y = { { "progress", separator = { right = "" } } },
+				lualine_z = { { "location", separator = { right = "" } } },
 			},
 			inactive_sections = {
 				lualine_a = { "filename" },
