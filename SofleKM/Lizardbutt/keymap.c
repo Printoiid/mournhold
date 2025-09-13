@@ -1,15 +1,9 @@
+// Include statements
 #include QMK_KEYBOARD_H
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include "ivy.h"
 #include "triforce.h"
-
-// Copyright 2023 QMK
-// SPDX-License-Identifier: GPL-2.0-or-later
-
-// REMEMBER THAT YOUR KNOB TURNING KEYCODE DEFINITIONS ARE
-// AT THE END OF THE FILE YOU SILLY GOOSE!
-// Animation Variables ------------------------------------
 // This is used later in the OLED Screensaver
 bool oled_screensaver_active = false;
 // Frame split time
@@ -17,7 +11,6 @@ bool oled_screensaver_active = false;
 // Animation timer/frames
 uint32_t timer = 0;
 uint8_t current_frame = 0;
-// --------------------------------------------------------
 
 // Current KB Layers and their names
 enum sofle_layers {
@@ -31,9 +24,8 @@ enum sofle_layers {
     _BLENDCMD,
     _LAYERSWITCH,
 };
-// Layer Definitions
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Base
  * ,-----------------------------------------.                     ,-----------------------------------------.
  * | ESC    | 1   | 2    | 3    | 4    | 5   |                     | 6    | 7    | 8    | 9    | 0    | - _  |
@@ -314,7 +306,7 @@ bool oled_task_user(void) {
                 break;
         }
         // Call render function to render Triforce
-        render_triforce_animation();
+        triforce_animation();
     }
     // If the oled is on, but has been idle for longer than the screensaver time, turn the OLED off
     if(is_oled_on() && last_input_activity_elapsed() > OLED_TIMEOUT) {
@@ -329,7 +321,7 @@ bool oled_task_user(void) {
     // If idle, render the animation.
     if (oled_screensaver_active) {
         // Use some render animation
-        render_ivy_animation();
+        ivy_animation();
         rgblight_mode(5);
         rgblight_sethsv(150, 255, 255);
         return false;

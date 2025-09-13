@@ -10,15 +10,13 @@ sudo apt-get update
 cd ~/Downloads
 
 # Get Steam and Nvidia drivers installed (The basics of course)
-yes | sudo apt-get install steam nvidia-driver-575 git tree spotify-client keepassxc npm wget
+yes | sudo apt-get install steam nvidia-driver-575 git tree spotify-client keepassxc npm wget python3-pip
 
-# Download Discord and Vivaldi deb packages
-wget "https://downloads.vivaldi.com/stable/vivaldi-stable_7.5.3735.66-1_amd64.deb"
-wget "https://discord.com/api/download?platform=linux&format=deb"
+python3 -m pip install --user qmk --break-system-packages
 
-# Install Discord and Vivaldi
-sudo dpkg -i "vivaldi-stable_7.5.3735.66-1_amd64.deb"
-sudo dpkg -i "download?platform=linux&format=deb"
+# Vivaldi stuff
+# I found the repo link for vivaldi. I might try to get that here and install without needing to worry about deb package versions
+# https://repo.vivaldi.com/archive/deb/pool/main/
 
 # Make the desktop pretty
 gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-Aqua"
@@ -36,11 +34,4 @@ brew install gcc
 
 # Install Neovim and configure the local repo
 brew install neovim
-
-# Setup PowerShell
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell_7.5.2-1.deb_amd64.deb
-sudo dpkg -i powershell_7.5.2-1.deb_amd64.deb
-sudo apt-get install -f
-rm powershell_7.5.2-1.deb_amd64.deb
-
 

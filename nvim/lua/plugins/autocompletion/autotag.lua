@@ -1,7 +1,10 @@
 return {
 	"windwp/nvim-ts-autotag",
-	opts = {
-		enable_close = true,
-	},
-	per_filetype = {},
+	config = function()
+		require("nvim-ts-autotag").setup({
+			opts = {
+				enable_close = true,
+			},
+		})
+	end,
 }
