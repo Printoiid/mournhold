@@ -339,8 +339,6 @@ static void ivy_animation(void) {
         0xc8, 0x3b, 0x67, 0xcc, 0xb9, 0xb3, 0xd7, 0x5c, 0xe6, 0x39, 0xdd, 0xd6, 0x32, 0xed, 0x9d, 0x73,
         0x6c, 0x9f, 0x71, 0x76, 0xcd, 0xbd, 0x72, 0xcf, 0xb9, 0x76, 0xd6, 0xb9, 0xed, 0x36, 0xdb, 0xdb
     };
-
-    // Array of all bitmaps for convenience. (Total bytes used to store images in PROGMEM = 69168)
     const char* epd_bitmap_allArray[10] = {
         epd_bitmap_frame_0,
         epd_bitmap_frame_1,
@@ -353,7 +351,6 @@ static void ivy_animation(void) {
         epd_bitmap_frame_8,
         epd_bitmap_frame_9
     };
-
     uint16_t frame_sizes[10] = {
         sizeof(epd_bitmap_frame_0),
         sizeof(epd_bitmap_frame_1),

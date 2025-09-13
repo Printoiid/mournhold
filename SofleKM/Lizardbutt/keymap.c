@@ -2,15 +2,18 @@
 #include QMK_KEYBOARD_H
 #include <stdbool.h>
 #include <stdint.h>
-#include "ivy.h"
-#include "triforce.h"
+
 // This is used later in the OLED Screensaver
 bool oled_screensaver_active = false;
-// Frame split time
-#define FRAME_DURATION 75
+
 // Animation timer/frames
+#define FRAME_DURATION 75
 uint32_t timer = 0;
 uint8_t current_frame = 0;
+
+// Import the stuff you need *after* defining globals... Duh
+#include "triforce.h"
+#include "ivy.h"
 
 // Current KB Layers and their names
 enum sofle_layers {
@@ -230,8 +233,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 */
 
-// This works, if I want more frames I need to add more, then add them to the array for display
-// This orients the non-master hand to display right-side-up
+// Set the light mode when first powered on
+void matrix_init_user() {
+	rgblight_mode(5);
+	rgblight_enable();
+}
+
+// Orients the non-master hand to display right-side-up
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (is_keyboard_master()) {
         return OLED_ROTATION_270;  // flips the display 270 degrees if mainhand
@@ -242,23 +250,19 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return rotation;
 }
 
-void matrix_init_user() {
-	rgblight_mode(5);
-	rgblight_enable();
-}
-
 // This works now, just need a better animation.
 bool oled_task_user(void) {
     // If the keyboard is active and screensaver is on, turn the OLED on and clear it once
-    if(last_input_activity_elapsed() < OLED_SCREENSAVER_TIMEOUT && oled_screensaver_active == true) {
+    // This seems redundant, but it's added to reset the OLED after coming back from AFK
+	if(last_input_activity_elapsed() < OLED_SCREENSAVER_TIMEOUT && oled_screensaver_active == true) {
         oled_screensaver_active = false;
         rgblight_enable();
         oled_on();
         oled_clear();
     }
-    if(last_input_activity_elapsed() < OLED_SCREENSAVER_TIMEOUT && oled_screensaver_active == false) {
+	// Draw the layer information and change layer colors after and when the screensaver is disabled.
+	if(last_input_activity_elapsed() < OLED_SCREENSAVER_TIMEOUT && oled_screensaver_active == false) {
         switch (get_highest_layer(layer_state)) {
-            // Layer states, displays on the OLED
             case _BASE:
                 oled_write_P("-==-\nMain\nLayer\n-==-\n", false);
                 rgblight_mode(11);
@@ -305,7 +309,7 @@ bool oled_task_user(void) {
                 rgblight_sethsv(1, 255, 255);
                 break;
         }
-        // Call render function to render Triforce
+		// Draw that silly little triforce animation
         triforce_animation();
     }
     // If the oled is on, but has been idle for longer than the screensaver time, turn the OLED off
@@ -317,10 +321,6 @@ bool oled_task_user(void) {
     // If the OLED is on, but has been idle for a while, turn the screensaver on
     } else if(is_oled_on() && last_input_activity_elapsed() > OLED_SCREENSAVER_TIMEOUT) {
         oled_screensaver_active = true;
-    }
-    // If idle, render the animation.
-    if (oled_screensaver_active) {
-        // Use some render animation
         ivy_animation();
         rgblight_mode(5);
         rgblight_sethsv(150, 255, 255);
@@ -329,12 +329,11 @@ bool oled_task_user(void) {
     return false;
 }
 
-// This is squared away and working correctly.
 bool encoder_update_kb(uint8_t index, bool clockwise) {
-    if (!encoder_update_user(index, clockwise)) {
+	
+	if (!encoder_update_user(index, clockwise)) {
         return false;
     }
-    // This is so ass backwards, it's fucking stupid.
     // clockwise is technically counter clockwise, I'm too lazy to inverse it.
     switch (get_highest_layer(layer_state)) {
         case _BASE :
@@ -367,8 +366,6 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
                 }
             }
             break;
-        case _NUMPAD :
-            break;
         case _CHARACTERS :
             if (index == 0) {
                 if (clockwise) {
@@ -383,16 +380,6 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
                     tap_code(KC_MPRV);
                 }
             }
-            break;
-        case _GAMES :
-            break;
-        case _BLENDER :
-            break;
-        case _BLENDNUM :
-            break;
-        case _BLENDCMD :
-            break;
-        case _LAYERSWITCH :
             break;
     }
     return true;
