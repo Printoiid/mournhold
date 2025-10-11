@@ -15,7 +15,7 @@ echo "Theme set and panel moved to the top!"
 
 echo "Setting up custom keymaps"
 custombindpath="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/"
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['${custombindpath}flameshot-screenshot/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['${custombindpath}flameshot-screenshot']"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-screenshot/ binding "<Ctrl><Shift>3"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-screenshot/ command "flameshot gui --accept-on-select --clipboard --path ~/Pictures/$(date '+%a-%M:%H-%h-%d-%Y')"
