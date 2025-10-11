@@ -1,0 +1,14 @@
+steam
+nvidia-driver-575
+git
+tree
+spotify-client
+keepassxc
+npm
+wget
+python3-pip
+flameshot
+vlc
+vivaldi-stable
+nicotine
+kitty
