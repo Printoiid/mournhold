@@ -1,0 +1,6 @@
+neovim
+helm
+argocd
+k9s
+terraform
+talosctl

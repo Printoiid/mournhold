@@ -10,4 +10,4 @@ sudo apt-get install build-essential
 brew install gcc
 
 # Install Neovim and configure the local repo
-brew install neovim
+brew install $(cat ./brewformulae.txt)
