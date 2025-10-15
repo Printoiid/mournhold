@@ -13,11 +13,14 @@ gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Aqua"
 gsettings set org.cinnamon panels-enabled "['1:0:top']"
 echo "Theme set and panel moved to the top!"
 
-# If I want brew installed + used packages
+# Brew + Packages
 source ./brew.sh
 
-# If I want to customize my QMK configuration
+# QMK configuration
 source ./qmk.sh
+
+# Kitty Terminal
+source ./kitty.sh
 
 # Append the .bashrc file with my changes
 cat bashrc_changes.sh >> ~/.bashrc
