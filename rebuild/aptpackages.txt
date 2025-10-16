@@ -12,3 +12,5 @@ vlc
 vivaldi-stable
 nicotine
 kitty
+gimp
+blender
