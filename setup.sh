@@ -3,24 +3,23 @@
 sudo apt-get update
 
 # Get all the goodies
-xargs sudo apt-get -y install < aptpackages.txt
+xargs sudo apt-get -y install < ./rebuild/aptpackages.txt
 
-echo "Making the desktop pretty!"
+# Desktop configuration
 gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-Aqua"
 gsettings set org.cinnamon.theme name "Mint-Y-Dark-Aqua"
 gsettings set org.cinnamon.desktop.wm.preferences theme "Mint-Y-Dark-Aqua"
 gsettings set org.cinnamon.desktop.interface icon-theme "Mint-Y-Aqua"
 gsettings set org.cinnamon panels-enabled "['1:0:top']"
-echo "Theme set and panel moved to the top!"
 
-# Brew + Packages
-source ./brew.sh
+# Fonts - Setup
+ln -s ~/Mournhold/fonts/* ~/.local/share/fonts
 
-# QMK configuration
-source ./qmk.sh
+# OhMyPosh - Setup
+source ~/Mournhold/ohmyposh/ohmyposh-setup.sh
 
-# Kitty Terminal
-source ./kitty.sh
+# Kitty - Setup
+source ~/Mournhold/kitty/kitty-setup.sh
 
-# Append the .bashrc file with my changes
-cat bashrc_changes.sh >> ~/.bashrc
+# Links
+ln -s ~/Mournhold/kitty/ ~/.config/
