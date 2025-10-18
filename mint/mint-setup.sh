@@ -1,3 +1,4 @@
+echo "Starting - Mint install"
 # Desktop configuration
 gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y-Dark-Aqua"
 gsettings set org.cinnamon.theme name "Mint-Y-Dark-Aqua"
@@ -13,3 +14,4 @@ sudo apt-get update
 
 # Get all the goodies
 xargs sudo apt-get -y install < aptpackages.txt
+echo "Finished - Mint install"

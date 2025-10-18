@@ -1,3 +1,4 @@
+echo "Starting - GIMP install"
 cd ~/Documents/
 if [ ! -d "~/Documents/PhotoGIMP/" ]; then
 	echo "Wow! The path ~/Documents/PhotoGIMP/ already exists!"
@@ -9,3 +10,4 @@ cp -R -f ~/Documents/PhotoGIMP/.local/share ~/.local/
 echo "GIMP setup is done! removing .git repo files"
 sudo rm -r ~/Documents/PhotoGIMP
 echo "Repository cleaned!"
+echo "Finished - GIMP install"
