@@ -9,5 +9,5 @@ echo "Finished - Brew install"
 
 echo "Starting - Brew packages install"
 # Install all of the fun stuff
-brew install $(cat ./brewformulae.txt)
+brew install $(cat ~/Mournhold/brew/brewformulae.txt)
 echo "Finished - Brew packages install"
