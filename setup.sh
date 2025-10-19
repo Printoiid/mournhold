@@ -22,3 +22,7 @@ source ~/Mournhold/soflekm/qmk-setup.sh
 
 # NVIM - Setup
 ln -s ~/Mournhold/nvim/ ~/.config/
+
+# Server stuff
+# Docker Engine
+# source ~/Mournhold/docker/docker-setup.sh
