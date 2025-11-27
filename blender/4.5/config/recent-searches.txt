@@ -1,0 +1,8 @@
+  Scene
+  Scene.001
+Mesh to Curve ▸ Mesh
+Geometry ▸ Join Geometry
+Clamp ▸ Result
+   tx_bc_podplant_01.jpg.001
+   tx_bc_podplant_02.jpg.001
+   tx_bc_podplant_01.jpg

@@ -1,0 +1,7 @@
+[Bookmarks]
+/home/nerevar/Documents/blender/
+[Recent]
+/home/nerevar/Documents/blender/textures/Morrowind/
+/home/nerevar/Documents/blender/projects/Morrowind/
+/home/nerevar/Documents/blender/textures/Morrowind/Vegetation/
+/home/nerevar/Documents/blender/projects/Morrowind/Morrowind Vegetation/
