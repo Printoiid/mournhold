@@ -3,7 +3,7 @@ return {
 	opts = {
 		-- NOTE: You can *only* `ensure_installed` for LSPs, literally nothing else.
 		-- NOTE: SuperHTML is an LSP _and_ a formatter.
-		ensure_installed = { "lua_ls", "gopls", "templ", "jsonls", "yamlls", "powershell_es", "clangd" },
+		ensure_installed = { "lua_ls", "gopls", "templ", "jsonls", "yamlls", "powershell_es" },
 	},
 	dependencies = {
 		{
