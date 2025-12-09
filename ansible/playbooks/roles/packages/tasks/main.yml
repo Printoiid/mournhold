@@ -1,0 +1,19 @@
+---
+
+# Packages - Tasks File
+
+- name: Packages - Install
+  tags: packages-install
+  block:
+    - name: Loop and install listed APT packages
+      ansible.builtin.apt:
+        autoclean: "{{ apt_package.autoclean | default('true') }}"
+        allow_downgrade: "{{ apt_package.allow_downgrade | default('false') }}"
+        name: "{{ apt_package.package }}=*{{ apt_package.version | default('*') }}*"
+        state: "{{ apt_package.state | default('latest') }}"
+      loop: "{{ apt_packages }}"
+      loop_control:
+        loop_var: apt_package
+      when: ansible_pkg_mgr == "apt"
+
+...

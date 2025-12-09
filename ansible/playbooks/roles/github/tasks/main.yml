@@ -1,0 +1,16 @@
+---
+
+# Github - Tasks File
+
+- name: Clone Personal Github Repositories
+  tags: personal-repositories
+  block:
+    - name: Loop and clone listed Github repositories
+      ansible.builtin.git:
+        repo: "{{ repo.uri }}"
+        dest: "{{ repo.dest | default('~/{{ repo.name }}') }}"
+      loop: "{{ github_repositories }}"
+      loop_control:
+        loop_var: repo
+
+...

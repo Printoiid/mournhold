@@ -1,0 +1,10 @@
+---
+# <package> - Tasks File
+
+- name: <package> - Install and Configure
+  tags: <package>-install
+  block:
+    - name: <SomeName>
+      ansible.builtin.stat:
+        path: some/path/
+      register: <variable>

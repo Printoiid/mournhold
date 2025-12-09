@@ -1,0 +1,12 @@
+---
+
+# Neovim - Playbook
+
+- name: Neovim
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - neovim
+
+...

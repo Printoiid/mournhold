@@ -1,0 +1,14 @@
+---
+
+# Packages - Playbook
+
+- name: Packages
+  hosts: vvardenfell
+  connection: local
+  become: true
+  become_method: ansible.builtin.sudo
+
+  roles:
+    - packages
+
+...

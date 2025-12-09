@@ -1,0 +1,36 @@
+---
+
+# All - Group Vars File
+
+apt_packages:
+  - package: "git"
+  - package: "vlc"
+  - package: "steam"
+  - package: "tree"
+  - package: "wget"
+  - package: "keepassxc"
+  - package: "build-essential"
+  - package: "spotify-client"
+  - package: "nvidia-driver-580"
+  - package: "kitty"
+    version: "0.32.2"
+    state: "fixed"
+  - package: "flameshot"
+    version: "12.1.0"
+    state: "fixed"
+
+homebrew_install_path: "/home/linuxbrew/.linuxbrew/bin/brew"
+homebrew_update: false
+homebrew_packages:
+  - neovim
+  - gcc
+
+github_repositories:
+  - name: mournhold
+    uri: "https://github.com/Printoiid/mournhold.git"
+    dest: "~/mournhold"
+  - name: Printoiid
+    uri: "https://github.com/Printoiid/Printoiid.git"
+    dest: "~/Printoiid"
+
+...

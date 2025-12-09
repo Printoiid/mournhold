@@ -1,0 +1,44 @@
+---
+
+# Linux - Playbook
+
+- hosts: vvardenfell
+  connection: local
+  tasks:
+    - name: Display OS Information
+      ansible.builtin.debug:
+        verbosity: 1
+        msg:
+          - "Verbosity: {{ ansible_verbosity }}"
+          - "Distribution: {{ ansible_distribution }}"
+          - "Variety: {{ ansible_distribution_file_variety }}"
+          - "Package Manager: {{ ansible_pkg_mgr }}"
+          - "Version: {{ ansible_distribution_version }}"
+          - "System: {{ ansible_system }}"
+          - "Hosts: {{ ansible_play_hosts }}"
+
+    - name: Gather package facts
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Output Installed Packages
+      ansible.builtin.copy:
+        content: "{{ ansible_facts.packages | to_nice_json }}"
+        dest: "~/Mournhold/ansible/logs/{{ inventory_hostname }}_packages.json"
+
+- name: Import and execute the Packages Playbook
+  ansible.builtin.import_playbook: packages.yml
+
+- name: Import and execute the Github Playbook
+  ansible.builtin.import_playbook: github.yml
+
+- name: Import and execute the Homebrew Playbook
+  ansible.builtin.import_playbook: homebrew.yml
+
+- name: Import and execute the Neovim Playbook
+  ansible.builtin.import_playbook: neovim.yml
+
+- name: Import and execute the Kitty Playbook
+  ansible.builtin.import_playbook: kitty.yml
+
+...

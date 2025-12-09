@@ -1,0 +1,22 @@
+---
+
+# Homebrew - Tasks File
+
+- name: Homebrew - Install and Configure
+  tags: homebrew-install
+  block:
+    - name: Check if Homebrew is installed
+      ansible.builtin.stat:
+        path: "{{ homebrew_install_path }}"
+      register: brew_status
+
+    - name: Install the latest version of Homebrew
+      ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      when: brew_status.stat.exists and homebrew_update == true
+
+    - name: Install brew packages with Homebrew
+      community.general.homebrew:
+        name: "{{ item }}"
+      loop: "{{ homebrew_packages }}"
+
+...

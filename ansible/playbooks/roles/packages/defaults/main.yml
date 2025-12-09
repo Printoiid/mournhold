@@ -1,0 +1,12 @@
+---
+
+# Packages - Defaults File
+
+apt_packages:
+  - package: ""
+    version: "*"
+    state: "latest"
+    allow_downgrade: false
+    autoclean: true
+
+...
