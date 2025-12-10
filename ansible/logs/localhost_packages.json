@@ -1039,6 +1039,16 @@
             "version": "4:13.2.0-7ubuntu1"
         }
     ],
+    "cpp-12": [
+        {
+            "arch": "amd64",
+            "category": "universe/interpreters",
+            "name": "cpp-12",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "12.4.0-2ubuntu1~24.04"
+        }
+    ],
     "cpp-13": [
         {
             "arch": "amd64",
@@ -2417,6 +2427,26 @@
             "origin": "Ubuntu",
             "source": "apt",
             "version": "4:13.2.0-7ubuntu1"
+        }
+    ],
+    "gcc-12": [
+        {
+            "arch": "amd64",
+            "category": "universe/devel",
+            "name": "gcc-12",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "12.4.0-2ubuntu1~24.04"
+        }
+    ],
+    "gcc-12-base": [
+        {
+            "arch": "amd64",
+            "category": "universe/libs",
+            "name": "gcc-12-base",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "12.4.0-2ubuntu1~24.04"
         }
     ],
     "gcc-13": [
@@ -4717,16 +4747,6 @@
             "origin": "Ubuntu",
             "source": "apt",
             "version": "5.115.0-0ubuntu6"
-        }
-    ],
-    "kitty": [
-        {
-            "arch": "amd64",
-            "category": "universe/x11",
-            "name": "kitty",
-            "origin": "Ubuntu",
-            "source": "apt",
-            "version": "0.32.2-1ubuntu0.4"
         }
     ],
     "kitty-doc": [
@@ -8537,6 +8557,16 @@
             "origin": "Ubuntu",
             "source": "apt",
             "version": "25.0.7-0ubuntu0.24.04.2"
+        }
+    ],
+    "libgcc-12-dev": [
+        {
+            "arch": "amd64",
+            "category": "universe/libdevel",
+            "name": "libgcc-12-dev",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "12.4.0-2ubuntu1~24.04"
         }
     ],
     "libgcc-13-dev": [
@@ -14887,6 +14917,26 @@
             "origin": "Ubuntu",
             "source": "apt",
             "version": "3.12.3-0ubuntu2.1"
+        }
+    ],
+    "libpython3.10-minimal": [
+        {
+            "arch": "amd64",
+            "category": "python",
+            "name": "libpython3.10-minimal",
+            "origin": "LP-PPA-deadsnakes",
+            "source": "apt",
+            "version": "3.10.19-1+noble1"
+        }
+    ],
+    "libpython3.10-stdlib": [
+        {
+            "arch": "amd64",
+            "category": "python",
+            "name": "libpython3.10-stdlib",
+            "origin": "LP-PPA-deadsnakes",
+            "source": "apt",
+            "version": "3.10.19-1+noble1"
         }
     ],
     "libpython3.12-dev": [
@@ -26149,6 +26199,16 @@
             "version": "1.0.5-1ubuntu3.1"
         }
     ],
+    "pipx": [
+        {
+            "arch": "all",
+            "category": "universe/python",
+            "name": "pipx",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "1.4.3-1"
+        }
+    ],
     "pix": [
         {
             "arch": "amd64",
@@ -27539,6 +27599,16 @@
             "version": "68.1.2-2ubuntu1.2"
         }
     ],
+    "python3-platformdirs": [
+        {
+            "arch": "all",
+            "category": "python",
+            "name": "python3-platformdirs",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "4.2.0-1"
+        }
+    ],
     "python3-png": [
         {
             "arch": "all",
@@ -27999,6 +28069,16 @@
             "version": "2.0.7-1ubuntu0.2"
         }
     ],
+    "python3-userpath": [
+        {
+            "arch": "all",
+            "category": "universe/utils",
+            "name": "python3-userpath",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "1.9.1-1"
+        }
+    ],
     "python3-vdf": [
         {
             "arch": "all",
@@ -28007,6 +28087,16 @@
             "origin": "Ubuntu",
             "source": "apt",
             "version": "3.4-4"
+        }
+    ],
+    "python3-venv": [
+        {
+            "arch": "amd64",
+            "category": "universe/python",
+            "name": "python3-venv",
+            "origin": "Ubuntu",
+            "source": "apt",
+            "version": "3.12.3-0ubuntu2.1"
         }
     ],
     "python3-wadllib": [
@@ -28137,6 +28227,26 @@
             "origin": "Ubuntu",
             "source": "apt",
             "version": "6.1-1build1"
+        }
+    ],
+    "python3.10": [
+        {
+            "arch": "amd64",
+            "category": "python",
+            "name": "python3.10",
+            "origin": "LP-PPA-deadsnakes",
+            "source": "apt",
+            "version": "3.10.19-1+noble1"
+        }
+    ],
+    "python3.10-minimal": [
+        {
+            "arch": "amd64",
+            "category": "python",
+            "name": "python3.10-minimal",
+            "origin": "LP-PPA-deadsnakes",
+            "source": "apt",
+            "version": "3.10.19-1+noble1"
         }
     ],
     "python3.12": [
@@ -29884,9 +29994,9 @@
             "arch": "amd64",
             "category": "web",
             "name": "vivaldi-stable",
-            "origin": "",
+            "origin": "Vivaldi Technologies",
             "source": "apt",
-            "version": "7.7.3851.52-1"
+            "version": "7.7.3851.58-1"
         }
     ],
     "vlc": [
@@ -30944,7 +31054,7 @@
             "arch": "all",
             "category": "web",
             "name": "yt-dlp",
-            "origin": "LP-PPA-tomtomtom-yt-dlp",
+            "origin": "",
             "source": "apt",
             "version": "2025.11.12-1~ppa~noble"
         }

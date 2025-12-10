@@ -12,9 +12,6 @@ apt_packages:
   - package: "build-essential"
   - package: "spotify-client"
   - package: "nvidia-driver-580"
-  - package: "kitty"
-    version: "0.32.2"
-    state: "fixed"
   - package: "flameshot"
     version: "12.1.0"
     state: "fixed"
@@ -32,5 +29,8 @@ github_repositories:
   - name: Printoiid
     uri: "https://github.com/Printoiid/Printoiid.git"
     dest: "~/Printoiid"
+
+kitty_curl_url: "https://sw.kovidgoyal.net/kitty/installer.sh"
+kitty_install_destination: "~/Downloads/kitty_install.sh"
 
 ...

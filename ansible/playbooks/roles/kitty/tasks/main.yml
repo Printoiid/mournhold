@@ -2,8 +2,17 @@
 
 # Kitty - Tasks File
 
-- name: Kitty - Configure
+- name: Kitty - Install and Configure
   tags: kitty-configure
+  block:
+    - name: Pull down Kitty Installer
+      ansible.builtin.get_url:
+        url: "{{ kitty_curl_url }}"
+        validate_certs: "{{ kitty_validate_certs }}"
+        dest: "{{ kitty_install_destination }}"
+        mode: 0755
 
+    - name: Install Kitty
+      ansible.builtin.command: "~/Downloads/kitty_install.sh"
 
 ...

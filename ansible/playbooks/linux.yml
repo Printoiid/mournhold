@@ -1,5 +1,4 @@
 ---
-
 # Linux - Playbook
 
 - hosts: vvardenfell
@@ -24,7 +23,7 @@
     - name: Output Installed Packages
       ansible.builtin.copy:
         content: "{{ ansible_facts.packages | to_nice_json }}"
-        dest: "~/Mournhold/ansible/logs/{{ inventory_hostname }}_packages.json"
+        dest: "~/mournhold/ansible/logs/{{ inventory_hostname }}_packages.json"
 
 - name: Import and execute the Packages Playbook
   ansible.builtin.import_playbook: packages.yml
@@ -40,5 +39,3 @@
 
 - name: Import and execute the Kitty Playbook
   ansible.builtin.import_playbook: kitty.yml
-
-...
