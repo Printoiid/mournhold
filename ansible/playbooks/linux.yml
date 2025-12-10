@@ -8,6 +8,7 @@
       ansible.builtin.debug:
         verbosity: 1
         msg:
+          - "It's just nice to have, okay Rob?"
           - "Verbosity: {{ ansible_verbosity }}"
           - "Distribution: {{ ansible_distribution }}"
           - "Variety: {{ ansible_distribution_file_variety }}"
@@ -19,11 +20,6 @@
     - name: Gather package facts
       ansible.builtin.package_facts:
         manager: auto
-
-    - name: Output Installed Packages
-      ansible.builtin.copy:
-        content: "{{ ansible_facts.packages | to_nice_json }}"
-        dest: "~/mournhold/ansible/logs/{{ inventory_hostname }}_packages.json"
 
 - name: Import and execute the Packages Playbook
   ansible.builtin.import_playbook: packages.yml

@@ -1,18 +1,20 @@
 ---
-
 # Kitty - Tasks File
 
 - name: Kitty - Install and Configure
   tags: kitty-configure
   block:
-    - name: Pull down Kitty Installer
-      ansible.builtin.get_url:
-        url: "{{ kitty_curl_url }}"
-        validate_certs: "{{ kitty_validate_certs }}"
-        dest: "{{ kitty_install_destination }}"
-        mode: 0755
-
     - name: Install Kitty
-      ansible.builtin.command: "~/Downloads/kitty_install.sh"
+      ansible.builtin.shell: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
 
-...
+    - name: Add Kitty and Kitten to PATH
+      ansible.builtin.file:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        state: link
+      loop: "{{ kitty_linked_directories }}"
+
+    - name: Add kitty.desktop to OS Applications
+      ansible.builtin.copy:
+        src: "{{ kitty_application_filepath.src }}"
+        dest: "{{ kitty_application_filepath.dest }}"

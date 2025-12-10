@@ -1,5 +1,4 @@
 ---
-
 # All - Group Vars File
 
 apt_packages:
@@ -32,5 +31,14 @@ github_repositories:
 
 kitty_curl_url: "https://sw.kovidgoyal.net/kitty/installer.sh"
 kitty_install_destination: "~/Downloads/kitty_install.sh"
+kitty_validate_certs: true
 
-...
+kitty_linked_directories:
+  - src: "~/.local/kitty.app/bin/kitten"
+    dest: "~/.local/bin/kitten"
+  - src: "~/.local/kitty.app/bin/kitty"
+    dest: "~/.local/bin/kitty"
+
+kitty_application_filepath:
+  src: "~/.local/kitty.app/share/applications/kitty.desktop/"
+  dest: "~/.local/share/applications/"

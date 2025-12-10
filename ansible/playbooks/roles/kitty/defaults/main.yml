@@ -1,9 +1,14 @@
 ---
-
 # Kitty - Default File
 
 kitty_curl_url: ""
 kitty_install_destination: ""
 kitty_validate_certs: true
 
-...
+kitty_binary_path: ""
+kitty_linked_directories:
+  - ""
+
+kitty_application_filepath:
+  src: ""
+  dest: ""
