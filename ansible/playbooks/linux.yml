@@ -2,6 +2,8 @@
 # Linux - Playbook
 
 - hosts: vvardenfell
+  vars_files:
+    - ../inventory/group_vars/password.yml
   connection: local
   tasks:
     - name: Display OS Information
@@ -17,9 +19,9 @@
           - "System: {{ ansible_system }}"
           - "Hosts: {{ ansible_play_hosts }}"
 
-    - name: Gather package facts
-      ansible.builtin.package_facts:
-        manager: auto
+    - name: Display secret
+      ansible.builtin.debug:
+        msg: "Bruh! {{ admin }}"
 
 - name: Import and execute the Packages Playbook
   ansible.builtin.import_playbook: packages.yml

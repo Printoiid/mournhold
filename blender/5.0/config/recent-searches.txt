@@ -11,5 +11,5 @@ Group Input
 Math ▸ Multiply
 Input ▸ Scene ▸ Scene Time ▸ Frame
 Layout ▸ Frame
-Generate ▸ Subdivision Surface
 Generate ▸ Bevel
+Generate ▸ Subdivision Surface
