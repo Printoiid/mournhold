@@ -2,11 +2,8 @@ layout tall
 
 cd ~/mournhold/ansible/
 
-launch --title "Roles" nvim ~/mournhold/ansible/playbooks/roles
+launch --title "Roles" nvim ~/mournhold/ansible/playbooks/roles/github/
 
 launch --title "Playbooks" nvim ~/mournhold/ansible/playbooks
 
-launch --title "Group Vars" nvim ~/mournhold/ansible/inventory/group_vars
-
-new_tab Bitches
-
+launch --title "Group Vars" nvim ~/mournhold/ansible/inventory/group_vars/

@@ -18,3 +18,10 @@
       ansible.builtin.copy:
         src: "{{ kitty_application_filepath.src }}"
         dest: "{{ kitty_application_filepath.dest }}"
+
+    - name: Debug each matching local directory path
+      ansible.builtin.debug:
+        msg: "Found local directory: {{ item }}"
+      loop: "{{ lookup('fileglob', '~/mournhold/ansible/playbooks/*').splitlines() }}"
+      tags:
+        - test-directory
