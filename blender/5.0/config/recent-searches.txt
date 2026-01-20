@@ -13,3 +13,4 @@ Input ▸ Scene ▸ Scene Time ▸ Frame
 Layout ▸ Frame
 Generate ▸ Bevel
 Generate ▸ Subdivision Surface
+Translate Instances ▸ Instances

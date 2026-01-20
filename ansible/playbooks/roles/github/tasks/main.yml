@@ -1,5 +1,3 @@
----
-
 # Github - Tasks File
 
 - name: Clone Personal Github Repositories
@@ -12,5 +10,3 @@
       loop: "{{ github_repositories }}"
       loop_control:
         loop_var: repo
-
-...

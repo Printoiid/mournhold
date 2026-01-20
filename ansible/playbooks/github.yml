@@ -1,5 +1,3 @@
----
-
 # Github - Playbook
 
 - name: Github
@@ -10,5 +8,3 @@
 
   roles:
     - github
-
-...

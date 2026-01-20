@@ -1,5 +1,3 @@
----
-
 # Neovim - Tasks File
 
 - name: Configure Neovim
@@ -10,5 +8,3 @@
         src: "{{ github_repositories | selectattr('name', '==', 'mournhold') | map(attribute='dest') | first }}/nvim"
         dest: "~/.config/nvim"
         state: link
-
-...

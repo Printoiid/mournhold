@@ -1,5 +1,3 @@
----
-
 # Packages - Playbook
 
 - name: Packages
@@ -10,5 +8,3 @@
 
   roles:
     - packages
-
-...

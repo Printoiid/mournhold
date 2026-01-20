@@ -1,9 +1,5 @@
----
-
 # Github - Defaults File
 
 github_repositories:
   - repo: "null"
     dest: ""
-
-...

@@ -1,0 +1,21 @@
+# Open your homelab session
+new_tab Homelab
+cd ~/homelab/
+launch --title "Homelab" nvim
+
+# Start SSH Sessions to VMs
+new_tab PvE VMs
+launch --title "PvE VM - GhostGate" ssh dagothur@ghostgate.vvardenfell.net
+launch --title "Pve VM - Umbra" ssh umbra.vvardenfell.net
+# K9s
+new_tab K9s
+launch --title "K9s" k9s
+
+# Start SSH Sessions to Proxmode Nodes
+new_tab PvE Nodes
+launch --title "PvE - Nerevarine" ssh root@nerevarine.vvardenfell.net
+launch --title "PvE - Almalexia"  ssh root@almalexia.vvardenfell.net
+launch --title "PvE - Dagoth Ur"  ssh root@dagothur.vvardenfell.net
+launch --title "PvE - Sotha-Sil"  ssh root@sothasil.vvardenfell.net
+launch --title "PvE - Vivec"      ssh root@vivec.vvardenfell.net
+
