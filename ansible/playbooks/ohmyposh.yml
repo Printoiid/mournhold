@@ -1,0 +1,7 @@
+# OhMyPosh - Playbook
+- name: OhMyPosh
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - ohmyposh

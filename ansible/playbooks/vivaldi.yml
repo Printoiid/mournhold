@@ -1,7 +1,7 @@
-# Neovim - Playbook
-- name: Neovim
+# Vivaldi - Playbook
+- name: Vivaldi
   hosts: vvardenfell
   connection: local
 
   roles:
-    - neovim
+    - vivaldi

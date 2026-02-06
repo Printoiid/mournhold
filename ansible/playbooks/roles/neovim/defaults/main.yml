@@ -1,1 +1,3 @@
 # Neovim - Defaults File
+
+neovim_repo_config_path: ""

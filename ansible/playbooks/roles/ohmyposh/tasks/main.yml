@@ -1,0 +1,20 @@
+# OhMyPosh - Tasks File
+- name: OhMyPosh - Install and Configure
+  tags: ohmyposh-setup
+  block:
+    - name: Download OhMyPosh Installation Script
+      ansible.builtin.get_url:
+        url: "{{ ohmyposh.url }}"
+        dest: "{{ ohmyposh.dest }}"
+
+    # The forward slash for the command feels needed here,
+    # otherwise Ansible throws a fucking fit about pathing.
+    - name: Run OhMyPosh Installation Script
+      ansible.builtin.script:
+        cmd: "{{ ohmyposh.dest }}"
+
+    - name: Update .bashrc
+      ansible.builtin.lineinfile:
+        dest: "{{ ohmyposh_bash.dest }}"
+        regexp: "{{ ohmyposh_bash.regexp }}"
+        line: "{{ ohmyposh_bash.line }}"

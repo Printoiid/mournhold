@@ -1,6 +1,6 @@
 # Packages - Tasks File
-- name: Packages - Install
-  tags: packages-install
+- name: Packages - Install and Configure
+  tags: packages-setup
   block:
     - name: Loop and install listed APT packages
       ansible.builtin.apt:
@@ -12,3 +12,16 @@
       loop_control:
         loop_var: apt_package
       when: ansible_pkg_mgr == "apt"
+
+    - name: Add ~/.local/bin/* to executable in $PATH
+      ansible.builtin.lineinfile:
+        dest: "{{ bin_executable.dest }}"
+        regexp: "{{ bin_executable.regexp }}"
+        line: "{{ bin_executable.line }}"
+
+    - name: Create hidden .packages folder for downloaded archives
+      ansible.builtin.file:
+        dest: "/home/$USER/.packages/"
+        state: directory
+        mode: '0777'
+        # This needs to be updated later

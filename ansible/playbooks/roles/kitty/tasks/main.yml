@@ -1,26 +1,49 @@
 # Kitty - Tasks File
-
 - name: Kitty - Install and Configure
-  tags: kitty-configure
+  tags: kitty-setup
   block:
+    - name: Link Kitty configuration
+      ansible.builtin.file:
+        src: "{{ kitty_configuration.src }}"
+        dest: "{{ kitty_configuration.dest }}"
+        state: link
+        force: true
+
     - name: Install Kitty
-      ansible.builtin.shell: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
+      ansible.builtin.shell:
+        cmd: "{{ kitty_install_cmd }}"
+
+    - name: Create bin folder
+      ansible.builtin.file:
+        path: "{{ kitty_bin_folder.path }}"
+        state: directory
+        owner: "{{ user_account }}"
+        mode: "{{ kitty_bin_folder.mode }}"
 
     - name: Add Kitty and Kitten to PATH
       ansible.builtin.file:
-        src: "{{ item.src }}"
-        dest: "{{ item.dest }}"
+        src: "{{ app_path.src }}"
+        dest: "{{ app_path.dest }}"
+        owner: "{{ user_account }}"
+        group: "{{ user_account }}"
         state: link
-      loop: "{{ kitty_linked_directories }}"
+      loop: "{{ kitty_app_filepath }}"
+      loop_control:
+        loop_var: app_path
 
     - name: Add kitty.desktop to OS Applications
       ansible.builtin.copy:
-        src: "{{ kitty_application_filepath.src }}"
-        dest: "{{ kitty_application_filepath.dest }}"
+        src: "{{ shortcut_path.src }}"
+        dest: "{{ shortcut_path.dest }}"
+        owner: "{{ user_account }}"
+        group: "{{ user_account }}"
+        mode: a+x
+      loop: "{{ kitty_shortcut_filepath }}"
+      loop_control:
+        loop_var: shortcut_path
 
-    - name: Debug each matching local directory path
-      ansible.builtin.debug:
-        msg: "Found local directory: {{ item }}"
-      loop: "{{ lookup('fileglob', '~/mournhold/ansible/playbooks/*').splitlines() }}"
-      tags:
-        - test-directory
+# This should be set this way in specific instances. For example this is for Gnome DE's
+    - name: Make XDG-Terminal-Exec use Kitty
+      ansible.builtin.shell:
+        cmd: "{{ kitty_gnome_terminal }}"
+

@@ -1,5 +1,4 @@
 # Kitty - Playbook
-
 - name: Kitty
   hosts: vvardenfell
   connection: local

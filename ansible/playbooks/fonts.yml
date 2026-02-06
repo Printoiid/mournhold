@@ -1,7 +1,7 @@
-# Neovim - Playbook
-- name: Neovim
+# Fonts - Playbook
+- name: Fonts
   hosts: vvardenfell
   connection: local
 
   roles:
-    - neovim
+    - fonts

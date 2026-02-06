@@ -1,0 +1,9 @@
+# Fonts - Tasks File
+- name: Fonts - Install and Configure
+  tags: fonts-setup
+  block:
+    - name: Link Fonts to {{ font_directory }}
+      ansible.builtin.file:
+        src: "{{ font_src }}"
+        dest: "{{ font_dest }}"
+        state: link

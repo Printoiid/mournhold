@@ -1,0 +1,3 @@
+# Fonts - Defaults File
+font_src: ~/mournhold/fonts
+font_dest: ~/.local/share/fonts

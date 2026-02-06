@@ -25,7 +25,7 @@ cyan='\033[0;36m'
 nc='\033[0m'
 
 # Session Variables
-projectPath=$(pwd)
+projectPath=$HOME/mournhold/ansible
 sessionName=ansible
 sessionFile=$sessionName.kitty-session
 sessionFilePath="$projectPath/$sessionFile"
@@ -75,6 +75,7 @@ for role in ${playbookRolePaths[@]}; do
 	roleName=${role##*/}
 	printf "${cyan}Created tab: $roleName\n${nc}"
 	write_tab "Role-${role##*/}" $sessionFilePath
+	layout_option "tall" $sessionFilePath
 	launch_session "All-Values" "nvim $projectPath/inventory/group_vars/all.yml" $sessionFilePath
 	for yml in $role/*/*; do
 		printf "\t${green}Created session: ${yml##*/}\n${nc}"

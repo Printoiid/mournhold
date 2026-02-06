@@ -1,11 +1,34 @@
 # All - Group Vars File
 
+# True Globals
+ohmyposh_theme: 'agnoster'
+user_account: "nerevar"
+dotconfig_path: "/home/$USER/.config"
+
+# Role - Git
+github_repositories:
+  mournhold:
+    uri: "https://github.com/Printoiid/mournhold.git"
+    dest: "/home/$USER/mournhold"
+  Printoiid:
+    uri: "https://github.com/Printoiid/Printoiid.git"
+    dest: "/home/$USER/Printoiid"
+
+mournhold_path: "{{ github_repositories.mournhold.dest }}"
+neovim_repo_config_path: "{{ mournhold_path }}/nvim"
+kitty_repo_config_path: "{{ mournhold_path }}/kitty"
+
+# Role - Packages
 apt_packages:
+  - package: "gcc"
+  - package: "curl"
+  - package: "tar"
   - package: "git"
   - package: "vlc"
   - package: "steam"
   - package: "tree"
   - package: "wget"
+  - package: "kdenlive"
   - package: "keepassxc"
   - package: "build-essential"
   - package: "spotify-client"
@@ -14,30 +37,9 @@ apt_packages:
     version: "12.1.0"
     state: "fixed"
 
-homebrew_install_path: "/home/linuxbrew/.linuxbrew/bin/brew"
-homebrew_update: false
+# Role - Homebrew
 homebrew_packages:
   - neovim
-  - gcc
+  - go
+  - yt-dlp
 
-github_repositories:
-  - name: mournhold
-    uri: "https://github.com/Printoiid/mournhold.git"
-    dest: "~/mournhold"
-  - name: Printoiid
-    uri: "https://github.com/Printoiid/Printoiid.git"
-    dest: "~/Printoiid"
-
-kitty_curl_url: "https://sw.kovidgoyal.net/kitty/installer.sh"
-kitty_install_destination: "~/Downloads/kitty_install.sh"
-kitty_validate_certs: true
-
-kitty_linked_directories:
-  - src: "~/.local/kitty.app/bin/kitten"
-    dest: "~/.local/bin/kitten"
-  - src: "~/.local/kitty.app/bin/kitty"
-    dest: "~/.local/bin/kitty"
-
-kitty_application_filepath:
-  src: "~/.local/kitty.app/share/applications/kitty.desktop/"
-  dest: "~/.local/share/applications/"

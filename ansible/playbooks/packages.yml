@@ -1,5 +1,4 @@
 # Packages - Playbook
-
 - name: Packages
   hosts: vvardenfell
   connection: local

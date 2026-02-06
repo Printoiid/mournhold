@@ -1,10 +1,9 @@
 # Neovim - Tasks File
-
-- name: Configure Neovim
-  tags: neovim-config
+- name: Neovim - Install and Configure
+  tags: neovim-setup
   block:
     - name: Link Neovim Configuration
       ansible.builtin.file:
-        src: "{{ github_repositories | selectattr('name', '==', 'mournhold') | map(attribute='dest') | first }}/nvim"
-        dest: "~/.config/nvim"
+        src: "{{ neovim_repo_config_path }}"
+        dest: "{{ dotconfig_path }}/nvim"
         state: link

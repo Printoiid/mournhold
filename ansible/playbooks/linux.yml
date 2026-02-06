@@ -1,5 +1,4 @@
 # Linux - Playbook
-
 - hosts: vvardenfell
   vars_files:
     - ../inventory/group_vars/password.yml
@@ -18,12 +17,11 @@
           - "System: {{ ansible_system }}"
           - "Hosts: {{ ansible_play_hosts }}"
 
-    - name: Display secret
-      ansible.builtin.debug:
-        msg: "Bruh! {{ admin }}"
-
 - name: Import and execute the Packages Playbook
   ansible.builtin.import_playbook: packages.yml
+
+- name: Import and execute the Fonts Playbook
+  ansible.builtin.import_playbook: fonts.yml
 
 - name: Import and execute the Github Playbook
   ansible.builtin.import_playbook: github.yml
@@ -36,3 +34,9 @@
 
 - name: Import and execute the Kitty Playbook
   ansible.builtin.import_playbook: kitty.yml
+
+- name: Import and execute the Vivaldi Playbook
+  ansible.builtin.import_playbook: vivaldi.yml
+
+- name: Import and execute the OhMyPosh Playbook
+  ansible.builtin.import_playbook: ohmyposh.yml

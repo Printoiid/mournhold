@@ -1,0 +1,9 @@
+# OhMyPosh - Defaults File
+ohmyposh:
+  url: https://ohmyposh.dev/install.sh
+  dest: "{{ mournhold_path }}/scripts/ohmyposh.sh"
+
+ohmyposh_bash:
+  dest: /home/$USER/.bashrc
+  regexp: oh-my-posh
+  line: eval "$(oh-my-posh init bash --config "{{ ohmyposh_theme }}")"

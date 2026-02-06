@@ -1,13 +1,28 @@
 # Kitty - Default File
 
-kitty_curl_url: ""
-kitty_install_destination: ""
-kitty_validate_certs: true
+kitty_configuration:
+  src: "{{ kitty_repo_config_path }}"
+  dest: "{{ dotconfig_path }}/kitty"
 
-kitty_binary_path: ""
-kitty_linked_directories:
-  - ""
+kitty_install_cmd: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
 
-kitty_application_filepath:
-  src: ""
-  dest: ""
+kitty_bin_folder:
+  path: "/home/$USER/.local/bin/"
+  mode: '0775'
+
+kitty_app_filepath:
+  - src: ~/.local/kitty.app/bin/kitten
+    dest: ~/.local/bin/kitten
+  - src: ~/.local/kitty.app/bin/kitty
+    dest: ~/.local/bin/kitty
+
+kitty_shortcut_filepath:
+  - src: ~/.local/kitty.app/share/applications/kitty-open.desktop
+    dest: ~/.local/share/applications/kitty-open.desktop
+  - src: ~/.local/kitty.app/share/applications/kitty.desktop
+    dest: ~/.local/share/applications/kitty.desktop
+
+# Update Icons
+
+xdg_terminals: /home/$USER/.config/xdg-terminals.list
+kitty_gnome_terminal: "echo 'kitty.desktop' > $HOME/.config/xdg-terminals.list"

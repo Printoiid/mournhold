@@ -1,5 +1,4 @@
 # Homebrew - Playbook
-
 - name: Homebrew
   hosts: vvardenfell
   connection: local

@@ -1,4 +1,11 @@
 # Homebrew - Defaults File
-
+homebrew_directory: /home/linuxbrew/.linuxbrew
+homebrew_directory_mode: 0755
 homebrew_packages:
   - ""
+
+# Dest is pulled from global
+ansible_env_shell:
+  dest: "{{ bashrc_path }}"
+  regexp: '.linuxbrew'
+  line: eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
