@@ -77,7 +77,7 @@ for role in ${playbookRolePaths[@]}; do
 	write_tab "Role-${role##*/}" $sessionFilePath
 	layout_option "tall" $sessionFilePath
 	launch_session "All-Values" "nvim $projectPath/inventory/group_vars/all.yml" $sessionFilePath
-	for yml in $role/*/*; do
+	for yml in $role/*/*.yml; do
 		printf "\t${green}Created session: ${yml##*/}\n${nc}"
 		launch_session ${yml##*/} "nvim $yml" $sessionFilePath
 	done

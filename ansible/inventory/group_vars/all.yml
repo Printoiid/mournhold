@@ -7,14 +7,10 @@ dotconfig_path: "/home/$USER/.config"
 
 # Role - Git
 github_repositories:
-  mournhold:
-    uri: "https://github.com/Printoiid/mournhold.git"
-    dest: "/home/$USER/mournhold"
-  Printoiid:
-    uri: "https://github.com/Printoiid/Printoiid.git"
-    dest: "/home/$USER/Printoiid"
+  mournhold: "https://github.com/Printoiid/mournhold.git"
+  Printoiid: "https://github.com/Printoiid/Printoiid.git"
 
-mournhold_path: "{{ github_repositories.mournhold.dest }}"
+mournhold_path: "/home/$USER/mournhold"
 neovim_repo_config_path: "{{ mournhold_path }}/nvim"
 kitty_repo_config_path: "{{ mournhold_path }}/kitty"
 
@@ -42,4 +38,8 @@ homebrew_packages:
   - neovim
   - go
   - yt-dlp
-
+  - talosctl
+  - terraform
+  - k9s
+  - argocd
+  - helm

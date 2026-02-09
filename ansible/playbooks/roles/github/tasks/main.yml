@@ -5,7 +5,7 @@
     - name: Loop and clone listed Github repositories
       ansible.builtin.git:
         repo: "{{ repo.uri }}"
-        dest: "{{ repo.dest | default('/home/$USER/{{ repo.name }}') }}"
-      loop: "{{ github_repositories }}"
+        dest: "/home/$USER/{{ repo.name }}"
+      loop: "{{ github_repositories | dict2items(key_name='name', value_name='uri') }}"
       loop_control:
         loop_var: repo

@@ -23,8 +23,8 @@
 - name: Import and execute the Fonts Playbook
   ansible.builtin.import_playbook: fonts.yml
 
-- name: Import and execute the Github Playbook
-  ansible.builtin.import_playbook: github.yml
+#- name: Import and execute the Github Playbook
+# ansible.builtin.import_playbook: github.yml
 
 - name: Import and execute the Homebrew Playbook
   ansible.builtin.import_playbook: homebrew.yml

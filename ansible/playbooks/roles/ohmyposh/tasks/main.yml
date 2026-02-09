@@ -13,7 +13,7 @@
       ansible.builtin.script:
         cmd: "{{ ohmyposh.dest }}"
 
-    - name: Update .bashrc
+    - name: Update .bashrc with OhMyPosh eval
       ansible.builtin.lineinfile:
         dest: "{{ ohmyposh_bash.dest }}"
         regexp: "{{ ohmyposh_bash.regexp }}"

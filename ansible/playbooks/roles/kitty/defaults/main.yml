@@ -1,10 +1,15 @@
 # Kitty - Default File
-
-kitty_configuration:
-  src: "{{ kitty_repo_config_path }}"
-  dest: "{{ dotconfig_path }}/kitty"
-
 kitty_install_cmd: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
+kitty_asset_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty"
+
+kitty_bashrc:
+  dest: /home/$USER/.bashrc
+  regexp: 'alias kitty=kitty --override background_image'
+  line: 'alias kitty="kitty --override background_image_layout=cscaled --override background_image=$(ls ~/.config/kitty/img/*.png | sort --random-sort | head -1)"'
+
+kitty_config:
+  src: "{{ kitty_asset_path }}/config"
+  dest: "{{ dotconfig_path }}/kitty"
 
 kitty_bin_folder:
   path: "/home/$USER/.local/bin/"
@@ -23,6 +28,5 @@ kitty_shortcut_filepath:
     dest: ~/.local/share/applications/kitty.desktop
 
 # Update Icons
-
 xdg_terminals: /home/$USER/.config/xdg-terminals.list
 kitty_gnome_terminal: "echo 'kitty.desktop' > $HOME/.config/xdg-terminals.list"

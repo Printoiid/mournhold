@@ -4,10 +4,9 @@
   block:
     - name: Link Kitty configuration
       ansible.builtin.file:
-        src: "{{ kitty_configuration.src }}"
-        dest: "{{ kitty_configuration.dest }}"
+        src: "{{ kitty_config.src }}"
+        dest: "{{ kitty_config.dest }}"
         state: link
-        force: true
 
     - name: Install Kitty
       ansible.builtin.shell:
@@ -41,6 +40,12 @@
       loop: "{{ kitty_shortcut_filepath }}"
       loop_control:
         loop_var: shortcut_path
+
+    - name: Update bashrc to include randomized backgrounds
+      ansible.builtin.lineinfile:
+        dest: "{{ kitty_bashrc.dest }}"
+        regexp: "{{ kitty_bashrc.regexp }}"
+        line: "{{ kitty_bashrc.line }}"
 
 # This should be set this way in specific instances. For example this is for Gnome DE's
     - name: Make XDG-Terminal-Exec use Kitty
