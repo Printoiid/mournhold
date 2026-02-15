@@ -11,8 +11,8 @@ github_repositories:
   Printoiid: "https://github.com/Printoiid/Printoiid.git"
 
 mournhold_path: "/home/$USER/mournhold"
-neovim_repo_config_path: "{{ mournhold_path }}/nvim"
-kitty_repo_config_path: "{{ mournhold_path }}/kitty"
+neovim_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/neovim/config"
+kitty_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty/config"
 
 # Role - Packages
 apt_packages:

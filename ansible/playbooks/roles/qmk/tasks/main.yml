@@ -1,0 +1,6 @@
+# QMK - Tasks File
+- name: QMK - Install and Configure
+  tags: qmk-setup
+  block:
+    - name:
+

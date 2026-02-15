@@ -2,7 +2,7 @@
 - name: Fonts - Install and Configure
   tags: fonts-setup
   block:
-    - name: Link Fonts to "{{ font_directory }}"
+    - name: Link Fonts
       ansible.builtin.file:
         src: "{{ font_src }}"
         dest: "{{ font_dest }}"

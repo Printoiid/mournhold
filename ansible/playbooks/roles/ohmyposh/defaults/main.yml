@@ -1,7 +1,7 @@
 # OhMyPosh - Defaults File
 ohmyposh:
   url: https://ohmyposh.dev/install.sh
-  dest: "{{ mournhold_path }}/scripts/ohmyposh.sh"
+  dest: "{{ mournhold_path }}/ansible/playbooks/roles/ohmyposh/scripts/ohmyposh.sh"
 
 ohmyposh_bash:
   dest: /home/$USER/.bashrc

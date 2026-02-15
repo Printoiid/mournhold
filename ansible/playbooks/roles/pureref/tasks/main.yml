@@ -1,0 +1,6 @@
+# PureRef - Tasks File
+- name: PureRef - Install and Configure
+  tags: pureref-setup
+  block:
+    - name: Download PureRef
+    - name: Install PureRef

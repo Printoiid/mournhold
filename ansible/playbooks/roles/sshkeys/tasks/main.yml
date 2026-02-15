@@ -1,5 +1,5 @@
 # SSH - Tasks File
-- name: Set up SSH Keys
+- name: SSH Keys - Install and Configure
   tags: sshkeys-setup
   block:
     - name:
