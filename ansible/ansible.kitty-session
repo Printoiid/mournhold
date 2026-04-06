@@ -15,10 +15,7 @@ launch --title "linux.yml" nvim /home/nerevar/mournhold/ansible/playbooks/linux.
 launch --title "neovim.yml" nvim /home/nerevar/mournhold/ansible/playbooks/neovim.yml
 launch --title "ohmyposh.yml" nvim /home/nerevar/mournhold/ansible/playbooks/ohmyposh.yml
 launch --title "packages.yml" nvim /home/nerevar/mournhold/ansible/playbooks/packages.yml
-launch --title "pureref.yml" nvim /home/nerevar/mournhold/ansible/playbooks/pureref.yml
 launch --title "qmk.yml" nvim /home/nerevar/mournhold/ansible/playbooks/qmk.yml
-launch --title "sshkeys.yml" nvim /home/nerevar/mournhold/ansible/playbooks/sshkeys.yml
-launch --title "vivaldi.yml" nvim /home/nerevar/mournhold/ansible/playbooks/vivaldi.yml
 new_tab Role-fonts
 layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
@@ -54,23 +51,8 @@ layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/packages/defaults/main.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/packages/tasks/main.yml
-new_tab Role-pureref
-layout tall
-launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
-launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/pureref/defaults/main.yml
-launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/pureref/tasks/main.yml
 new_tab Role-qmk
 layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/qmk/defaults/main.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/qmk/tasks/main.yml
-new_tab Role-sshkeys
-layout tall
-launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
-launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/sshkeys/defaults/main.yml
-launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/sshkeys/tasks/main.yml
-new_tab Role-vivaldi
-layout tall
-launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
-launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/vivaldi/defaults/main.yml
-launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/vivaldi/tasks/main.yml

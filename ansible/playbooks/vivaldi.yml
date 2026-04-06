@@ -1,7 +1,0 @@
-# Vivaldi - Playbook
-- name: Vivaldi
-  hosts: vvardenfell
-  connection: local
-
-  roles:
-    - vivaldi

@@ -20,11 +20,7 @@ enum sofle_layers {
     _BASE,
     _FUNC,
     _CHARACTERS,
-    _NUMPAD,
     _GAMES,
-    _BLENDER,
-    _BLENDNUM,
-    _BLENDCMD,
     _LAYERSWITCH,
 };
 
@@ -43,73 +39,53 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *         |      |      |      |         |/       /          \      \ |       |      |      |      |
  *         '------------------------------''------'            '------''----------------------------'       */
 [_BASE] = LAYOUT(
-  KC_ESC,  KC_1, KC_2,    KC_3,    KC_4,      KC_5,                                  KC_6,     KC_7,            KC_8,     KC_9,             KC_0,    KC_MINS,
-  KC_TAB,  KC_Q, KC_W,    KC_E,    KC_R,      KC_T,                                  KC_Y,     KC_U,            KC_I,     KC_O,             KC_P,    KC_BSLS,
-  KC_LSFT, KC_A, KC_S,    KC_D,    KC_F,      KC_G,                                  KC_H,     KC_J,            KC_K,     KC_L,             KC_SCLN, KC_QUOT,
-  KC_LCTL, KC_Z, KC_X,    KC_C,    KC_V,      KC_B,         KC_MUTE,    KC_MPLY,     KC_N,     KC_M,            KC_EQUAL, KC_COMMA,         KC_DOT,  KC_SLSH,
-                 KC_LGUI, KC_LALT, MO(_FUNC), KC_BACKSPACE, KC_ENT,     MO(_NUMPAD), KC_SPACE, MO(_CHARACTERS), XXXXXXX,  MO(_LAYERSWITCH)
+  KC_ESC,  KC_1, KC_2,    KC_3,    KC_4,      KC_5,                             KC_6,     KC_7,            KC_8,     KC_9,             KC_0,    KC_MINS,
+  KC_TAB,  KC_Q, KC_W,    KC_E,    KC_R,      KC_T,                             KC_Y,     KC_U,            KC_I,     KC_O,             KC_P,    KC_BSLS,
+  KC_LSFT, KC_A, KC_S,    KC_D,    KC_F,      KC_G,                             KC_H,     KC_J,            KC_K,     KC_L,             KC_SCLN, KC_QUOT,
+  KC_LCTL, KC_Z, KC_X,    KC_C,    KC_V,      KC_B,    KC_MUTE,    KC_MPLY,     KC_N,     KC_M,            KC_EQUAL, KC_COMMA,         KC_DOT,  KC_SLSH,
+                 KC_LGUI, KC_LALT, MO(_FUNC), KC_BSPC, KC_ENT,     MO(_NUMPAD), KC_SPACE, MO(_CHARACTERS), XXXXXXX,  MO(_LAYERSWITCH)
 ),
 /* Function
- * ,------------------------------------------.                    ,---------------------------------------------.
- * | F1    | F2   | F3   | F4   | F5   | F6   |                    |      |       |      |      |       | ALT-F4 |
- * |-------+------+------+------+------+------|                    |------+-------+------+------+-------+--------|
- * | F7    | F8   | F9   | F10  | F11  | F12  |                    |      |       |      |      |       |        |
- * |-------+------+------+------+------+------|                    |------+-------+------+------+-------+--------|
- * | CAPS  |      |      |      |      |      |-------.    ,-------|      |       |      |      |       |        |
- * |-------+------+------+------+------+------|       |    |       |------+-------+------+------+-------+--------|
- * | CTRL  | ALT  |      |      |      |      |-------|    |-------|      |       |      |      |       |        |
- * `------------------------------------------/      /      \      \---------------------------------------------'
- *            |       |      |      | PT   | / PT   /        \      \  |      | CTRL | ALT  | DEL  |
- *            |       |      |      |      |/      /          \      \ |      |      |      |      |
- *            '----------------------------''-----'            '------''---------------------------'            */
+ * ,--------------------------------------------.                     ,------------------------------------------.
+ * | F1     | F2   | F3   | F4   | F5   | F6    |                     |      |      |      |      |      | NMLCK |
+ * |--------+------+------+------+------+-------|                     |------+------+------+------+------+-------|
+ * | F7     | F8   | F9   | F10  | F11  | F12   |                     |      | 7    | 8    | 9    |      |       |
+ * |--------+------+------+------+------+-------|                     |------+------+------+------+------+-------|
+ * | LShift | CAPS | *    | *    | =    |       |--------.    ,-------| DEL  | 4    | 5    | 6    | 0    |       |
+ * |--------+------+------+------+------+-------| TOGRGB |    |       |------+------+------+------+------+-------|
+ * | CTRL   | ALT  | /    | -    |      |       |--------|    |-------|      | 1    | 2    | 3    | .    | PRSCR |
+ * `--------------------------------------------/       /      \      \------------------------------------------'
+ *            | PT    | PT   |     | Backspc | / Enter /        \      \  |      | CTRL | ALT  | DEL  |
+ *            |       |      |     |         |/       /          \      \ |      |      |      |      |
+ *            '------------------------------''------'            '------''---------------------------'            */
 [_FUNC] = LAYOUT(
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   KC_F6,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LALT(KC_F4),
-  KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LCTL, KC_LALT, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                    XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_LCTL, KC_RALT, KC_DEL
-),
-/* Numpad
- * ,------------------------------------------.                     ,-------------------------------------------.
- * | PT   |      |      |      |      |       |                     |       | NLOCK | /    | *    |      |      |
- * |------+------+------+------+------+-------|                     |-------+-------+------+------+------+------|
- * | PT   |      |      |      |      |       |                     |       | 7     | 8    | 9    | -    |      |
- * |------+------+------+------+------+-------|                     |-------+-------+------+------+------+------|
- * | PT   |      |      |      |      |       |--------.    ,-------| DEL   | 4     | 5    | 6    | +    |      |
- * |------+------+------+------+------+-------| TOGRGB |    |       |-------+-------+------+------+------+------|
- * | PT   |      |      |      |      |       |--------|    |-------|       | 1     | 2    | 3    |      |      |
- * `------------------------------------------/       /      \      \-------------------------------------------'
- *            | PT   | PT   |      | Space | / BKSPC /        \      \  | ENTER | 0    | .    |      |
- *            |      |      |      |       |/       /          \      \ |       |      |      |      |
- *            '----------------------------''------'            '------''----------------------------'        */
-[_NUMPAD] = LAYOUT(
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, KC_NUM,  KC_PSLS, KC_PAST, XXXXXXX, XXXXXXX,
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, KC_P7,   KC_P8,   KC_P9,   KC_PMNS, XXXXXXX,
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         KC_DEL,  KC_P4,   KC_P5,   KC_P6,   KC_PPLS, XXXXXXX,
-  KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  UG_TOGG,      XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, XXXXXXX,
-                    KC_TRNS, KC_TRNS, XXXXXXX, KC_SPACE, KC_BACKSPACE, XXXXXXX, KC_ENT,  KC_P0,   KC_PDOT, XXXXXXX 
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,                        XXXXXXX, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, XXXXXXX,
+  KC_LSFT, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_DEL,  KC_P4,   KC_P5,   KC_P6,   KC_P0,   XXXXXXX,
+  KC_LCTL, KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   KC_PDOT, KC_PSCR,
+            		KC_TRNS, KC_TRNS, XXXXXXX, KC_BSPC, KC_ENT,      XXXXXXX, XXXXXXX, KC_LCTL, KC_RALT, KC_DEL
 ),
 /* Characters
- * ,-----------------------------------------.                    ,-------------------------------------------.
- * |      |      |      | [    | ]    | *    |                    |       |      |      |       |      |      |
- * |------+------+------+------+------+------|                    |-------+------+------+-------+------+------|
- * | `    | '    | "    | (    | )    | +    |                    |       |      | Up   |       | PGUP |      |
- * |------+------+------+------+------+------|                    |-------+------+------+-------+------+------|
- * | PT   | ~    | $    | {    | }    | -    |--------.   ,-------| DEL   | Left | Down | Right | PGDN | |    |
- * |------+------+------+------+------+------|        |   |       |-------+------+------+-------+------+------|
- * | PT   | :    | @    | <    | >    | =    |--------|   |-------|       |      |      |       |      |      |
- * `-----------------------------------------/       /     \      \-------------------------------------------'
- *            | PT   | PT   |      | PT   | / PT    /       \      \  |      |      |       |       |
- *            |      |      |      |      |/       /         \      \ |      |      |       |       |
- *            '-----------------------------------'           '------''-----------------------------'         */
+ * ,------------------------------------------.                    ,-------------------------------------------.
+ * |      |      |      | [    | ]    | *     |                    |       |      |      |       |      |      |
+ * |------+------+------+------+------+-------|                    |-------+------+------+-------+------+------|
+ * | `    | '    | "    | (    | )    | +     |                    |       |      | Up   |       | PGUP |      |
+ * |------+------+------+------+------+-------|                    |-------+------+------+-------+------+------|
+ * | PT   | ~    | $    | {    | }    | -     |--------.   ,-------| DEL   | Left | Down | Right | PGDN |      |
+ * |------+------+------+------+------+-------|        |   |       |-------+------+------+-------+------+------|
+ * | PT   | :    | @    | <    | >    | =     |--------|   |-------|       |      |      |       |      |      |
+ * `------------------------------------------/       /     \      \-------------------------------------------'
+ *            | PT   | PT   |    | Backspc | / Enter /       \      \  |      |      |       |       |
+ *            |      |      |    |         |/       /         \      \ |      |      |       |       |
+ *            '----------------------------''------'           '------''-----------------------------'         */
 [_CHARACTERS] = LAYOUT(
    XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_ASTR,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
    KC_GRV,  KC_QUOT, KC_DQT,  KC_LPRN, KC_RPRN, KC_PLUS,                     XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX,  KC_PGUP, XXXXXXX,
-   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     KC_DEL,  KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, KC_PIPE,
+   KC_TRNS, KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, KC_MINS,                     KC_DEL,  KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, XXXXXXX,
    KC_TRNS, KC_COLN, KC_AT,   KC_LABK, KC_RABK, KC_EQUAL, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,
-                     KC_TRNS, KC_TRNS, XXXXXXX, KC_TRNS,  KC_TRNS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+                     KC_TRNS, KC_TRNS, XXXXXXX, KC_BSPC,  KC_ENT,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
-/* GAMES
+/* Games
  * ,-----------------------------------------.                     ,-----------------------------------------.
  * | ESC    | 1   | 2    | 3    | 4    | 5   |                     | 6    | 7    | 8    | 9    | 0    | - _  |
  * |--------+-----+------+------+------+-----|                     |------+------+------+------+------+------|
@@ -119,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+-----+------+------+------+-----| Mute   |    | P/P   |------+------+------+------+------+------|
  * | LCTRL  | Z   | X    | C    | V    | B   |--------|    |-------| N    | M    | = +  | , <  | . >  | / ?  |
  * `-----------------------------------------/       /      \      \-----------------------------------------'
- *         |      | LAlt |      | SPC     | / BKSPC /        \ ENT  \  | Space |      |      | SWCH |
+ *         |      | LAlt |      | Space   | / BKSPC /        \ ENT  \  | Space |      |      | SWCH |
  *         |      |      |      |         |/       /          \      \ |       |      |      |      |
  *         '------------------------------''------'            '------''----------------------------'       */
 [_GAMES] = LAYOUT(
@@ -129,71 +105,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LCTL, KC_Z, KC_X,    KC_C,    KC_V,    KC_B,     KC_MUTE,      KC_MPLY,  KC_N,      KC_M,    KC_EQUAL, KC_COMMA,        KC_DOT,  KC_SLSH,
                  XXXXXXX, KC_LALT, XXXXXXX, KC_SPACE, KC_BACKSPACE, KC_ENTER, KC_SPACE,  XXXXXXX, XXXXXXX,  MO(_LAYERSWITCH)
 ),
-/* Blender
- * ,-----------------------------------------.                     ,-----------------------------------------.
- * | ESC    | 1   | 2    | 3    | 4    | 5   |                     | 6    | 7    | 8    | 9    | 0    | - _  |
- * |--------+-----+------+------+------+-----|                     |------+------+------+------+------+------|
- * | Tab    | Q   | W    | E    | R    | T   |                     | Y    | U    | I    | O    | P    | \ |  |
- * |--------+-----+------+------+------+-----|                     |------+------+------+------+------+------|
- * | LShift | A   | S    | D    | F    | G   |--------.    ,-------| H    | J    | K    | L    | ; :  | ' "  |
- * |--------+-----+------+------+------+-----| Mute   |    | P/P   |------+------+------+------+------+------|
- * | LCTRL  | Z   | X    | C    | V    | B   |--------|    |-------| N    | M    | = +  | , <  | . >  | / ?  |
- * `-----------------------------------------/       /      \      \-----------------------------------------'
- *         | BLND | LAlt | BLND | Backspc | / Enter /        \      \  | Space |      |      | SWCH |
- *         | CMD  |      | NUM  |         |/       /          \      \ |       |      |      |      |
- *         '------------------------------''------'            '------''----------------------------'       */
-[_BLENDER] = LAYOUT(
-  KC_ESC,  KC_1, KC_2,          KC_3,    KC_4,          KC_5,                              KC_6,     KC_7,    KC_8,     KC_9,            KC_0,    KC_MINS,
-  KC_TAB,  KC_Q, KC_W,          KC_E,    KC_R,          KC_T,                              KC_Y,     KC_U,    KC_I,     KC_O,            KC_P,    KC_BSLS,
-  KC_LSFT, KC_A, KC_S,          KC_D,    KC_F,          KC_G,                              KC_H,     KC_J,    KC_K,     KC_L,            KC_SCLN, KC_QUOT,
-  KC_LCTL, KC_Z, KC_X,          KC_C,    KC_V,          KC_B,         KC_MUTE,    KC_MPLY, KC_N,     KC_M,    KC_EQUAL, KC_COMMA,        KC_DOT,  KC_SLSH,
-                 MO(_BLENDCMD), KC_LALT, MO(_BLENDNUM), KC_BACKSPACE, KC_ENT,     XXXXXXX, KC_SPACE, XXXXXXX, XXXXXXX,  MO(_LAYERSWITCH)
-),
-/* Blender Numpad
- * ,------------------------------------------.                    ,---------------------------------------------.
- * | DEL  | NLOCK | /    | *    | -    |      |                    |      |       |      |      |       |        |
- * |------+-------+------+------+------+------|                    |------+-------+------+------+-------+--------|
- * | TAB  | 7     | 8    | 9    | +    |      |                    |      |       |      |      |       |        |
- * |------+-------+------+------+------+------|                    |------+-------+------+------+-------+--------|
- * |      | 4     | 5    | 6    |      |      |-------.    ,-------|      |       |      |      |       |        |
- * |------+-------+------+------+------+------|       |    |       |------+-------+------+------+-------+--------|
- * |      | 1     | 2    | 3    |      |      |-------|    |-------|      |       |      |      |       |        |
- * `------------------------------------------/      /      \      \---------------------------------------------'
- *            |  0    | .    |      | PT   | / PT   /        \      \  |      |      |      |      |
- *            |       |      |      |      |/      /          \      \ |      |      |      |      |
- *            '-----------------------------------'            '------''---------------------------'            */
-[_BLENDNUM] = LAYOUT(
-  KC_DEL,  KC_NUM, KC_PSLS, KC_PAST, KC_PMNS, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_TAB,  KC_P7,  KC_P8,   KC_P9,   KC_PPLS, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_P4,  KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_P1,  KC_P2,   KC_P3,   XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                   KC_P0,   KC_PDOT, XXXXXXX, KC_TRNS, KC_TRNS,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-),
-/* Blender Commands
- * ,-----------------------------------------.                     ,-----------------------------------------.
- * |      |      |      |      |      |      |                     |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                     |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
- * |      | Z    | X    | Y    |      |      |--------.    ,-------|      |      |      |      |      |      |
- * |------+------+------+------+------+------|        |    |       |------+------+------+------+------+------|
- * |      |      |      |      |      |      |--------|    |-------|      |      |      |      |      |      |
- * `-----------------------------------------/       /      \      \-----------------------------------------'
- *            |      |      |      |      | /       /        \      \  |      |      |      |      |
- *            |      |      |      |      |/       /          \      \ |      |      |      |      |
- *            '---------------------------''------'            '------''---------------------------'        */
-[_BLENDCMD] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_Z,    KC_X,    KC_Y,    XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-),
 /* LayerSwitch
  * ,------------------------------------------.                     ,-----------------------------------------.
  * |       |      |      |      |      |      |                     |      |      |      |      |      | BASE |
  * |-------+------+------+------+------+------|                     |------+------+------+------+------+------|
- * |       |      |      |      |      |      |                     |      |      |      |      |      | BNDR |
+ * |       |      |      |      |      |      |                     |      |      |      |      |      |      |
  * |-------+------+------+------+------+------|                     |------+------+------+------+------+------|
  * |       |      |      |      |      |      |--------.    ,-------|      |      |      |      |      |      |
  * |-------+------+------+------+------+------|        |    |       |------+------+------+------+------+------|
@@ -204,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *             '---------------------------''------'            '------''---------------------------'        */
 [_LAYERSWITCH] = LAYOUT(
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(_BASE),
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(_BLENDER),
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO(_GAMES),
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
@@ -269,6 +185,7 @@ bool oled_task_user(void) {
                 rgblight_sethsv(127, 255, 255);
                 break;
             case _FUNC:
+kitty_repo_config_path: "{{ mournhold_path }}/kitty"
                 oled_write_P("-==-\nFunc\nLayer\n-==-\n", false);
                 rgblight_mode(16);
                 rgblight_sethsv(85, 255, 255);
@@ -287,21 +204,6 @@ bool oled_task_user(void) {
                 oled_write_P("-==-\nGame\nLayer\n-==-\n", false);
                 rgblight_mode(26);
                 rgblight_sethsv(200, 255, 255);
-                break;
-            case _BLENDER:
-                oled_write_P("-==-\nBlnd\nLayer\n-==-\n", false);
-                rgblight_mode(1);
-                rgblight_sethsv(20, 255, 255);
-                break;
-            case _BLENDNUM:
-                oled_write_P("-==-\nBNum\nLayer\n-==-\n", false);
-                rgblight_mode(7);
-                rgblight_sethsv(10, 255, 255);
-                break;
-            case _BLENDCMD:
-                oled_write_P("-==-\nBcmd\nLayer\n-==-\n", false);
-                rgblight_mode(7);
-                rgblight_sethsv(15, 255, 255);
                 break;
             case _LAYERSWITCH:
                 oled_write_P("-==-\nSwch\nLayer\n-==-\n", false);

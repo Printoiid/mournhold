@@ -23,9 +23,6 @@
 - name: Import and execute the Fonts Playbook
   ansible.builtin.import_playbook: fonts.yml
 
-#- name: Import and execute the Github Playbook
-# ansible.builtin.import_playbook: github.yml
-
 - name: Import and execute the Homebrew Playbook
   ansible.builtin.import_playbook: homebrew.yml
 
@@ -35,8 +32,8 @@
 - name: Import and execute the Kitty Playbook
   ansible.builtin.import_playbook: kitty.yml
 
-- name: Import and execute the Vivaldi Playbook
-  ansible.builtin.import_playbook: vivaldi.yml
-
 - name: Import and execute the OhMyPosh Playbook
   ansible.builtin.import_playbook: ohmyposh.yml
+
+- name: Import and execute the QMK Playbook
+  ansible.builtin.import_playbook: qmk.yml

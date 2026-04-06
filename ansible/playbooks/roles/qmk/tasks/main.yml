@@ -2,5 +2,7 @@
 - name: QMK - Install and Configure
   tags: qmk-setup
   block:
-    - name:
+    - name: Run QMK install command
+      ansible.builtin.command:
+        cmd: curl -fsSL https://install.qmk.fm | sh
 
