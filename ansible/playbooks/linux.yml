@@ -7,6 +7,7 @@
     - name: Show machine Facts
       ansible.builtin.debug:
         var: ansible_facts
+        verbosity: 2
 
     - name: Display OS Information
       ansible.builtin.debug:
@@ -14,7 +15,7 @@
         msg:
           - "It's just nice to have, okay Rob?"
           - "Verbosity: {{ ansible_verbosity }}"
-          - "Distribution: {{ ansible_facts['ansible_distribution'] }}"
+          - "Distribution: {{ ansible_distribution }}"
           - "Variety: {{ ansible_distribution_file_variety }}"
           - "Package Manager: {{ ansible_pkg_mgr }}"
           - "Version: {{ ansible_distribution_version }}"

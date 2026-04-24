@@ -11,7 +11,7 @@
       loop: "{{ apt_packages }}"
       loop_control:
         loop_var: apt_package
-  when: ansible_facts["ansible_pkg_mgr"] == "apt"
+  when: ansible_pkg_mgr == "apt"
 
   block:
     - name: Loop and install listed Pacman packages
@@ -21,7 +21,7 @@
       loop: "{{ pacman_packages }}"
       loop_control:
         loop_var: pacman_packages
-  when: ansible_facts["ansible_pkg_mgr"] == "pacman"
+  when: ansible_pkg_mgr == "pacman"
 
   block:
     - name: Add ~/.local/bin/* to executable in $PATH
