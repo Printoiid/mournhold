@@ -14,7 +14,7 @@
         verbosity: 1
         msg:
           - "It's just nice to have, okay Rob?"
-          - "Verbosity: {{ ansible_facts['verbosity'] }}"
+          - "Verbosity: {{ ansible_verbosity }}"
           - "Distribution: {{ ansible_facts['distribution'] }}"
           - "Variety: {{ ansible_facts['distribution_file_variety'] }}"
           - "Package Manager: {{ ansible_facts['pkg_mgr'] }}"
