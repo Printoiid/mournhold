@@ -5,3 +5,10 @@ There's nothing fancy in here, but I plan on adding more for automatic set up us
 
 1. Neovim
 1. QMK (Running with a Sofle Choc)
+
+### Arch Notes
+
+#### Packages installed
+
+- hyprland
+- hyprpaper

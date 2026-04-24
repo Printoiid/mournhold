@@ -1,6 +1,7 @@
 # Kitty - Tasks File
 - name: Kitty - Install and Configure
   tags: kitty-setup
+
   block:
     - name: Link Kitty configuration
       ansible.builtin.file:

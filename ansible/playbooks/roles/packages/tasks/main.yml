@@ -11,8 +11,19 @@
       loop: "{{ apt_packages }}"
       loop_control:
         loop_var: apt_package
-      when: ansible_pkg_mgr == "apt"
+  when: ansible_pkg_mgr == "apt"
 
+  block:
+    - name: Loop and install listed Pacman packages
+      community.general.pacman:
+        name: "{{ pacman_packages.package }}"
+        state: "{{ pacman_packages.state | default('latest') }}"
+      loop: "{{ pacman_packages }}"
+      loop_control:
+        loop_var: pacman_packages
+  when: ansible_pkg_mgr == "pacman"
+
+  block:
     - name: Add ~/.local/bin/* to executable in $PATH
       ansible.builtin.lineinfile:
         dest: "{{ bin_executable.dest }}"
@@ -25,3 +36,4 @@
         state: directory
         mode: '0777'
         # This needs to be updated later
+        # The fuck am I using this for again????

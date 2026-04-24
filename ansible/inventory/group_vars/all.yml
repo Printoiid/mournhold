@@ -33,6 +33,14 @@ apt_packages:
     version: "12.1.0"
     state: "fixed"
 
+pacman_packages:
+  - package: "ansible"
+    state: "latest"
+  - package: "spotify-launcher"
+  - package: "vivaldi"
+  - package: "flameshot"
+  - package: "git"
+
 # Role - Homebrew
 homebrew_packages:
   - neovim
