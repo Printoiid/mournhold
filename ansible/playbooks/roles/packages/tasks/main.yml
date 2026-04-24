@@ -1,6 +1,7 @@
 # Packages - Tasks File
-- name: Packages - Install and Configure
-  tags: packages-setup
+- name: APT Packages - Install and Configure
+  tags: apt-packages-setup
+  when: ansible_facts['pkg_mgr'] == "apt"
   block:
     - name: Loop and install listed APT packages
       ansible.builtin.apt:
@@ -11,8 +12,10 @@
       loop: "{{ apt_packages }}"
       loop_control:
         loop_var: apt_package
-  when: ansible_pkg_mgr == "apt"
 
+- name: Pacman Packages - Install and Configure
+  tags: pacman-packages-setup
+  when: ansible_facts['pkg_mgr'] == "pacman"
   block:
     - name: Loop and install listed Pacman packages
       community.general.pacman:
@@ -21,8 +24,9 @@
       loop: "{{ pacman_packages }}"
       loop_control:
         loop_var: pacman_packages
-  when: ansible_pkg_mgr == "pacman"
 
+- name: Set up /bin/ executable in $PATH
+  tags: bin-setup
   block:
     - name: Add ~/.local/bin/* to executable in $PATH
       ansible.builtin.lineinfile:
