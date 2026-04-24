@@ -34,10 +34,17 @@
         regexp: "{{ bin_executable.regexp }}"
         line: "{{ bin_executable.line }}"
 
+- name: Create folders and files for downloaded archives and modifications
+  tags: modification-setup
+  block:
     - name: Create hidden .packages folder for downloaded archives
       ansible.builtin.file:
         dest: "/home/$USER/.packages/"
         state: directory
         mode: '0777'
+    - name: Ensure .bashrc exists in ~/
+      ansible.builtin.file:
+        des: "/home/$USER/.bashrc"
+        state: file
         # This needs to be updated later
         # The fuck am I using this for again????
