@@ -6,6 +6,6 @@ homebrew_packages:
 
 # Dest is pulled from global
 ansible_env_shell:
-  dest: ~/.bashrc
+  dest: "{{ bashrc_path }}"
   regexp: '.linuxbrew'
   line: eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

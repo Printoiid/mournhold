@@ -4,6 +4,6 @@ ohmyposh:
   dest: "{{ mournhold_path }}/ansible/playbooks/roles/ohmyposh/scripts/ohmyposh.sh"
 
 ohmyposh_bash:
-  dest: /home/$USER/.bashrc
+  dest: "{{ bashrc_path }}"
   regexp: oh-my-posh
   line: eval "$(oh-my-posh init bash --config "{{ ohmyposh_theme }}")"

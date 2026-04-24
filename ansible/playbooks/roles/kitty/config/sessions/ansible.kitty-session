@@ -7,6 +7,8 @@ new_tab Linux-Playbook
 launch --title "linux.yml" nvim /home/nerevar/mournhold/ansible/playbooks/linux.yml
 new_tab All-Playbooks
 layout grid
+launch --title "directories.yml" nvim /home/nerevar/mournhold/ansible/playbooks/directories.yml
+launch --title "files.yml" nvim /home/nerevar/mournhold/ansible/playbooks/files.yml
 launch --title "fonts.yml" nvim /home/nerevar/mournhold/ansible/playbooks/fonts.yml
 launch --title "github.yml" nvim /home/nerevar/mournhold/ansible/playbooks/github.yml
 launch --title "homebrew.yml" nvim /home/nerevar/mournhold/ansible/playbooks/homebrew.yml
@@ -16,6 +18,16 @@ launch --title "neovim.yml" nvim /home/nerevar/mournhold/ansible/playbooks/neovi
 launch --title "ohmyposh.yml" nvim /home/nerevar/mournhold/ansible/playbooks/ohmyposh.yml
 launch --title "packages.yml" nvim /home/nerevar/mournhold/ansible/playbooks/packages.yml
 launch --title "qmk.yml" nvim /home/nerevar/mournhold/ansible/playbooks/qmk.yml
+new_tab Role-directories
+layout tall
+launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/directories/defaults/main.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/directories/tasks/main.yml
+new_tab Role-files
+layout tall
+launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/files/defaults/main.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/files/tasks/main.yml
 new_tab Role-fonts
 layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml

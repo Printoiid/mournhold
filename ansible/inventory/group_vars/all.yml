@@ -4,6 +4,7 @@
 ohmyposh_theme: 'agnoster'
 user_account: "nerevar"
 dotconfig_path: "/home/$USER/.config"
+bashrc_path: "/home/$USER/.bashrc"
 
 # Role - Git
 github_repositories:

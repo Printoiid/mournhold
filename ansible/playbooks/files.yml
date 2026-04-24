@@ -1,0 +1,7 @@
+# Files - Playbook
+- name: Files
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - files

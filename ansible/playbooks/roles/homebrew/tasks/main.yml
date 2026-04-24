@@ -24,6 +24,8 @@
 
     - name: Install formulae
       community.general.homebrew:
-        name: "{{ item }}"
+        name: "{{ homebrew_package }}"
         state: present
       loop: "{{ homebrew_packages }}"
+      loop_control:
+        loop_var: homebrew_package

@@ -3,7 +3,7 @@ kitty_install_cmd: "curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /d
 kitty_asset_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty"
 
 kitty_bashrc:
-  dest: /home/$USER/.bashrc
+  dest: "{{ bashrc_path }}"
   regexp: 'alias kitty=kitty --override background_image'
   line: 'alias kitty="kitty --override background_image_layout=cscaled --override background_image=$(ls ~/.config/kitty/img/*.png | sort --random-sort | head -1)"'
 

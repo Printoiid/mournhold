@@ -25,26 +25,3 @@
       loop_control:
         loop_var: pacman_package
 
-- name: Set up /bin/ executable in $PATH
-  tags: bin-setup
-  block:
-    - name: Add ~/.local/bin/* to executable in $PATH
-      ansible.builtin.lineinfile:
-        dest: "{{ bin_executable.dest }}"
-        regexp: "{{ bin_executable.regexp }}"
-        line: "{{ bin_executable.line }}"
-
-- name: Create folders and files for downloaded archives and modifications
-  tags: modification-setup
-  block:
-    - name: Create hidden .packages folder for downloaded archives
-      ansible.builtin.file:
-        dest: "/home/{{ user_account }}/.packages/"
-        state: directory
-        mode: '0777'
-    - name: Ensure .bashrc exists in ~/
-      ansible.builtin.file:
-        des: "/home/{{ user_account }}/.bashrc"
-        state: file
-        # This needs to be updated later
-        # The fuck am I using this for again????

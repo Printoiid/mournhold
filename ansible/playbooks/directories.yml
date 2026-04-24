@@ -1,0 +1,7 @@
+# Directories - Playbook
+- name: Directories
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - directories

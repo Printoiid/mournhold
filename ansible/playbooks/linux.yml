@@ -13,17 +13,25 @@
       ansible.builtin.debug:
         verbosity: 1
         msg:
+          - "---------------------------------"
           - "It's just nice to have, okay Rob?"
+          - "---------------------------------"
           - "Verbosity: {{ ansible_verbosity }}"
           - "Distribution: {{ ansible_facts['distribution'] }}"
           - "Variety: {{ ansible_facts['distribution_file_variety'] }}"
           - "Package Manager: {{ ansible_facts['pkg_mgr'] }}"
-          - "Version: {{ ansible_distribution_version }}"
+          - "Version: {{ ansible_facts['distribution_version'] }}"
           - "System: {{ ansible_facts['system'] }}"
           - "Hosts: {{ ansible_play_hosts }}"
 
 - name: Import and execute the Packages Playbook
   ansible.builtin.import_playbook: packages.yml
+
+- name: Import and execute the Files Playbook
+  ansible.builtin.import_playbook: files.yml
+
+- name: Import and execute the Directories Playbook
+  ansible.builtin.import_playbook: directories.yml
 
 - name: Import and execute the Fonts Playbook
   ansible.builtin.import_playbook: fonts.yml

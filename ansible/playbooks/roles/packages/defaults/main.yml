@@ -6,7 +6,6 @@ apt_packages:
     allow_downgrade: false
     autoclean: true
 
-bin_executable:
-  dest: ~/.bashrc
-  regexp: /.local/bin:$PATH
-  line: export PATH="$HOME/.local/bin:$PATH"
+pacman_packages:
+  - package: ""
+    state: "latest"

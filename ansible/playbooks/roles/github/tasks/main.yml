@@ -1,7 +1,6 @@
 # Github - Tasks File
 - name: Github Repositories - Install and Configure
   tags: ghrepo-setup
-
   block:
     - name: Loop and clone listed Github repositories
       ansible.builtin.git:

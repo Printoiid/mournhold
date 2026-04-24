@@ -1,0 +1,9 @@
+# Files - Tasks File
+- name: Set up /bin/ executable in $PATH
+  tags: bin-setup
+  block:
+    - name: Add ~/.local/bin/* to executable in $PATH
+      ansible.builtin.lineinfile:
+        dest: "{{ bin_executable.dest }}"
+        regexp: "{{ bin_executable.regexp }}"
+        line: "{{ bin_executable.line }}"
