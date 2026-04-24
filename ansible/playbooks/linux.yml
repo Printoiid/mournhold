@@ -18,7 +18,7 @@
           - "Distribution: {{ ansible_facts['distribution'] }}"
           - "Variety: {{ ansible_facts['distribution_file_variety'] }}"
           - "Package Manager: {{ ansible_facts['pkg_mgr'] }}"
-          - "Version: {{ ansible_facts['distribution_version'] }}"
+          - "Version: {{ ansible_distribution_version }}"
           - "System: {{ ansible_facts['system'] }}"
           - "Hosts: {{ ansible_play_hosts }}"
 
