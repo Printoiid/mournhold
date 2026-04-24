@@ -15,7 +15,7 @@
         msg:
           - "It's just nice to have, okay Rob?"
           - "Verbosity: {{ ansible_verbosity }}"
-          - "Distribution: {{ ansible_distribution }}"
+          - "Distribution: {{ ansible_facts['distribution'] }}"
           - "Variety: {{ ansible_distribution_file_variety }}"
           - "Package Manager: {{ ansible_pkg_mgr }}"
           - "Version: {{ ansible_distribution_version }}"
