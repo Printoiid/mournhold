@@ -9,7 +9,6 @@
         allow_downgrade: "{{ apt_package.allow_downgrade | default('false') }}"
         name: "{{ apt_package.package }}=*{{ apt_package.version | default('*') }}*"
         state: "{{ apt_package.state | default('latest') }}"
-      loop: "{{ apt_packages }}"
       loop_control:
         loop_var: apt_package
 
@@ -21,7 +20,6 @@
       community.general.pacman:
         name: "{{ pacman_packages.package }}"
         state: "{{ pacman_packages.state | default('latest') }}"
-      loop: "{{ pacman_packages }}"
       loop_control:
         loop_var: pacman_packages
 
