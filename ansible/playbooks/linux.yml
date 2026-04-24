@@ -19,7 +19,7 @@
           - "Variety: {{ ansible_facts['distribution_file_variety'] }}"
           - "Package Manager: {{ ansible_facts['pkg_mgr'] }}"
           - "Version: {{ ansible_facts['distribution_version'] }}"
-          - "System: {{ ansible_system }}"
+          - "System: {{ ansible_facts['system'] }}"
           - "Hosts: {{ ansible_play_hosts }}"
 
 - name: Import and execute the Packages Playbook
