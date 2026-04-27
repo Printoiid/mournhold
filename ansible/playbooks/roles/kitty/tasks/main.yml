@@ -1,4 +1,12 @@
 # Kitty - Tasks File
+- name: Remove Pre-existing Kitty Config
+  tags: wipe-kitty
+  block:
+    - name: Remove Existing Kitty Config Folder
+      ansible.builtin.file:
+        path: "{{ user_account_path }}/.config/kitty"
+        state: absent
+
 - name: Kitty - Install and Configure
   tags: kitty-setup
   block:
