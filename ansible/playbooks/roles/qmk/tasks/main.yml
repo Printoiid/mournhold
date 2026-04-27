@@ -1,8 +1,12 @@
 # QMK - Tasks File
+# This needs to be fixed, not currently working
 - name: QMK - Install and Configure
   tags: qmk-setup
   block:
-    - name: Run QMK install command
-      ansible.builtin.command:
-        cmd: curl -fsSL https://install.qmk.fm | sh
-
+    - name: Save QMK Setup Script
+      ansible.builtin.get_url: 
+        url: "https://install.qmk.fm"
+        dest: "{{ qmk_install_script_path }}/setup.sh"
+        mode: '0644'
+    - name: Run QMK Install Script
+      ansible.builtin.shell: "{{ qmk_install_script_path}}/setup.sh"

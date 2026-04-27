@@ -3,6 +3,7 @@
 # True Globals
 ohmyposh_theme: 'agnoster'
 user_account: "nerevar"
+user_account_path: "/home/{{user_account}}"
 dotconfig_path: "/home/$USER/.config"
 bashrc_path: "/home/$USER/.bashrc"
 
@@ -14,6 +15,7 @@ github_repositories:
 mournhold_path: "/home/$USER/mournhold"
 neovim_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/neovim/config"
 kitty_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty/config"
+qmk_install_script_path: "{{ mournhold_path }}/ansible/playbooks/roles/qmk/templates"
 
 # Role - Packages
 apt_packages:
@@ -48,7 +50,6 @@ homebrew_packages:
   - go
   - yt-dlp
   - talosctl
-  - terraform
   - k9s
   - argocd
   - helm

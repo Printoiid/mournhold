@@ -30,3 +30,4 @@ kitty_shortcut_filepath:
 # Update Icons
 xdg_terminals: /home/$USER/.config/xdg-terminals.list
 kitty_gnome_terminal: "echo 'kitty.desktop' > $HOME/.config/xdg-terminals.list"
+

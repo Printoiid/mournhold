@@ -7,8 +7,6 @@
         url: "{{ ohmyposh.url }}"
         dest: "{{ ohmyposh.dest }}"
 
-    # The forward slash for the command feels needed here,
-    # otherwise Ansible throws a fucking fit about pathing.
     - name: Run OhMyPosh Installation Script
       ansible.builtin.script:
         cmd: "{{ ohmyposh.dest }}"
