@@ -43,6 +43,10 @@ pacman_packages:
   - package: "vivaldi"
   - package: "flameshot"
   - package: "git"
+# Fonts lol
+  - package: "ttf-font-awesome"
+  - package: "otf-font-awesome"
+  - package: "noto-fonts-emoji"
 
 # Role - Homebrew
 homebrew_packages:
