@@ -12,6 +12,15 @@
       ansible.builtin.file:
         state: directory
         path: "{{ hyprland_config_path }}"
+    
+    - name: Get config files
+      ansible.builtin.command:
+        cmd: "ls {{ hyprland_repo_configs }}"
+        register: hyprland_config_files
+    - name: List config files
+      ansible.builtin.debug:
+        verbosity: 1
+        msg: "{{ hyprland_config_files }}"
 
     - name: Create default config
       ansible.builtin.template:
