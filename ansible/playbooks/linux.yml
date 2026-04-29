@@ -49,6 +49,6 @@
   ansible.builtin.import_playbook: fonts.yml
   when: ansible_facts['distribution'] == 'Linux Mint'
 
-#- name: Import and execute the Hyprland Playbook
-#  ansible.builtin.import_playbook: hyprland.yml
-#  when: ansible_facts['distribution'] == 'Archlinux'
+- name: Import and execute the Hyprland Playbook
+  ansible.builtin.import_playbook: hyprland.yml
+  when: ansible_facts['distribution'] == 'Archlinux'
