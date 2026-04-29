@@ -19,7 +19,11 @@
         patterns: "*.conf"
         recurse: yes
       register: test_files
-    
+    - name: List gathered files
+      ansible.builtin.debug:
+        msg: "{{ item.path }}"
+      loop: "{{ test_files.files }}"
+
     - name: Create default config
       ansible.builtin.template:
         src: "{{ hyprland_repo_main_config.src }}"
