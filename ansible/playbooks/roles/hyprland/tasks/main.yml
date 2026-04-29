@@ -13,7 +13,7 @@
       ansible.builtin.debug:
         verbosity: 1
         msg: file.path
-      loop: "{{ hyprland_config_files }}"
+      loop: "{{ hyprland_config_files | dict2items }}"
       loop_control:
         loop_var: file
 
