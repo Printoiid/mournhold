@@ -11,3 +11,4 @@ config_files:
   - "programs.conf"
   - "autostart.conf"
   - "env.conf"
+  - "permissions.conf"
