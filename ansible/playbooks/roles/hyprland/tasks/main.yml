@@ -12,8 +12,16 @@
       ansible.builtin.file:
         state: directory
         path: "{{ hyprland_config_path }}"
+
+    - name: List files
+      ansible.builtin.find:
+        paths: "{{ hyprland_repo_configs }}"
+        patterns: "*.conf"
+        recurse: yes
+      register: test_files
     
     - name: Create default config
       ansible.builtin.template:
         src: "{{ hyprland_repo_main_config.src }}"
         dest: "{{ hyprland_repo_main_config.dest }}"
+

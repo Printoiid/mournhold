@@ -12,6 +12,10 @@
 source ~/.config/hypr/{{ conf.file }}
 {% endfor %}
 
+{% for file.path in test_files.files %}
+source ~/.config/hypr/{{ file.path | basename }}
+{% endfor %}
+
 source ~/.config/hypr/monitors.conf
 source ~/.config/hypr/programs.conf
 source ~/.config/hypr/autostart.conf
