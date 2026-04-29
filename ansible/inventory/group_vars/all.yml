@@ -12,10 +12,10 @@ github_repositories:
   mournhold: "https://github.com/Printoiid/mournhold.git"
   Printoiid: "https://github.com/Printoiid/Printoiid.git"
 
-mournhold_path: "/home/$USER/mournhold"
+mournhold_path: "{{ user_account_path }}/mournhold"
 neovim_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/neovim/config"
 kitty_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty/config"
-hyprland_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/hyprland/config"
+hyprland_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/hyprland"
 
 # Role - Packages
 apt_packages:
