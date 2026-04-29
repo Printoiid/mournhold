@@ -12,8 +12,8 @@
 source ~/.config/hypr/{{ conf.file }}
 {% endfor %}
 
-{% for file.path in test_files.files %}
-source ~/.config/hypr/{{ file.path | basename }}
+{% for file in test_files.files %}
+source ~/.config/hypr/{{ file.path }}
 {% endfor %}
 
 source ~/.config/hypr/monitors.conf
