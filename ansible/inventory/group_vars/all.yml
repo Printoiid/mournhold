@@ -47,6 +47,7 @@ pacman_packages:
   - package: "otf-font-awesome"
   - package: "waybar"
   - package: "qmk"
+  - package: "tree"
 
 # Role - Homebrew
 homebrew_packages:
