@@ -9,6 +9,14 @@
         file_type: file
       register: hyprland_config_files
 
+    - name: Show config files
+      ansible.builtin.debug:
+        verbosity: 1
+        msg: file
+      loop: "{{ hyprland_config_files }}"
+      loop_control:
+        loop_var: file
+
     - name: Clear default config file(s)
       ansible.builtin.file:
         dest: "{{ config_file }}"
@@ -16,6 +24,7 @@
       loop: "{{ hyprland_config_path }}"
       loop_control:
         loop_var: config_file
+
 
     - name: Link primary config file
       ansible.builtin.template:
