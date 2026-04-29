@@ -4,20 +4,20 @@
 
   block:
     - name: Clear default config file(s)
-    ansible.builtin.file:
-      dest: "{{ config_file.dest }}"
-      state: absent
-    loop: "{{ hyprland_config_files }}"
-    loop_control:
-      loop_var: config_file
+      ansible.builtin.file:
+        dest: "{{ config_file.dest }}"
+        state: absent
+      loop: "{{ hyprland_config_files }}"
+      loop_control:
+        loop_var: config_file
 
   block:
     - name: Link primary config file(s)
-    ansible.builtin.file:
-      src: "{{ config_file.src }}"
-      dest: "{{ config_file.dest }}"
-      state: link
-    loop: "{{ hyprland_config_files }}"
-    loop_control:
-      loop_var: config_file
+      ansible.builtin.file:
+        src: "{{ config_file.src }}"
+        dest: "{{ config_file.dest }}"
+        state: link
+      loop: "{{ hyprland_config_files }}"
+      loop_control:
+        loop_var: config_file
 
