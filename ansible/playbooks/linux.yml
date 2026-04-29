@@ -47,13 +47,8 @@
 
 - name: Import and execute the Fonts Playbook
   ansible.builtin.import_playbook: fonts.yml
-  when: ansible_facts['distribution'] == 'Linuxmint'
+  when: ansible_facts['distribution'] == 'Linux Mint'
 
-- name: Import and execute the Hyprland Playbook
-  ansible.builtin.import_playbook: hyprland.yml
-  when: ansible_facts['distribution'] == 'Archlinux'
-
-# This is going to take some extra work, for now
-# Given this is an interactive script setup, I have to skip it - April 26 2026
-#- name: Import and execute the QMK Playbook
-#  ansible.builtin.import_playbook: qmk.yml
+#- name: Import and execute the Hyprland Playbook
+#  ansible.builtin.import_playbook: hyprland.yml
+#  when: ansible_facts['distribution'] == 'Archlinux'

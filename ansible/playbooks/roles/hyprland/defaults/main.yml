@@ -1,1 +1,5 @@
 # Hyprland - Default File
+
+hyprland_config_path: 
+  src: "{{ hyprland_repo_config_path }}/hyprland.conf"
+  dest: "{{ dotconfig_path }}/hypr/hyprland.conf"

@@ -3,10 +3,4 @@
 - name: QMK - Install and Configure
   tags: qmk-setup
   block:
-    - name: Save QMK Setup Script
-      ansible.builtin.get_url: 
-        url: "https://install.qmk.fm"
-        dest: "{{ qmk_install_script_path }}/setup.sh"
-        mode: '0644'
-    - name: Run QMK Install Script
-      ansible.builtin.shell: "{{ qmk_install_script_path}}/setup.sh"
+
