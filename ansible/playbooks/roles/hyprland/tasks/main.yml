@@ -3,7 +3,17 @@
   tags: hyprland-setup
 
   block:
-    - name: Clear config directory
-      ansible.builtin.file:
-        dest: "{{ hyprland_config_path }}/*"
+    - name: Remove config files
+      ansible.builtin.find:
         state: absent
+        path: "{{ hyprland_config_path }}"
+
+    - name: Recreate hypr directory
+      ansible.builtin.file:
+        state: directory
+        path: "{{ hyprland_config_path }}"
+
+    - name: Create default config
+      ansible.builtin.template:
+        src: "{{ hyprland_repo_main_config.src }}"
+        dest: "{{ hyprland_repo_main_config.dest }}"
