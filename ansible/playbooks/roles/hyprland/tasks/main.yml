@@ -21,7 +21,7 @@
       register: test_files
     - name: List gathered files
       ansible.builtin.debug:
-        msg: "{{ item.path }}"
+        msg: "{{ item.path | basename }}"
       loop: "{{ test_files.files }}"
 
     - name: Create default config
