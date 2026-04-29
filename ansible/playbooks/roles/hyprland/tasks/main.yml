@@ -6,16 +6,17 @@
     - name: Find all repo config file(s)
       ansible.builtin.find:
         paths: "{{ hyprland_repo_configs }}"
-        file_type: file
+        patterns: "*.conf"
+        recurse: yes
       register: hyprland_config_files
 
     - name: Show config files
       ansible.builtin.debug:
         verbosity: 1
-        msg: file.path
-      loop: "{{ hyprland_config_files | dict2items }}"
+        msg: "{{ config_file.path }}"
+      loop: "{{ hyprland_config_files.files"
       loop_control:
-        loop_var: file
+        loop_var: config_file
 
     - name: Clear default config file(s)
       ansible.builtin.file:
