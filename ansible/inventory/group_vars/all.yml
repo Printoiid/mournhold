@@ -43,11 +43,11 @@ pacman_packages:
   - package: "vivaldi"
   - package: "flameshot"
   - package: "git"
-# Fonts lol
-  - package: "otf-font-awesome"
   - package: "waybar"
   - package: "qmk"
   - package: "tree"
+# Fonts
+  - package: "otf-font-awesome"
 
 # Role - Homebrew
 homebrew_packages:

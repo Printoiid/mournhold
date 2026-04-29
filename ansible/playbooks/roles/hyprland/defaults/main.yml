@@ -7,4 +7,4 @@ hyprland_repo_main_config:
   dest: "{{ hyprland_config_path }}/hyprland.conf"
 
 config_files:
-  - file: "test.conf"
+  - file: "testsssssss.conf"
