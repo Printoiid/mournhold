@@ -12,7 +12,7 @@
 source ~/.config/hypr/{{ conf.file }}
 {% endfor %}
 
-{% for item.path in test_files.files %}
+{% for item in test_files.files %}
 source ~/.config/hypr/{{ item.path | basename }}
 {% endfor %}
 

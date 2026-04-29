@@ -19,6 +19,7 @@
         patterns: "*.conf"
         recurse: yes
       register: test_files
+
     - name: List gathered files
       ansible.builtin.debug:
         msg: "{{ item.path | basename }}"
