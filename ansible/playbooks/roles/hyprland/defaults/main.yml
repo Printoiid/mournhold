@@ -7,4 +7,7 @@ hyprland_repo_main_config:
   dest: "{{ hyprland_config_path }}/hyprland.conf"
 
 config_files:
-  - file: "testsssssss.conf"
+  - file: "monitors.conf"
+  - file: "programs.conf"
+  - file: "autostart.conf"
+  - file: "env.conf"
