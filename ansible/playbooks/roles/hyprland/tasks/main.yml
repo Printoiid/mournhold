@@ -3,41 +3,7 @@
   tags: hyprland-setup
 
   block:
-    - name: Find all repo config file(s)
-      ansible.builtin.find:
-        paths: "{{ hyprland_repo_configs }}"
-        patterns: "*.conf"
-        recurse: yes
-      register: hyprland_config_files
-
-    - name: Show config files
-      ansible.builtin.debug:
-        verbosity: 1
-        msg: "{{ config_file.path }}"
-      loop: "{{ hyprland_config_files.files }}"
-      loop_control:
-        loop_var: config_file
-
-    - name: Clear default config file(s)
+    - name: Clear config directory
       ansible.builtin.file:
-        dest: "{{ config_file }}"
+        dest: "{{ hyprland_config_path }}"
         state: absent
-      loop: "{{ hyprland_config_path }}"
-      loop_control:
-        loop_var: config_file
-
-
-    - name: Link primary config file
-      ansible.builtin.template:
-        src: "{{ hyprland_repo_main_config.src }}"
-        dest: "{{ hyprland_repo_main_config.dest }}"
-        
-    - name: Link config file(s)
-      ansible.builtin.file:
-        src: "{{ config_file.src }}"
-        dest: "{{ config_file.dest }}"
-        state: link
-      loop: "{{ hyprland_config_files }}"
-      loop_control:
-        loop_var: config_file
-
