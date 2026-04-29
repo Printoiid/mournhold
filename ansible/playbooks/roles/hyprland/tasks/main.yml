@@ -5,5 +5,5 @@
   block:
     - name: Clear config directory
       ansible.builtin.file:
-        dest: "{{ hyprland_config_path }}"
+        dest: "{{ hyprland_config_path }}/*"
         state: absent
