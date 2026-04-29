@@ -18,7 +18,7 @@
         paths: "{{ hyprland_repo_configs }}"
         pattern: "*.conf"
         recurse: yes
-      register: hyprland_config_files
+      register: config_files
 
     - name: Create default config
       ansible.builtin.template:

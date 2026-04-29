@@ -8,8 +8,8 @@
 # Create your files separately and then link them to this file like this:
 # source = ~/.config/hypr/myColors.conf
 
-{% for config in hyprland_config_files.files %}
-source ~/.config/hypr/{{ config }}
+{% for config_file in config_files.files %}
+source ~/.config/hypr/{{ config_file }}
 {% endfor %}
 
 source ~/.config/hypr/monitors.conf
