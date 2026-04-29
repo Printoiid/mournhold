@@ -9,7 +9,7 @@
 # source = ~/.config/hypr/myColors.conf
 
 {% for config_file in config_files.files %}
-source ~/.config/hypr/{{ config_file }}
+source ~/.config/hypr/{{ config_file.path | basename }}
 {% endfor %}
 
 source ~/.config/hypr/monitors.conf
