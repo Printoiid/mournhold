@@ -33,9 +33,6 @@
 - name: Import and execute the Directories Playbook
   ansible.builtin.import_playbook: directories.yml
 
-- name: Import and execute the Fonts Playbook
-  ansible.builtin.import_playbook: fonts.yml
-
 - name: Import and execute the Homebrew Playbook
   ansible.builtin.import_playbook: homebrew.yml
 
@@ -47,6 +44,14 @@
 
 - name: Import and execute the OhMyPosh Playbook
   ansible.builtin.import_playbook: ohmyposh.yml
+
+- name: Import and execute the Fonts Playbook
+  ansible.builtin.import_playbook: fonts.yml
+  when: ansible_facts['distribution'] == 'Linuxmint'
+
+- name: Import and execute the Hyprland Playbook
+  ansible.builtin.import_playbook: hyprland.yml
+  when: ansible_facts['distribution'] == 'Archlinux'
 
 # This is going to take some extra work, for now
 # Given this is an interactive script setup, I have to skip it - April 26 2026

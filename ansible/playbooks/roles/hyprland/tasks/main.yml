@@ -1,0 +1,6 @@
+# Hyprland - Task File
+- name: Hyprland - Install and Configure
+  tags: hyprland-setup
+
+  block:
+    - name:

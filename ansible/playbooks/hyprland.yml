@@ -1,0 +1,7 @@
+# Hyprland - Playbook
+- name: Hyprland
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - hyprland

@@ -12,6 +12,7 @@ launch --title "files.yml" nvim /home/nerevar/mournhold/ansible/playbooks/files.
 launch --title "fonts.yml" nvim /home/nerevar/mournhold/ansible/playbooks/fonts.yml
 launch --title "github.yml" nvim /home/nerevar/mournhold/ansible/playbooks/github.yml
 launch --title "homebrew.yml" nvim /home/nerevar/mournhold/ansible/playbooks/homebrew.yml
+launch --title "hyprland.yml" nvim /home/nerevar/mournhold/ansible/playbooks/hyprland.yml
 launch --title "kitty.yml" nvim /home/nerevar/mournhold/ansible/playbooks/kitty.yml
 launch --title "linux.yml" nvim /home/nerevar/mournhold/ansible/playbooks/linux.yml
 launch --title "neovim.yml" nvim /home/nerevar/mournhold/ansible/playbooks/neovim.yml
@@ -43,6 +44,11 @@ layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/homebrew/defaults/main.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/homebrew/tasks/main.yml
+new_tab Role-hyprland
+layout tall
+launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/hyprland/defaults/main.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/hyprland/tasks/main.yml
 new_tab Role-kitty
 layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
