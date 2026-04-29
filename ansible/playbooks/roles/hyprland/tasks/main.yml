@@ -12,8 +12,8 @@
     - name: Show config files
       ansible.builtin.debug:
         verbosity: 1
-        msg: file
-      loop: "{{ hyprland_config_files.path }}"
+        msg: file.path
+      loop: "{{ hyprland_config_files }}"
       loop_control:
         loop_var: file
 
