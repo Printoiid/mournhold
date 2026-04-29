@@ -4,7 +4,7 @@
 
   block:
     - name: Remove config files
-      ansible.builtin.find:
+      ansible.builtin.file:
         state: absent
         path: "{{ hyprland_config_path }}"
 
