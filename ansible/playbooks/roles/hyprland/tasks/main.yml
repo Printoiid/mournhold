@@ -23,7 +23,7 @@
         src: "{{ hyprland_repo_main_config.src }}"
         dest: "{{ hyprland_repo_main_config.dest }}"
 
-    - name: Copy config files into hypr/conf/
+    - name: Copy config files into hypr/conf/ directory
       ansible.builtin.copy:
         src: "{{ hyprland_config_files.src }}"
         dest: "{{ hyprland_config_files.dest }}"
