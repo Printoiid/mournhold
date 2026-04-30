@@ -4,7 +4,7 @@ hyprland_config_path: "{{ dotconfig_path }}/hypr"
 hyprland_repo_configs: "{{ hyprland_repo_config_path }}/config"
 
 hyprland_repo_main_config: 
-  src: "{{ hyprland_repo_config_path }}/templates/hyprland.conf.j2"
+  src: "{{ hyprland_repo_config_path }}/main/hyprland.conf"
   dest: "{{ hyprland_config_path }}/hyprland.conf"
 
 hyprland_config_files:

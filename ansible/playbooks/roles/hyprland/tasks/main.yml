@@ -13,11 +13,6 @@
         state: directory
         path: "{{ hyprland_config_path }}"
 
-    - name: Recreate conf directory
-      ansible.builtin.file:
-        state: directory
-        path: "{{ hyprland_config_path }}/conf"
-
     - name: Link default config
       ansible.builtin.file:
         src: "{{ hyprland_repo_main_config.src }}"
