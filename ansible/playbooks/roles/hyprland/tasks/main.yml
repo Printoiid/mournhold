@@ -3,11 +3,10 @@
   tags: hyprland-setup
 
   block:
-    - name: Remove config files
+    - name: Remove existing hypr config files
       ansible.builtin.file:
         state: absent
         path: "{{ hyprland_config_path }}"
-
     - name: Link hypr config files
       ansible.builtin.file:
         src: "{{ hyprland_config_files.src }}"
