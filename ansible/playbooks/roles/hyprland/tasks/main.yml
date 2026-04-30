@@ -18,13 +18,14 @@
         state: directory
         path: "{{ hyprland_config_path }}/conf"
 
-    - name: Create default config
-      ansible.builtin.template:
+    - name: Link default config
+      ansible.builtin.file:
         src: "{{ hyprland_repo_main_config.src }}"
         dest: "{{ hyprland_repo_main_config.dest }}"
+        state: link
 
-    - name: Copy config files into hypr/conf/ directory
-      ansible.builtin.copy:
+    - name: Link config files into hypr/conf/ directory
+      ansible.builtin.file:
         src: "{{ hyprland_config_files.src }}"
         dest: "{{ hyprland_config_files.dest }}"
-
+        state: link
