@@ -3,6 +3,7 @@
   tags: hyprland-setup
 
   block:
+    # Base Hyprland setup
     - name: Remove existing hypr config files
       ansible.builtin.file:
         state: absent
@@ -12,7 +13,7 @@
         src: "{{ hyprland_config_files.src }}"
         dest: "{{ hyprland_config_files.dest }}"
         state: link
-  block:
+    # Waybar setup
     - name: Remove existing waybar config files
       ansible.builtin.file:
         state: absent
