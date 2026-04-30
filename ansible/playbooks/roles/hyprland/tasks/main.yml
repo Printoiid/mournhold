@@ -25,9 +25,6 @@
 
     - name: Copy config files into hypr/conf/
       ansible.builtin.copy:
-        src: 
-        dest:
-      loop:
-      loop_control:
-        loop_var:
+        src: "{{ hyprland_config_files.src }}"
+        dest: "{{ hyprland_config_files.dest }}"
 
