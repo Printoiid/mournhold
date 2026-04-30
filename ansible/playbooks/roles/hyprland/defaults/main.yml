@@ -8,6 +8,6 @@ hyprland_repo_main_config:
   dest: "{{ hyprland_config_path }}/hyprland.conf"
 
 hyprland_config_files:
-  src: "{{ hyprland_repo_config_path }}/config/"
-  dest: "{{ hyprland_config_path }}/conf/"
+  src: "{{ hyprland_repo_config_path }}/config"
+  dest: "{{ hyprland_config_path }}/conf"
 
