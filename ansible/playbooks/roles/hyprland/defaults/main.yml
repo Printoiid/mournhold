@@ -1,8 +1,10 @@
 # Hyprland - Default File
 hyprland_config_path: "{{ dotconfig_path }}/hypr"
-waybar_config_path: "{{ dotconfig_path }}/waybar"
-
 hyprland_config_files:
   src: "{{ hyprland_repo_config_path }}/config/hypr"
   dest: "{{ hyprland_config_path }}"
 
+waybar_config_path: "{{ dotconfig_path }}/waybar"
+waybar_config_files:
+  src: "{{ hyprland_repo_config_path }}/config/waybar"
+  dest: "{{ waybar_config_path }}"

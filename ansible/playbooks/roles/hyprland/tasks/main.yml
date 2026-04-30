@@ -12,3 +12,13 @@
         src: "{{ hyprland_config_files.src }}"
         dest: "{{ hyprland_config_files.dest }}"
         state: link
+  block:
+    - name: Remove existing waybar config files
+      ansible.builtin.file:
+        state: absent
+        path: "{{ waybar_config_path }}"
+    - name: Link waybar config files
+      ansible.builtin.file:
+        src: "{{ waybar_config_files.src }}"
+        dest: "{{ waybar_config_files.dest }}"
+        state: link
