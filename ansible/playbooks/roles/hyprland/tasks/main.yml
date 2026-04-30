@@ -8,18 +8,7 @@
         state: absent
         path: "{{ hyprland_config_path }}"
 
-    - name: Recreate hypr directory
-      ansible.builtin.file:
-        state: directory
-        path: "{{ hyprland_config_path }}"
-
-    - name: Link default config
-      ansible.builtin.file:
-        src: "{{ hyprland_repo_main_config.src }}"
-        dest: "{{ hyprland_repo_main_config.dest }}"
-        state: link
-
-    - name: Link config files into hypr/conf/ directory
+    - name: Link hypr config files
       ansible.builtin.file:
         src: "{{ hyprland_config_files.src }}"
         dest: "{{ hyprland_config_files.dest }}"
