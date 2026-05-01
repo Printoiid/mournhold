@@ -37,6 +37,8 @@ apt_packages:
     state: "fixed"
 
 pacman_packages:
+  - package: "gcc"
+  - package: "base-devel"
   - package: "unzip"
   - package: "ansible"
     state: "latest"
