@@ -47,6 +47,7 @@ pacman_packages:
   - package: "waybar"
   - package: "qmk"
   - package: "tree"
+  
 # Fonts
   - package: "otf-font-awesome"
 
