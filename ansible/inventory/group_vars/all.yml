@@ -47,7 +47,8 @@ pacman_packages:
   - package: "waybar"
   - package: "qmk"
   - package: "tree"
-  
+  - package: "pulseaudio"
+  - package: "pavucontrol"
 # Fonts
   - package: "otf-font-awesome"
 

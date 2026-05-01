@@ -25,7 +25,7 @@
 * {
 	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
-	padding: 0px 2.5px;
+	padding: 0px;
 	color: #ffffff;
 }
 
@@ -34,11 +34,13 @@ window#waybar {
 	background-color: rgba(0,0,0,0);
 }
 
+/* Hover pop up */
 tooltip {
 	background: rgba(5,25,35,1);
 	border: 2px solid #00A6FB;
 	border-radius: 5px;
 }
+
 
 /* Sound/Bluetooth */
 #pulseaudio-slider {
@@ -63,6 +65,14 @@ tooltip {
 #pulseaudio-slider highlight {
 	min-width: 10px;
 	border-radius: 5px;
-	background: #FB5500;
+	background: #00A6FB;
+}
+
+/* Style box for all */
+#pulseaudio, #pulseaudio-slider, #network, #cpu, #disk, #memory, #clock, #workspaces {
+	border: 1.5px solid #00A6FB;
+	border-radius: 7px;
+	padding: 0px 5px;
+	margin: 0.5px
 }
 
