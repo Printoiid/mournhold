@@ -37,6 +37,7 @@ apt_packages:
     state: "fixed"
 
 pacman_packages:
+  - package: "discord"
   - package: "gcc"
   - package: "base-devel"
   - package: "unzip"
@@ -49,9 +50,13 @@ pacman_packages:
   - package: "waybar"
   - package: "qmk"
   - package: "tree"
-  - package: "pulseaudio"
+  - package: "pipewire"
+  - package: "pipewire-pulse"
+  - package: "wireplumber"
   - package: "pavucontrol"
-# Fonts
+  - package: "spotify-launcher"
+  - package: "keepass"
+  # Fonts
   - package: "otf-font-awesome"
 
 # Role - Homebrew

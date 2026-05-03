@@ -69,7 +69,7 @@ tooltip {
 }
 
 /* Style box for all */
-#pulseaudio, #pulseaudio-slider, #network, #cpu, #disk, #memory, #clock, #workspaces {
+#battery, #bluetooth, #pulseaudio, #temperature, #pulseaudio-slider, #network, #cpu, #disk, #memory, #clock, #workspaces {
 	border: 1.5px solid #00A6FB;
 	border-radius: 7px;
 	padding: 0px 5px;

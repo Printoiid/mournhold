@@ -8,6 +8,8 @@
 	// Choose the order of the modules
     "modules-left": [
 		"group/audio",
+		"battery",
+		"bluetooth",
 	],
     "modules-center": [
     	"hyprland/workspaces",
@@ -35,6 +37,7 @@
 			"cpu",
 			"disk",
 			"memory",
+			"temperature",
 			"network",
 		],
 		"drawer": {
@@ -49,7 +52,6 @@
 		"max": 100,
 		"orientation": "horizontal"
 	},
-
 	/* Date/Time Modules */	
     "clock": {
 		"format":         "{:%r - %m/%d/%y}",
@@ -95,11 +97,22 @@
 		"format": "{percentage_free}% ",
 		"tooltip": true
 	},
-    "memory": {
-        "format": "{}% "
-    },
-
-    "temperature": {
+	"memory": {
+		"format": "{}% "
+	},
+	/* Battery */
+	"battery": {
+		"format": "{capacity}% - {time}",
+		"format-icons": [""],
+		"interval": 120,
+		"full-at": 95,	
+		"states": {
+			"good": 80,
+			"warning": 30,
+			"critical": 15,
+		},
+	},
+	"temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
@@ -138,3 +151,5 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
 }
+
+
