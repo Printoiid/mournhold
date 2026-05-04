@@ -18,6 +18,7 @@ kitty_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty/conf
 hyprland_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/hyprland"
 
 # Role - Packages
+## Debian - Linux Mint
 apt_packages:
   - package: "gcc"
   - package: "curl"
@@ -35,8 +36,9 @@ apt_packages:
   - package: "flameshot"
     version: "12.1.0"
     state: "fixed"
-
+## Arch - Hyprland
 pacman_packages:
+  - package: "go"
   - package: "discord"
   - package: "gcc"
   - package: "base-devel"
@@ -44,18 +46,17 @@ pacman_packages:
   - package: "ansible"
     state: "latest"
   - package: "spotify-launcher"
-  - package: "vivaldi"
+  - package: "firefox"
   - package: "flameshot"
   - package: "git"
-  - package: "waybar"
   - package: "qmk"
   - package: "tree"
-  - package: "pipewire"
-  - package: "pipewire-pulse"
-  - package: "wireplumber"
   - package: "pavucontrol"
   - package: "spotify-launcher"
   - package: "keepass"
+  - package: "hyprpaper"
+  - package: "waybar"
+  - package: "rofi"
   # Fonts
   - package: "otf-font-awesome"
 
