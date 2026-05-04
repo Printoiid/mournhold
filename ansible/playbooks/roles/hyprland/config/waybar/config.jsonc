@@ -3,19 +3,20 @@
     "height": 35, // Waybar height (to be removed for auto height)
     
 	// "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+	// This is controlled in CSS for more granularity
+    "spacing": 0, // Gaps between modules (4px)
     
 	// Choose the order of the modules
     "modules-left": [
 		"group/audio",
 	  	"pulseaudio/slider",
 		"bluetooth",
-		"battery",
 	],
     "modules-center": [
     	"hyprland/workspaces",
 	],
     "modules-right": [
+		"battery",
 		"group/resources",
 	],
 
