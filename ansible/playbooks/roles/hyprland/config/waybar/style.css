@@ -33,6 +33,17 @@
 window#waybar {
 	background-color: rgba(0,0,0,0);
 }
+#workspaces {
+	border: 2px solid #00A6FB;
+	border-radius: 7px;
+	background: rgba(0,53,84,0.75);
+	margin: 1px;
+	padding: 0px;
+}
+#workspaces button.active {
+	background-color: rgba(251,85,0,0.4);
+	padding: 0px 5px;
+}
 
 /* Hover pop up */
 tooltip {
@@ -68,7 +79,7 @@ tooltip {
 }
 
 /* Style box for all */
-#battery, #bluetooth, #pulseaudio, #temperature, #pulseaudio-slider, #network, #cpu, #disk, #memory, #clock, #workspaces {
+#battery, #bluetooth, #pulseaudio, #temperature, #pulseaudio-slider, #network, #cpu, #disk, #memory, #clock {
 	border: 2px solid #00A6FB;
 	border-radius: 7px;
 	padding: 0px 5px;
