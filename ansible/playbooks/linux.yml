@@ -52,3 +52,7 @@
 - name: Import and execute the Hyprland Playbook
   ansible.builtin.import_playbook: hyprland.yml
   when: ansible_facts['distribution'] == 'Archlinux'
+
+- name: Import and execute the QMK Playbook
+  ansible.builtin.import_playbook: qmk.yml
+  when: ansible_facts['distribution'] == 'Archlinux'

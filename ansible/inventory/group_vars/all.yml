@@ -38,6 +38,7 @@ apt_packages:
     state: "fixed"
 ## Arch - Hyprland
 pacman_packages:
+  - package: "brightnessctl"
   - package: "go"
   - package: "discord"
   - package: "gcc"
@@ -53,12 +54,27 @@ pacman_packages:
   - package: "tree"
   - package: "pavucontrol"
   - package: "spotify-launcher"
-  - package: "keepass"
+  - package: "keepassxc"
   - package: "hyprpaper"
+  - package: "hypridle"
+  - package: "hyprsunset"
+  - package: "hyprpicker"
+  - package: "hyprlock"
   - package: "waybar"
   - package: "rofi"
+  - package: "unrar"
+  - package: "xdg-desktop-portal-hyprland"
   # Fonts
   - package: "otf-font-awesome"
+
+pacman_packages_to_enable:
+  - package: "rofi"
+  - package: "brightnessctl"
+  - package: "hypridle"
+  - package: "hyprsunset"
+  - package: "hyprlock"
+  - package: "hypridle"
+
 
 # Role - Homebrew
 homebrew_packages:

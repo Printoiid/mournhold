@@ -1,6 +1,0 @@
-# QMK - Tasks File
-# This needs to be fixed, not currently working
-- name: QMK - Install and Configure
-  tags: qmk-setup
-  block:
-
