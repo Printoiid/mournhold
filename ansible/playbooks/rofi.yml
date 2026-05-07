@@ -1,0 +1,7 @@
+# Rofi - Playbook
+- name: Rofi
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - rofi

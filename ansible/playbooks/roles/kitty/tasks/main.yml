@@ -1,5 +1,4 @@
 # Kitty - Tasks File
-
 - name: Kitty - Install and Configure
   tags: kitty-setup
   block:
@@ -35,7 +34,6 @@
       loop: "{{ kitty_app_filepath }}"
       loop_control:
         loop_var: app_path
-
 
     - name: Update bashrc to include randomized backgrounds
       ansible.builtin.lineinfile:

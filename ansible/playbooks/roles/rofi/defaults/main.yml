@@ -1,0 +1,3 @@
+# Rofi - Defaults File
+rofi_config: "{{ rofi_repo_config_path }}/config"
+

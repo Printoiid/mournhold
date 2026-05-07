@@ -1,6 +1,7 @@
 # Directories - Tasks File
 - name: Create folders and files for downloaded archives and modifications
   tags: modification-setup
+  when: ansible_facts['pkg_mgr'] == 'apt'
   block:
     - name: Create hidden .packages folder for downloaded archives
       ansible.builtin.file:

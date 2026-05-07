@@ -1,0 +1,9 @@
+# Rofi - Tasks File
+- name: Rofi - Install and Configure
+  tags: rofi-setup
+  block:
+    - name: Link Rofi configuration
+      ansible.builtin.file:
+        src: "{{ rofi_config }}"
+        dest: "{{ dotconfig_path }}/rofi"
+        state: link

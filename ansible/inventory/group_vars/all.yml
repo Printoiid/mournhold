@@ -1,6 +1,7 @@
 # All - Group Vars File
 
 # True Globals
+github_account: "Printoiid"
 ohmyposh_theme: 'agnoster'
 user_account: "nerevar"
 user_account_path: "/home/{{user_account}}"
@@ -11,7 +12,6 @@ bashrc_path: "{{ user_account_path }}/.bashrc"
 github_repositories:
   mournhold: "https://github.com/Printoiid/mournhold.git"
   Printoiid: "https://github.com/Printoiid/Printoiid.git"
-  qmk_firmware: "https://github.com/Printoiid/qmk_firmware.git"
 
 ssh_github_repositories:
   mournhold: "git@github.com:Printoiid/mournhold.git"
@@ -22,11 +22,7 @@ mournhold_path: "{{ user_account_path }}/mournhold"
 neovim_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/neovim/config"
 kitty_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty/config"
 hyprland_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/hyprland"
-
-# Symbolic Links
-qmk_link:
-  src: "~/qmk_firmware/keyboards"
-  dest: "~/mournhold/qmk_keymaps"
+rofi_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/rofi"
 
 # Role - Packages
 ## Debian - Linux Mint
@@ -57,7 +53,6 @@ pacman_packages:
   - package: "unzip"
   - package: "ansible"
     state: "latest"
-  - package: "spotify-launcher"
   - package: "firefox"
   - package: "flameshot"
   - package: "git"

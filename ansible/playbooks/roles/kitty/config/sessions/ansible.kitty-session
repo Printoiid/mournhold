@@ -19,6 +19,7 @@ launch --title "neovim.yml" nvim /home/nerevar/mournhold/ansible/playbooks/neovi
 launch --title "ohmyposh.yml" nvim /home/nerevar/mournhold/ansible/playbooks/ohmyposh.yml
 launch --title "packages.yml" nvim /home/nerevar/mournhold/ansible/playbooks/packages.yml
 launch --title "qmk.yml" nvim /home/nerevar/mournhold/ansible/playbooks/qmk.yml
+launch --title "rofi.yml" nvim /home/nerevar/mournhold/ansible/playbooks/rofi.yml
 new_tab Role-directories
 layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
@@ -74,3 +75,8 @@ layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/qmk/defaults/main.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/qmk/tasks/main.yml
+new_tab Role-rofi
+layout tall
+launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/rofi/defaults/main.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/rofi/tasks/main.yml

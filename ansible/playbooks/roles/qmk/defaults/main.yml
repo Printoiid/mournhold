@@ -1,3 +1,7 @@
 # QMK - Defaults File
-qmk_repo: ""
+qmk_repo: "{{ github_account }}/qmk_firmware"
 qmk_path: "{{ user_account_path }}/qmk_firmware"
+
+qmk_link:
+  src: "{{ user_account_path }}/qmk_firmware/keyboards"
+  dest: "{{ user_account_path }}/qmk_keymaps"

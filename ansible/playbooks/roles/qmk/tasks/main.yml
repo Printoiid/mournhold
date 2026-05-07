@@ -13,14 +13,10 @@
         cmd: yes | qmk setup {{ qmk_repo }}
       when: not qmk_exists.stat.exists
 
-    - name: Update my QMK Fork
-      ansible.builtin.command:
-        cmd: git fetch upstream && git rebase upstream/master && git push origin
-      when: qmk_exists.stat.exists
-
-    - name: Link keyboard keymaps into Mournhold
+    - name: Link QMK keymaps into Mournhold
       ansible.builtin.file:
         src: "{{ qmk_link.src }}"
         dest: "{{ qmk_link.dest }}"
+        state: link
       when: qmk_exists.stat.exists
 
