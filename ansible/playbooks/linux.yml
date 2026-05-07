@@ -33,6 +33,9 @@
 - name: Import and execute the Directories Playbook
   ansible.builtin.import_playbook: directories.yml
 
+- name: Import and execute the Fonts Playbook
+  ansible.builtin.import_playbook: fonts.yml
+
 - name: Import and execute the Homebrew Playbook
   ansible.builtin.import_playbook: homebrew.yml
 

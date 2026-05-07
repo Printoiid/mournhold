@@ -166,7 +166,6 @@ configuration {
 		sorting-method:    "name";
 	}
 }
-
 entry {
 	placeholder: "Mosthera";
 }
