@@ -11,3 +11,5 @@ Add in QMK steps to:
     - `git fetch upstream`
     - `git rebase upstream/master`
     - `git push origin`
+1. Set up symbolic links
+    - `ln -s ~/qmk_firmware/keyboards/ ~/mournhold/qmk_keymaps`
