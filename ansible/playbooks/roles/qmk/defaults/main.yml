@@ -1,0 +1,3 @@
+# QMK - Defaults File
+qmk_repo: ""
+qmk_path: "{{ user_account_path }}/qmk_firmware"

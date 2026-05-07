@@ -1,0 +1,7 @@
+# QMK - Playbook
+- name: QMK
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - qmk

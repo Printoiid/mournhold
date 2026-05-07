@@ -1,0 +1,26 @@
+# QMK - Tasks File
+- name: QMK Firmware - Install and configure
+  tags: qmk-setup
+  block:
+    # Check if the `qmk_firmware` directory exists
+    - name: Check for QMK directory
+      ansible.builtin.stat:
+        path: "{{ qmk_path }}"
+      register: qmk_exists
+    # This takes a *long* ass time without a good connection
+    - name: QMK Setup
+      ansible.builtin.command:
+        cmd: yes | qmk setup {{ qmk_repo }}
+      when: not qmk_exists.stat.exists
+
+    - name: Update my QMK Fork
+      ansible.builtin.command:
+        cmd: git fetch upstream && git rebase upstream/master && git push origin
+      when: qmk_exists.stat.exists
+
+    - name: Link keyboard keymaps into Mournhold
+      ansible.builtin.file:
+        src: "{{ qmk_link.src }}"
+        dest: "{{ qmk_link.dest }}"
+      when: qmk_exists.stat.exists
+
