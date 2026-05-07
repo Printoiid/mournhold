@@ -166,14 +166,51 @@ configuration {
 		sorting-method:    "name";
 	}
 }
+
+* {
+	font: "Magic Cards 15";
+	/* Ink Black */
+	color1: rgba ( 5, 25, 35, 100 % ); 
+	color1-opaque: rgba ( 5, 25, 35, 80 % );
+	/* Deep Space Blue */
+	color2: rgba ( 0, 53, 84, 100 % );
+	color2-opaque: rgba ( 0, 53, 84, 80 % );
+	/* Baltic Blue */
+	color3: rgba ( 0, 100, 148, 100 % );
+	color3-opaque: rgba ( 0, 100, 148, 80 % );
+	/* Steel Blue */	
+	color4: rgba ( 5, 120, 202, 100 % );
+	color4-opaque: rgba ( 5, 120, 202, 80 % );
+	/* Fresh Sky */
+	color5: rgba ( 0, 166, 251, 100 % );
+	color5-opaque: rgba ( 0, 166, 251, 80 % );
+	/* Blaze Orange */
+	color6: rgba ( 251, 85, 0, 100 % );
+	color6-opaque: rgba ( 251, 85, 0, 80 % );
+	
+	background-color: var(color5);
+	font-color: var(color1);
+}
+
+window {
+	background-color: var(color6);
+	border-radius: 10px;
+}
+
 entry {
 	placeholder: "Mosthera";
 }
+inputbar {
+}
 element {
+	orientation: horizontal;
 	padding: 5px;
 	spacing: 10px;
 }
-window {
-	background-color: rgba(0,166,251,1);
-	border-radius: 10px;
+element-icon {
+	size: 1.0em;
 }
+element-text {
+	text-color: var(font-color);
+}
+
