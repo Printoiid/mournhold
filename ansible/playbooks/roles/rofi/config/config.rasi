@@ -1,6 +1,6 @@
 configuration {
 	modes: "window,drun,run,ssh";
-	font: "Magic Cards";
+	font: "Magic Cards 15";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -170,7 +170,7 @@ configuration {
 * {
 	/* Ink Black */
 	color1: rgba ( 5, 25, 35, 100 % );
-	color1-opaque: rgba ( 5, 25, 35, 80 % );
+	color1-opaque: rgba ( 5, 25, 35, 40 % );
 	/* Deep Space Blue */
 	color2: rgba ( 0, 53, 84, 100 % );
 	color2-opaque: rgba ( 0, 53, 84, 80 % );
@@ -190,9 +190,9 @@ configuration {
 	color7: rgba ( 255, 255, 255, 100 % );
 	color7-opaque: rgba ( 255, 255, 255, 80 % );
 	/* Built-in settings */
-	background-color: var(color5);
-	font-color: var(color1);
+	font-color: white;
 	spacing: 10;
+	vertical-align:0.75;
 }
 /* Elements */
 element {
@@ -202,13 +202,16 @@ element {
 	spacing: 10px;
 	border-radius: 20px;
 }
+element-text {
+	vertical-align: 0.5;
+}
 element normal.normal, element alternate.normal {
-	background-color: var(color4);
+	background-color: var(color2-opaque);
 	text-color: var(color7);
 }
 element selected.normal, element selected.active {
-	background-color: var(color6);
-	text-color: var(color7);
+	background-color: var(color6-opaque);
+	text-color: var(color2);
 }
 element-icon {
 	size: 1.25em;
@@ -218,37 +221,34 @@ window {
 	padding: 5;
 	background-color: var(color2);
 	border-radius: 10px;
-	height: 33%;
+	height: 35%;
 	width: 30%;
 	background-image: url("~/mournhold/ansible/playbooks/roles/kitty/config/img/morrowind1.png");
 }
 /* Mainbox */
 mainbox {
-	padding: 10;
+	padding: 5;
 	border: 2;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 /* Textbox */
 textbox {
 	text-color: var(color7);
 }
-textbox-prompt-colon {
-	str: "";
-}
 /* Listview */
 listview {
-	spacing: 5px;
-	padding: 10px 10px 10px 10px;
+	spacing: 4px;
+	padding: 10px 0px 0px 0px;
 }
 /* Scrollbar */
 scrollbar {
 	handle-width: 10;
 	width: 10px;
-	background-color: var(color3);
+	background-color: var(color2-opaque);
 	handle-rounded-corners: true;
-	border-color: var(color4);
+	border-color: var(color2);
 	border: 2;
-	margin: 0px -10px 0px 0px;
+	margin: 0px;
 	border-radius: 5px;
 	handle-color: var(color6);
 }
@@ -258,21 +258,26 @@ sidebar {
 }
 /* Inputbar */
 inputbar {
-	background-color: var(color3);
+	text-color: var(color7);
+	background-color: var(color2-opaque);
 	padding: 10px;
 	magin: 10;
 	border-radius: 30;
 }
 num-filtered-rows, textbox-num-sep, num-rows {
-	text-color: white;
+	text-color: var(color7);
+	vertical-align: 0.75;
 }
 /* Overlay */
 overlay {
 	padding: 10px 0.2000em;
 }
 /* Entry */
+prompt {
+	text-color: var(color6-opaque);
+}
 entry {
-	text-color: var(color7);
-	placeholder-color: var(color7);
+	text-color: var(color7-opaque);
+	placeholder-color: var(color7-opaque);
 	placeholder: "Mosthera";
 }
