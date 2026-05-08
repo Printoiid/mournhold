@@ -23,7 +23,7 @@
 
 /* All */
 * {
-	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;*/
     font-size: 15px;
 	padding: 0px;
 	color: #ffffff;
@@ -53,6 +53,11 @@ tooltip {
 }
 
 /* Sound/Bluetooth */
+#pulseaudio-slider {
+	padding: 0px;
+	margin: 0px;
+	background-image: none;
+}
 #pulseaudio-slider slider {
 	min-height: 0px;
 	min-width: 0px;
@@ -73,10 +78,6 @@ tooltip {
 	background: #00A6FB;
 }
 
-/* Keyboard States */
-/*#keyboard-state label {
-	padding: 1px;
-}*/
 /* Style box for all */
 #battery, #bluetooth, #pulseaudio, #temperature, #pulseaudio-slider, #network, #cpu, #disk, #memory, #clock {
 	border: 2px solid #00A6FB;
