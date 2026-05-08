@@ -71,7 +71,7 @@ configuration {
 /*	display-window: ;*/
 /*	display-run: ;*/
 /*	display-ssh: ;*/
-/*	display-drun: ;*/
+	display-drun: "Apps";
 /*	display-combi: ;*/
 /*	display-keys: ;*/
 /*	display-filebrowser: ;*/
@@ -169,13 +169,13 @@ configuration {
 
 * {
 	/* Ink Black */
-	color1: rgba ( 5, 25, 35, 80 % );
+	color1: rgba ( 5, 25, 35, 100 % );
 	color1-opaque: rgba ( 5, 25, 35, 80 % );
 	/* Deep Space Blue */
-	color2: rgba ( 0, 53, 84, 20 % );
+	color2: rgba ( 0, 53, 84, 100 % );
 	color2-opaque: rgba ( 0, 53, 84, 80 % );
 	/* Baltic Blue */
-	color3: rgba ( 0, 100, 148, 20 % );
+	color3: rgba ( 0, 100, 148, 50 % );
 	color3-opaque: rgba ( 0, 100, 148, 80 % );
 	/* Steel Blue */
 	color4: rgba ( 5, 120, 202, 50 % );
@@ -196,14 +196,18 @@ configuration {
 }
 /* Elements */
 element {
-	padding: 5px;
+	padding: 7px;
 	orientation: horizontal;
 	background-color: var(color2);
-	spacing: 20px;
+	spacing: 10px;
 	border-radius: 20px;
 }
 element normal.normal, element alternate.normal {
 	background-color: var(color4);
+	text-color: var(color7);
+}
+element selected.normal, element selected.active {
+	background-color: var(color6);
 	text-color: var(color7);
 }
 element-icon {
@@ -211,10 +215,10 @@ element-icon {
 }
 /* Window */
 window {
-	padding: 2;
+	padding: 5;
 	background-color: var(color2);
 	border-radius: 10px;
-	height: 30%;
+	height: 33%;
 	width: 30%;
 	background-image: url("~/mournhold/ansible/playbooks/roles/kitty/config/img/morrowind1.png");
 }
@@ -228,9 +232,13 @@ mainbox {
 textbox {
 	text-color: var(color7);
 }
+textbox-prompt-colon {
+	str: "";
+}
 /* Listview */
 listview {
-	padding: 2px 0px 0px;
+	spacing: 5px;
+	padding: 10px 10px 10px 10px;
 }
 /* Scrollbar */
 scrollbar {
@@ -240,19 +248,23 @@ scrollbar {
 	handle-rounded-corners: true;
 	border-color: var(color4);
 	border: 2;
+	margin: 0px -10px 0px 0px;
 	border-radius: 5px;
 	handle-color: var(color6);
 }
 /* Sidebar */
 sidebar {
-	border-color: purple;
 	border: 2px dash 10px 10px; 
 }
 /* Inputbar */
 inputbar {
-	padding: 5px;
+	background-color: var(color3);
+	padding: 10px;
 	magin: 10;
-	border-radius: 10;
+	border-radius: 30;
+}
+num-filtered-rows, textbox-num-sep, num-rows {
+	text-color: white;
 }
 /* Overlay */
 overlay {
