@@ -1,6 +1,6 @@
 {
 	// "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 25, // Waybar height (to be removed for auto height)
+    //"height": 32, // Waybar height (to be removed for auto height)
     
 	// "width": 1280, // Waybar width
 	// This is controlled in CSS for more granularity
@@ -11,26 +11,26 @@
 		"group/audio",
 	  	"pulseaudio/slider",
 		"bluetooth",
-		"keyboard-state",
+		"keyboard-state"
 	],
     "modules-center": [
-    	"hyprland/workspaces",
+    	"hyprland/workspaces"
 	],
     "modules-right": [
 		"battery",
-		"group/resources",
+		"group/resources"
 	],
 
 	/* Groups */
 	"group/audio": {
 		"orientation": "horizontal",
 		"modules": [
-			"pulseaudio",
+			"pulseaudio"
 		],
 		"drawer": {
 			"transition-duration": 500,
 			"transition-left-to-right": true,
-		},
+		}
 	},
 	"group/resources": {
 		"orientation": "horizontal",
@@ -40,12 +40,12 @@
 			"disk",
 			"memory",
 			"temperature",
-			"network",
+			"network"
 		],
 		"drawer": {
 			"transition-duration": 500,
-			"transition-left-to-right": false,
-		},
+			"transition-left-to-right": false
+		}
 	},
 	/* Keyboard State */
 	/*"keyboard-state": {
@@ -114,8 +114,8 @@
 			"on-scroll-up":   "tz_up",
 			"on-scroll-down": "tz_down",
 			"on-scroll-up":   "shift_up",
-			"on-scroll-down": "shift_down",
-		},
+			"on-scroll-down": "shift_down"
+		}
 	},
 	/* Resource usage */
     "network": {
@@ -127,7 +127,8 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% {icon}",
+		"format-icons": [""],
         "tooltip": true
     },
 	"disk": {
@@ -140,7 +141,7 @@
 	/* Battery */
 	"battery": {
 		"format": "{capacity}% {icon} {time}",
-		"format-full": "{capacity}% {icon}",
+		"format-full": "{capacity}% {icon} {time}",
 		"format-charging": "{capacity}% {icon} {time}",
 		"format-icons": ["", "", "", "", ""],
 		"interval": 120,
@@ -151,13 +152,13 @@
 			"warning": 30,
 			"critical": 15,
 			"dead": 5
-		},
+		}
 	},
 	"temperature": {
         "critical-threshold": 40,
         "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
-    },
+    }
 }
 

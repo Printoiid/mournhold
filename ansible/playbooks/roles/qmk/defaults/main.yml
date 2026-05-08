@@ -4,4 +4,4 @@ qmk_path: "{{ user_account_path }}/qmk_firmware"
 
 qmk_link:
   src: "{{ user_account_path }}/qmk_firmware/keyboards"
-  dest: "{{ user_account_path }}/qmk_keymaps"
+  dest: "{{ mournhold_path }}/qmk_keymaps"
