@@ -24,7 +24,8 @@
 /* All */
 * {
 	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
+	padding: 0px;
 	color: #ffffff;
 }
 
@@ -82,5 +83,6 @@ tooltip {
 	border-radius: 7px;
 	padding: 0px 5px;
 	margin: 1px;
-	background: rgba(0,53,84,0.75);
+	background: rgba(0,53,84,0.75)
 }
+

@@ -1,11 +1,11 @@
 {
 	// "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 35, // Waybar height (to be removed for auto height)
-	
+    "height": 25, // Waybar height (to be removed for auto height)
+    
 	// "width": 1280, // Waybar width
 	// This is controlled in CSS for more granularity
-    "spacing": 2, // Gaps between modules (4px)
-		
+    "spacing": 0, // Gaps between modules (4px)
+    
 	// Choose the order of the modules
     "modules-left": [
 		"group/audio",
@@ -62,12 +62,12 @@
 	},*/
     /* Audio Modules */
     "pulseaudio": {
-		"format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% 󰍬",
-        "format-source-muted": "󰍭",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
