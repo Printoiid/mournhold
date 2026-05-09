@@ -202,9 +202,6 @@ element {
 	spacing: 10px;
 	border-radius: 20px;
 }
-element-text {
-	vertical-align: 0.5;
-}
 element normal.normal, element alternate.normal {
 	background-color: var(color2-opaque);
 	text-color: var(color7);

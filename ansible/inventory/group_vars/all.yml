@@ -58,7 +58,7 @@ pacman_packages:
   - package: "git"
   - package: "qmk"
   - package: "tree"
-#  - package: "pavucontrol"
+  - package: "pavucontrol"
   - package: "spotify-launcher"
   - package: "keepassxc"
   - package: "hyprpaper"
@@ -72,6 +72,7 @@ pacman_packages:
   - package: "xdg-desktop-portal-hyprland"
   # Fonts
   - package: "otf-font-awesome"
+  - package: "ttf-mononoki-nerd"
 
 pacman_packages_to_enable:
   - package: "rofi"

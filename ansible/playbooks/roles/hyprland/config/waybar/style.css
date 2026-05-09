@@ -23,10 +23,11 @@
 
 /* All */
 * {
-	font-family: "Mononoki Nerd Font Propo", "Font Awesome 7 Free", FontAwesome, Roboto, Helvetica, Arial, "sans-serif";
-    font-size: 15px;
-	padding: 0px;
+	font-family: "magic cards", "Mononoki Nerd Font Propo", "Font Awesome 7 Free", FontAwesome, Roboto, Helvetica, Arial, "sans-serif";
+    font-size: 17px;
 	color: #ffffff;
+	padding: 0px;
+	margin: 0px;
 }
 
 /* Waybar base */
@@ -34,16 +35,18 @@ window#waybar {
 	background-color: rgba(0,0,0,0);
 }
 #workspaces {
-	font-weight: bold;
 	border: 2px solid #00A6FB;
 	border-radius: 7px;
 	background: rgba(0,53,84,0.75);
 	margin: 1px;
 	padding: 0px;
 }
+#workspaces button {
+	padding: 5px 0px 0px 0px;
+}
 #workspaces button.active {
 	background-color: rgba(251,85,0,0.4);
-	padding: 0px 5px;
+	padding: 5px 5px 0px 5px;
 }
 
 /* Hover pop up */
@@ -54,11 +57,6 @@ tooltip {
 }
 
 /* Sound/Bluetooth */
-#pulseaudio-slider {
-	padding: 0px;
-	margin: 0px;
-	background-image: none;
-}
 #pulseaudio-slider slider {
 	min-height: 0px;
 	min-width: 0px;
@@ -80,11 +78,18 @@ tooltip {
 }
 
 /* Style box for all */
-#battery, #bluetooth, #pulseaudio, #temperature, #pulseaudio-slider, #network, #cpu, #disk, #memory, #clock {
+#battery, #pulseaudio, #temperature, #pulseaudio-slider, #network, #cpu, #disk, #memory{
 	border: 2px solid #00A6FB;
 	border-radius: 7px;
 	padding: 0px 5px;
 	margin: 1px;
 	background: rgba(0,53,84,0.75)
+}
+#bluetooth, #clock {
+	border: 2px solid #00A6FB;
+	border-radius: 7px;
+	padding: 5px 5px 0px 5px;
+	margin: 1px;
+	background: rgba(0,53,84,0.75);
 }
 

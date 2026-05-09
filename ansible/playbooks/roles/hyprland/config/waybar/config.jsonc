@@ -29,7 +29,7 @@
 		],
 		"drawer": {
 			"transition-duration": 500,
-			"transition-left-to-right": true,
+			"transition-left-to-right": true
 		}
 	},
 	"group/resources": {
@@ -88,17 +88,17 @@
 	"bluetooth": {
 		"format": " {status}",
 		"on-click": "bluetoothctl power on",
-		"on-click-right": "bluetoothctl power off",
+		"on-click-right": "bluetoothctl power off"
 	},
 	/* Date/Time Modules */	
     "clock": {
-		"format":         "{:%I:%M:%S %p %Z - %m/%d/%y}",
-		"interval":       1,
+		"format":         "{:%I:%M - %m/%d/%y}",
+		"interval":       60,
 		"timezone":       "America/Chicago",
-		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"tooltip-format": "<tt><small><span font-family='mononoki nerd font mono'>{calendar}</span></small></tt>",
 		"calendar": {
 			"mode":         "year",
-			"mode-mon-col": 3,
+			"mode-mon-col": 4,
 			"on-scroll":    1,
 			"weeks-pos":     "right",
 			"format": {
@@ -159,6 +159,23 @@
         "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
-    }
+    },
+	/* Workspaces */
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1":  "[",
+			"2":  "]",
+			"3":  "{",
+			"4":  "|",
+			"5":  "}",
+			"6":  "\\",
+			"7":  "]",
+			"8":  "[",
+			"9":  "{",
+			"10": "}"
+		}
+	}
 }
 
