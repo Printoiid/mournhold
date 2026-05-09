@@ -71,7 +71,7 @@ pacman_packages:
   - package: "unrar"
   - package: "xdg-desktop-portal-hyprland"
   # Fonts
-#  - package: "otf-font-awesome"
+  - package: "otf-font-awesome"
 
 pacman_packages_to_enable:
   - package: "rofi"

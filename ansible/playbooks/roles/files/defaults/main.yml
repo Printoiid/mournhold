@@ -1,5 +1,5 @@
 # Files - Defaults File
 bin_executable:
-  dest: ~/.bashrc
+  dest: "{{ user_account_path }}/.bashrc"
   regexp: /.local/bin:$PATH
   line: export PATH="$HOME/.local/bin:$PATH"

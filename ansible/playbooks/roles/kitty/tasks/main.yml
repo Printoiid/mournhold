@@ -13,6 +13,11 @@
         dest: "{{ kitty_config.dest }}"
         state: link
 
+# This should be set this way in specific instances. For example this is for Gnome DE's
+- name: Set up desktop icons for XDG Desktops
+  tags: kitty-icons
+  when: ansible_facts['distribution'] == "Linux Mint"
+  block:
     - name: Install Kitty
       ansible.builtin.shell:
         cmd: "{{ kitty_install_cmd }}"
@@ -34,18 +39,7 @@
       loop: "{{ kitty_app_filepath }}"
       loop_control:
         loop_var: app_path
-
-    - name: Update bashrc to include randomized backgrounds
-      ansible.builtin.lineinfile:
-        dest: "{{ kitty_bashrc.dest }}"
-        regexp: "{{ kitty_bashrc.regexp }}"
-        line: "{{ kitty_bashrc.line }}"
-
-# This should be set this way in specific instances. For example this is for Gnome DE's
-- name: Set up desktop icons for XDG Desktops
-  tags: kitty-icons
-  when: ansible_facts['distribution'] == "Linux Mint"
-  block:
+    
     - name: Add kitty.desktop to OS Applications
       ansible.builtin.copy:
         src: "{{ shortcut_path.src }}"
@@ -61,3 +55,8 @@
       ansible.builtin.shell:
         cmd: "{{ kitty_gnome_terminal }}"
 
+    - name: Update bashrc to include randomized backgrounds
+      ansible.builtin.lineinfile:
+        dest: "{{ kitty_bashrc.dest }}"
+        regexp: "{{ kitty_bashrc.regexp }}"
+        line: "{{ kitty_bashrc.line }}"
