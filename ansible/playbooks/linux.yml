@@ -48,9 +48,9 @@
 - name: Import and execute the OhMyPosh Playbook
   ansible.builtin.import_playbook: ohmyposh.yml
 
-- name: Import and execute the Fonts Playbook
-  ansible.builtin.import_playbook: fonts.yml
-  when: ansible_facts['distribution'] == 'Linux Mint'
+#- name: Import and execute the Fonts Playbook
+#  ansible.builtin.import_playbook: fonts.yml
+#  when: ansible_facts['distribution'] == 'Linux Mint'
 
 - name: Import and execute the Hyprland Playbook
   ansible.builtin.import_playbook: hyprland.yml

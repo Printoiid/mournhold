@@ -58,7 +58,7 @@ pacman_packages:
   - package: "git"
   - package: "qmk"
   - package: "tree"
-  - package: "pavucontrol"
+#  - package: "pavucontrol"
   - package: "spotify-launcher"
   - package: "keepassxc"
   - package: "hyprpaper"
@@ -71,7 +71,7 @@ pacman_packages:
   - package: "unrar"
   - package: "xdg-desktop-portal-hyprland"
   # Fonts
-  - package: "otf-font-awesome"
+#  - package: "otf-font-awesome"
 
 pacman_packages_to_enable:
   - package: "rofi"
@@ -85,7 +85,7 @@ pacman_packages_to_enable:
 # Role - Homebrew
 homebrew_packages:
   - neovim
-  - go
+#  - go
   - yt-dlp
   - talosctl
   - k9s

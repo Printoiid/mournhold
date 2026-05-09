@@ -10,7 +10,7 @@
     # This takes a *long* ass time without a good connection
     - name: QMK Setup
       ansible.builtin.command:
-        cmd: yes | qmk setup {{ qmk_repo }}
+        cmd: "qmk setup {{ qmk_repo }} --yes"
       when: not qmk_exists.stat.exists
 
     - name: Link QMK keymaps into Mournhold
