@@ -73,6 +73,8 @@ pacman_packages:
   # Fonts
   - package: "otf-font-awesome"
   - package: "ttf-mononoki-nerd"
+  - package: "mpd"
+  - package: "mpc"
 
 pacman_packages_to_enable:
   - package: "rofi"

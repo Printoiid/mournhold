@@ -1,31 +1,34 @@
 {
 	// "position": "bottom", // Waybar position (top|bottom|left|right)
-    //"height": 32, // Waybar height (to be removed for auto height)
+    //"height": 37, // Waybar height (to be removed for auto height)
     
 	// "width": 1280, // Waybar width
 	// This is controlled in CSS for more granularity
     "spacing": 0, // Gaps between modules (4px)
-    
+    // Main Monitor
+	"output": ["eDP-1"],
+	// Reload on change
+	"reload_style_on_change": true,
 	// Choose the order of the modules
     "modules-left": [
 		"group/audio",
-	  	"pulseaudio/slider",
-		"bluetooth",
 		"keyboard-state"
 	],
     "modules-center": [
     	"hyprland/workspaces"
 	],
     "modules-right": [
-		"battery",
-		"group/resources"
+		"group/resources",
+		"group/power"
 	],
-
 	/* Groups */
 	"group/audio": {
 		"orientation": "horizontal",
 		"modules": [
-			"pulseaudio"
+			"pulseaudio",
+			"bluetooth",
+			"pulseaudio/slider"
+
 		],
 		"drawer": {
 			"transition-duration": 500,
@@ -47,19 +50,30 @@
 			"transition-left-to-right": false
 		}
 	},
+	"group/power": {
+		"orientation": "horizontal",
+		"modules": [
+			"battery",
+			"backlight/slider"
+		],
+		"drawer": {
+			"transition-duration": 500,
+			"transition-left-to-right": true
+		}
+	},
 	/* Keyboard State */
-	/*"keyboard-state": {
+	"keyboard-state": {
 		"numlock": true,
 		"capslock": true,
 		"format": {
 		 "numlock": "{name} {icon}",
-		 "capslock": "{name} {icon}",
+		 "capslock": "{name} {icon}"
 		},
 		"format-icons": {
 			"locked": "",
-			"unlocked": "",
-		},
-	},*/
+			"unlocked": ""
+		}
+	},
     /* Audio Modules */
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
@@ -83,7 +97,9 @@
 	"pulseaudio/slider": {
 		"min": 0,
 		"max": 100,
-		"orientation": "horizontal"
+		"orientation": "horizontal",
+		"format": "Volume: {icon} {volume}%",
+		"tooltip": "Volume"
 	},
 	"bluetooth": {
 		"format": " {status}",
@@ -117,6 +133,13 @@
 			"on-scroll-down": "shift_down"
 		}
 	},
+	/* Backlight */
+	"backlight/slider": {
+		"min": 10,
+		"max": 100,
+		"orientation": "horizontal",
+		"device": "intel_backlight",	
+	},
 	/* Resource usage */
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -138,6 +161,12 @@
 	"memory": {
 		"format": "{}% "
 	},
+	"temperature": {
+        "critical-threshold": 40,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
 	/* Battery */
 	"battery": {
 		"format": "{capacity}% {icon} {time}",
@@ -154,12 +183,6 @@
 			"dead": 5
 		}
 	},
-	"temperature": {
-        "critical-threshold": 40,
-        "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
 	/* Workspaces */
 	"hyprland/workspaces": {
 		"format": "{icon}",
