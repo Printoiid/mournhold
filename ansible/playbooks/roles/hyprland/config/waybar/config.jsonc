@@ -12,6 +12,7 @@
 	// Choose the order of the modules
     "modules-left": [
 		"group/audio",
+		"pulseaudio/slider",
 		"keyboard-state"
 	],
     "modules-center": [
@@ -27,8 +28,6 @@
 		"modules": [
 			"pulseaudio",
 			"bluetooth",
-			"pulseaudio/slider"
-
 		],
 		"drawer": {
 			"transition-duration": 500,

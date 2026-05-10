@@ -29,11 +29,17 @@
 	padding: 0px;
 	margin: 0px;
 }
-
+/* Hover pop up */
+tooltip {
+	background: rgba(5,25,35,1);
+	border: 3px solid #00A6FB;
+	border-radius: 5px;
+}
 /* Waybar base */
 window#waybar {
 	background-color: rgba(0,0,0,0);
 }
+/* Workspaces */
 #workspaces {
 	border: 2px solid #00A6FB;
 	border-radius: 7px;
@@ -48,14 +54,6 @@ window#waybar {
 	background-color: rgba(251,85,0,0.4);
 	padding: 5px 5px 0px 5px;
 }
-
-/* Hover pop up */
-tooltip {
-	background: rgba(5,25,35,1);
-	border: 3px solid #00A6FB;
-	border-radius: 5px;
-}
-
 /* Sound/Bluetooth */
 #pulseaudio-slider slider, #backlight-slider slider {
 	min-height: 0px;
@@ -81,7 +79,6 @@ tooltip {
 	padding: 0px 0px 0px 5px;
 	margin: 0px 0px 0px 0px;
 }
-
 /* Style box for all */
 #battery, #keyboard-state, #pulseaudio, #backlight-slider, #temperature, #pulseaudio-slider, #network, #cpu, #disk, #memory{
 	border: 2px solid #00A6FB;

@@ -191,16 +191,16 @@ configuration {
 	color7-opaque: rgba ( 255, 255, 255, 80 % );
 	/* Built-in settings */
 	font-color: white;
-	spacing: 10;
+	spacing: 2;
 	vertical-align:0.75;
 }
 /* Elements */
 element {
-	padding: 7px;
+    padding: 2px;
 	orientation: horizontal;
 	background-color: var(color2);
-	spacing: 10px;
-	border-radius: 20px;
+	spacing: 7px;
+	border-radius: 10px;
 }
 element normal.normal, element alternate.normal {
 	background-color: var(color2-opaque);
@@ -211,22 +211,23 @@ element selected.normal, element selected.active {
 	text-color: var(color2);
 }
 element-icon {
-	size: 1.25em;
+	size: 1em;
 }
 /* Window */
 window {
+	border-color: var(color6);
+	border: 3px;
 	padding: 5;
-	background-color: var(color2);
 	border-radius: 10px;
-	height: 35%;
-	width: 30%;
+	height: 18%;
+	width: 20%;
+	background-color: var(color7);
 	background-image: url("~/mournhold/ansible/playbooks/roles/kitty/config/img/morrowind1.png");
 }
 /* Mainbox */
 mainbox {
-	padding: 5;
-	border: 2;
-	border-radius: 4px;
+	padding: 0;
+	border-radius: 2px;
 }
 /* Textbox */
 textbox {
@@ -234,32 +235,32 @@ textbox {
 }
 /* Listview */
 listview {
-	spacing: 4px;
-	padding: 10px 0px 0px 0px;
+	spacing: 1px;
+	padding: 2px 0px 0px 0px;
 }
 /* Scrollbar */
 scrollbar {
-	handle-width: 10;
-	width: 10px;
+	handle-width: 5;
+	width: 0px;
 	background-color: var(color2-opaque);
 	handle-rounded-corners: true;
 	border-color: var(color2);
 	border: 2;
-	margin: 0px;
+	margin: 0px 0px 0px 2px; 
 	border-radius: 5px;
 	handle-color: var(color6);
 }
 /* Sidebar */
 sidebar {
-	border: 2px dash 10px 10px; 
+	border: 0px dash 0px 0px; 
 }
 /* Inputbar */
 inputbar {
 	text-color: var(color7);
 	background-color: var(color2-opaque);
-	padding: 10px;
+	padding: 0px 0px 0px 5px;
 	magin: 10;
-	border-radius: 30;
+	border-radius: 10;
 }
 num-filtered-rows, textbox-num-sep, num-rows {
 	text-color: var(color7);
@@ -267,7 +268,7 @@ num-filtered-rows, textbox-num-sep, num-rows {
 }
 /* Overlay */
 overlay {
-	padding: 10px 0.2000em;
+	padding: 0px 0.2000em;
 }
 /* Entry */
 prompt {
