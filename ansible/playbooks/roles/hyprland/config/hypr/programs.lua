@@ -3,6 +3,6 @@
 ---------------------
 
 -- Set programs that you use
-local terminal = "kitty"
-local fileManager = "dolphin"
-local menu = "hyprlauncher"
+global terminal = "kitty"
+global fileManager = "dolphin"
+global menu = "hyprlauncher"

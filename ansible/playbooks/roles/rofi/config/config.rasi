@@ -215,7 +215,7 @@ element-icon {
 }
 /* Window */
 window {
-	border-color: var(color6);
+	border-color: var(color6-opaque);
 	border: 3px;
 	padding: 5;
 	border-radius: 10px;

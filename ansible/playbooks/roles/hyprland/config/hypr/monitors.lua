@@ -4,7 +4,7 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-	output = "DP-1",
+	output = "",
 	mode = "1920x1080p@144",
 	position = "0x0",
 	scale = "1",

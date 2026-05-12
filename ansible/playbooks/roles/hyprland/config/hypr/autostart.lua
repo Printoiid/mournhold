@@ -7,8 +7,11 @@
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function ()
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+require("programs")
+
+hl.on("hyprland.start", function()
+	hl.exec_cmd("hypridle & hyprsunset")
+	hl.exec_cmd(terminal)
+	hl.exec_cmd("nm-applet")
+	hl.exec_cmd("waybar & hyprpaper")
+end)
