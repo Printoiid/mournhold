@@ -1,0 +1,119 @@
+[global]
+	
+	# Monitor to display notifications on
+	monitor = 0
+	
+	# Display notification on focused monitor
+	follow = none
+
+	# Notification Box
+	width = 250
+    height = (0, 150)
+	origin = top-center
+	offset = (1, 10)
+	scale = 0
+	
+	notification_limit = 10
+
+	# Progress Bar
+	progress_bar = true
+	progress_bar_height = 10
+	progress_bar_frame_width = 1
+	progress_bar_min_width = 150
+	progress_bar_max_width = 300
+	progress_bar_corner_radius = 10
+	progress_bar_corners = all
+	icon_corner_radius = 0
+	icon_corners = all
+
+	# Show how many messages are hidden
+	indicate_hidden = yes
+	transparency = 0
+
+	# Space between notifications
+	separator_height = 2
+
+	# Padding between text and seperator
+	padding = 8
+	horizontal_padding = 8
+	text_icon_padding = 0
+
+	# Width in pixels of frame around notif window
+	frame_width = 3
+	frame_color = "#aaaaaa"
+	gap_size = 0
+
+	# Color of separator
+	seperator_color = frame
+	
+	# Sort types
+	sort = yes
+
+	# Text
+	font = magic cards
+	line_height = 0
+	markup = full
+	format = "<b>%s</b>\n%b"
+	alignment = left
+	vertical_alignment = center
+	show_age_threshold = 60
+	ellipsize = middle
+	ignore_newline = no
+	stack_duplicates = true
+	hide_duplicant_count = false
+	show_indicators = yes
+	enable_posix_regex = false
+
+	# Icons
+	enable_recursive_icon_lookup = true
+	icon_theme = Adwaita
+	icon_position = left
+	min_icon_size = 32
+	# icon_path = /some/path/to/directory/
+	sticky_history = yes
+	history_length = 20
+	
+	# Misc/Advanced
+	dmenu = /usr/bin/dmeny -p dunst:
+	browser = /user/bin/xdg-open
+	always_run_script = true
+	title = Dunst
+	class = Dunst
+	corner_radius = 10
+	corners = all
+	ignore_dbusclose = false
+	force_xwayland = false
+
+	# Legacy
+	force_xinerama = false
+	mouse_left_click = close_current
+	mouse_middle_click = do_action, close_current
+	mouse_right_click = close_all
+
+[experimental]
+	per_monitor_dpi = false
+	pause_on_mouse_over = false
+	enable_pcre_regex = false
+
+[urgency_low]
+	background = "#FFFFFF"
+	foreground = "#FFFFFF"
+	timeout = 10
+	override_pause_level = 30
+	default_icon = dialog-information
+
+[urgency_normal]
+	background = "#000000"
+	foreground = "#FFFFFF"
+	timeout = 10
+	override_pause_level = 30
+	default_icon = dialog-information
+
+[urgency_critical]
+	background = "#000000"
+	foreground = "#FFFFFF"
+	frame_color = "#FFFFFF"
+	timeout = 10
+	override_pause_level = 30
+	default_icon = dialog-warning
+
