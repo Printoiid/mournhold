@@ -59,3 +59,7 @@
 - name: Import and execute the Rofi Playbook
   ansible.builtin.import_playbook: rofi.yml
   when: ansible_facts['distribution'] == 'Archlinux'
+
+- name: Import and execute the Dunst Playbook
+  ansible.builtin.import_playbook: dunst.yml
+  when: ansible_facts['distribution'] == 'Archlinux'

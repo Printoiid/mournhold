@@ -45,6 +45,7 @@ apt_packages:
     state: "fixed"
 ## Arch - Hyprland
 pacman_packages:
+  - package: "nautilus"
   - package: "brightnessctl"
   - package: "go"
   - package: "discord"

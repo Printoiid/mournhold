@@ -6,29 +6,18 @@ require("programs")
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
+local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close()) -- NOTE: Close Window
 
--- NOTE: Shutdown Command
---hl.bind(
---	mainMod .. " + M",
---	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
---)
-
--- NOTE: Kitty Terminal
 hl.bind(
 	mainMod .. " + Q",
 	hl.dsp.exec_cmd(
 		terminal
 			.. " --override background_image_layout=cscaled --override background_image=$(ls ~/.config/kitty/img/*.png | sort --random-sort | head -1)"
 	)
-)
-
--- NOTE: Rofi DRun
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("rofi -show drun"))
-
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+) -- NOTE: Kitty Terminal
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("rofi -show drun")) -- NOTE: Rofi DRun
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager)) -- NOTE: Nautilus
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- NOTE: dwindle only
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))

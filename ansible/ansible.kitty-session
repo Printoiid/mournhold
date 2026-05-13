@@ -25,6 +25,11 @@ layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/directories/defaults/main.yml
 launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/directories/tasks/main.yml
+new_tab Role-dunst
+layout tall
+launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/dunst/defaults/main.yml
+launch --title "main.yml" nvim /home/nerevar/mournhold/ansible/playbooks/roles/dunst/tasks/main.yml
 new_tab Role-files
 layout tall
 launch --title "All-Values" nvim /home/nerevar/mournhold/ansible/inventory/group_vars/all.yml

@@ -1,0 +1,7 @@
+# Dunst - Playbook
+- name: Dunst
+  hosts: vvardenfell
+  connection: local
+
+  roles:
+    - dunst

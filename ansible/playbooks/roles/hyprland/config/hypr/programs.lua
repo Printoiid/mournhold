@@ -4,5 +4,5 @@
 
 -- Set programs that you use
 global terminal = "kitty"
-global fileManager = "dolphin"
+global fileManager = "nautilus"
 global menu = "hyprlauncher"
