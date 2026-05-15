@@ -15,7 +15,7 @@ hl.bind(
 			.. " --override background_image_layout=cscaled --override background_image=$(ls ~/.config/kitty/img/*.png | sort --random-sort | head -1)"
 	)
 ) -- NOTE: Kitty Terminal
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("rofi -show drun")) -- NOTE: Rofi DRun
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(rofiApps)) -- NOTE: Rofi DRun
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager)) -- NOTE: Nautilus
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- NOTE: dwindle only
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lock)) -- NOTE: Lock the computer

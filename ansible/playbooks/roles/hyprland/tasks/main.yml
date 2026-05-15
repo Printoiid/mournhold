@@ -23,3 +23,11 @@
         src: "{{ waybar_config_files.src }}"
         dest: "{{ waybar_config_files.dest }}"
         state: link 
+    # Hyprpaper Service
+    - name: Enable and Start Hyperpaper in .bashrc
+      ansible.builtin.lineinfile:
+        dest: "{{ hyprpaper_bash.dest }}"
+        regexp: "{{ hyprpaper_bash.regexp }}"
+        line: "{{ hyprpaper_bash.line }}"
+
+
