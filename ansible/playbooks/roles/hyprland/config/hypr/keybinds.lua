@@ -18,6 +18,7 @@ hl.bind(
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("rofi -show drun")) -- NOTE: Rofi DRun
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager)) -- NOTE: Nautilus
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- NOTE: dwindle only
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock")) -- NOTE: Lock the computer
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))

@@ -23,8 +23,3 @@
         src: "{{ waybar_config_files.src }}"
         dest: "{{ waybar_config_files.dest }}"
         state: link 
-    # Remove Dolphin because it fucking sucks
-    - name: Remove Dolphin
-      community.general.pacman:
-        name: dolphin
-        state: absent

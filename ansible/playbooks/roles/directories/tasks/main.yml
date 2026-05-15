@@ -8,5 +8,3 @@
         dest: "/home/{{ user_account }}/.packages/"
         state: directory
         mode: '0777'
-        # This needs to be updated later
-        # The fuck am I using this for again????

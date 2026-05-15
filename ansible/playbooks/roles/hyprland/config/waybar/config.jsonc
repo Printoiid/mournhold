@@ -6,7 +6,7 @@
 	// This is controlled in CSS for more granularity
     "spacing": 0, // Gaps between modules (4px)
     // Main Monitor
-	"output": ["eDP-1"],
+	"output": ["HDMI-A-1","DP-1","DP-2"],
 	// Reload on change
 	"reload_style_on_change": true,
 	// Choose the order of the modules

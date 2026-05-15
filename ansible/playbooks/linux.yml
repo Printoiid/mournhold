@@ -63,3 +63,9 @@
 - name: Import and execute the Dunst Playbook
   ansible.builtin.import_playbook: dunst.yml
   when: ansible_facts['distribution'] == 'Archlinux'
+
+- name: Import and execute the Services Playbook
+  ansible.builtin.import_playbook: services.yml
+  when: ansible_facts['distribution'] == 'Archlinux'
+
+

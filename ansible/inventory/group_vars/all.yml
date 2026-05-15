@@ -60,6 +60,11 @@ pacman_packages:
   - package: "qmk"
   - package: "tree"
   - package: "pavucontrol"
+  # All three because keyboard control
+  - package: "pipewire"
+  - package: "pipewire-pulse"
+  - package: "pulseaudio"
+  - package: "wireplumber"
   - package: "spotify-launcher"
   - package: "keepassxc"
   - package: "hyprpaper"
@@ -71,6 +76,8 @@ pacman_packages:
   - package: "rofi"
   - package: "unrar"
   - package: "xdg-desktop-portal-hyprland"
+  - package: "vlc"
+  - package: "vlc-plugin-ffmpeg"
   # Fonts
   - package: "otf-font-awesome"
   - package: "ttf-mononoki-nerd"
@@ -80,6 +87,7 @@ pacman_packages:
 pacman_packages_to_enable:
   - package: "rofi"
   - package: "brightnessctl"
+  - package: "hyprpaper"
   - package: "hypridle"
   - package: "hyprsunset"
   - package: "hyprlock"
