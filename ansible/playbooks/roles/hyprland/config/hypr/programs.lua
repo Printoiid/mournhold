@@ -6,3 +6,4 @@
 global terminal = "kitty"
 global fileManager = "nautilus"
 global menu = "hyprlauncher"
+global lock = "hyprlock"
