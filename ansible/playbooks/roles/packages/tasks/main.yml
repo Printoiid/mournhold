@@ -1,6 +1,6 @@
 # Packages - Tasks File
 - name: APT Packages - Install and Configure
-  tags: apt-packages-setup
+  tags: packages-setup
   when: ansible_facts['pkg_mgr'] == "apt"
   block:
     - name: Loop and install listed APT packages
@@ -14,9 +14,21 @@
         loop_var: apt_package
 
 - name: Pacman Packages - Install and Configure
-  tags: pacman-packages-setup
+  tags: packages-setup
   when: ansible_facts['pkg_mgr'] == "pacman"
   block:
+    # Pacman Libary change
+    - name: Uncomment [multilib] in /etc/pacman.conf
+      ansible.builtin.replace:
+        path: "{{ pacman_multilib.path }}"
+        regexp: "{{ pacman_multilib.regexp }}"
+        replace: "{{ pacman_multilib.replace }}"
+      become: true
+    # Update the cache
+    - name: Update Pacman to include new libaries
+      community.general.pacman:
+        update_cache: true
+    # Install all listed packages
     - name: Loop and install listed Pacman packages
       community.general.pacman:
         name: "{{ pacman_package.package }}"
@@ -24,4 +36,3 @@
       loop: "{{ pacman_packages }}"
       loop_control:
         loop_var: pacman_package
-

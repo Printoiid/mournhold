@@ -9,3 +9,10 @@ apt_packages:
 pacman_packages:
   - package: ""
     state: "latest"
+
+pacman_multilib:
+  path: /etc/pacman.conf
+  regexp: '^#\[multilib]\n#Include = \/etc\/pacman.d\/mirrorlist$'
+  replace: |-
+    [multilib]
+    Include = /etc/pacman.d/mirrorlist

@@ -29,5 +29,3 @@
         dest: "{{ hyprpaper_bash.dest }}"
         regexp: "{{ hyprpaper_bash.regexp }}"
         line: "{{ hyprpaper_bash.line }}"
-
-

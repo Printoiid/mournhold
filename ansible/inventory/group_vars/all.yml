@@ -63,7 +63,6 @@ pacman_packages:
   # All three because keyboard control
   - package: "pipewire"
   - package: "pipewire-pulse"
-  - package: "pulseaudio"
   - package: "wireplumber"
   - package: "spotify-launcher"
   - package: "keepassxc"
@@ -83,6 +82,8 @@ pacman_packages:
   - package: "ttf-mononoki-nerd"
   - package: "mpd"
   - package: "mpc"
+  # Mirror packages
+  - package: "steam"
 
 pacman_packages_to_enable:
   - package: "rofi"
