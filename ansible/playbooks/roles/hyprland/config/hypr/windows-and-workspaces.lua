@@ -47,3 +47,12 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+hl.window_rule({
+	name = "Steam Games",
+	match = {
+		class = "bg3",
+	},
+	float = false,
+	monitor = "DP-1",
+})

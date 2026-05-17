@@ -19,6 +19,10 @@ hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(rofiApps)) -- NOTE: Rofi DRun
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager)) -- NOTE: Nautilus
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- NOTE: dwindle only
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lock)) -- NOTE: Lock the computer
+hl.bind(
+	"CONTROL + SHIFT + 3",
+	hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png')
+) -- NOTE: Screenshot, place into clipboard
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -34,7 +38,7 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- Example special workspace (scratchpad)
+-- NOTE: Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
