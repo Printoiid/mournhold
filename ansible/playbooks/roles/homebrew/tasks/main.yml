@@ -1,7 +1,6 @@
 # Homebrew - Tasks File
 - name: Homebrew - Install and Configure
   tags: homebrew-setup
-
   block:
     - name: Create Hombrew directory
       ansible.builtin.file:
@@ -12,7 +11,6 @@
         mode: "{{ homebrew_directory_mode }}"
       become: true
 
-# I need to split this install step out so it's idempodent
     - name: Install Homebrew
       ansible.builtin.shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

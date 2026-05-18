@@ -23,6 +23,7 @@ neovim_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/neovim/co
 kitty_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty/config"
 hyprland_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/hyprland"
 rofi_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/rofi"
+dunst_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/dunst"
 
 # Role - Packages
 ## Debian - Linux Mint
@@ -56,6 +57,7 @@ pacman_packages:
   - package: "git"
   - package: "qmk"
   - package: "tree"
+  - package: "fastfetch"
   # Screenshot stuff
   - package: "grim"
   - package: "slurp"
@@ -69,10 +71,11 @@ pacman_packages:
   # Apps
   - package: "steam"
   - package: "discord"
-  - package: "firefox"
   - package: "keepassxc"
   - package: "vlc"
   - package: "vlc-plugin-ffmpeg"
+  - package: "vivaldi"
+  - package: "nicotine+"
   # Hyprland
   - package: "hyprpaper"
   - package: "hypridle"
@@ -90,20 +93,9 @@ pacman_packages:
   - package: "mpd"
   - package: "mpc"
 
-pacman_packages_to_enable:
-  - package: "rofi"
-  - package: "brightnessctl"
-  - package: "hyprpaper"
-  - package: "hypridle"
-  - package: "hyprsunset"
-  - package: "hyprlock"
-  - package: "hypridle"
-
-
 # Role - Homebrew
 homebrew_packages:
   - neovim
-#  - go
   - yt-dlp
   - talosctl
   - k9s

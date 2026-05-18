@@ -1,2 +1,15 @@
 # Dunst - Tasks File
+- name: Dunst - Install and Configure
+  tags: dunst-setup
+  block: 
+    - name: Link Dunst configuration files
+      ansible.builtin.file:
+        src: "{{ dunst_repo_config_files }}"
+        dest: "{{ dunst_config_path }}"
+        state: link
 
+    - name: Reload Dunst Service
+      ansible.builtin.service:
+        service: dunst
+        state: reloaded
+        scope: user

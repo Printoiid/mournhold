@@ -1,13 +1,13 @@
 # Hyprland - Task File
 - name: Hyprland - Install and Configure
   tags: hyprland-setup
-
   block:
     # Base Hyprland setup
     - name: Remove existing hypr config files
       ansible.builtin.file:
         state: absent
         path: "{{ hyprland_config_path }}"
+    
     - name: Link hypr config files
       ansible.builtin.file:
         src: "{{ hyprland_config_files.src }}"
@@ -18,6 +18,7 @@
       ansible.builtin.file:
         state: absent
         path: "{{ waybar_config_path }}"
+
     - name: Link waybar config files
       ansible.builtin.file:
         src: "{{ waybar_config_files.src }}"
