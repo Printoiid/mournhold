@@ -96,15 +96,15 @@
 	enable_pcre_regex = false
 
 [urgency_low]
-	background = "#000000"
+	background = "#003554"
 	foreground = "#FFFFFF"
-	frame_color = "#FFFFFF"
+	frame_color = "#006494"
 	timeout = 10
 	override_pause_level = 30
 	default_icon = dialog-information
 
 [urgency_normal]
-	background = "#000000"
+	background = "#0582CAFC"
 	foreground = "#FFFFFF"
 	frame_color = "#FFFFFF"
 	timeout = 10
@@ -112,9 +112,9 @@
 	default_icon = dialog-information
 
 [urgency_critical]
-	background = "#000000"
+	background = "#051923"
 	foreground = "#FFFFFF"
-	frame_color = "#FFFFFF"
+	frame_color = "#FB5500"
 	timeout = 10
 	override_pause_level = 30
 	default_icon = dialog-warning
