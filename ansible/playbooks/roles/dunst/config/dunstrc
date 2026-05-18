@@ -36,7 +36,7 @@
 	# Padding between text and seperator
 	padding = 8
 	horizontal_padding = 8
-	text_icon_padding = 0
+	text_icon_padding = 5
 
 	# Width in pixels of frame around notif window
 	frame_width = 3
