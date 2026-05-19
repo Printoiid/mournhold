@@ -1,7 +1,7 @@
 [global]
-	
+
 	# Monitor to display notifications on
-	monitor = 1
+	monitor = 0
 	
 	# Display notification on focused monitor
 	follow = none

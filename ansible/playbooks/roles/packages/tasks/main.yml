@@ -36,3 +36,12 @@
       loop: "{{ pacman_packages }}"
       loop_control:
         loop_var: pacman_package
+
+- name: Bashrc - Configure
+  tags: bashrc-setup
+  when: ansible_facts['distribution'] == 'Archlinux'
+  block:
+    - name: Add fastfetch to .bashrc 
+      ansible.builtin.lineinfile:
+        path: "{{ bashrc_path }}"
+        line: "fastfetch"
