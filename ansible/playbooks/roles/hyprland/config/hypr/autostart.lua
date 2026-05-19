@@ -12,14 +12,11 @@ require("programs")
 hl.on("hyprland.start", function()
 	-- Force Dark Theme
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'") -- for GTK4 apps
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'") -- for GTK3 apps
+	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'adw-dark'") -- for GTK3 apps
 	hl.env("QT_QPA_PLATFORMTHEME", "qt6ct") -- for Qt apps# Theme
-	-- Force Primary monitor for games
-	hl.exec_cmd("xrandr --output DP-1 --primary")
-	-- Hyprland Items
-	hl.exec_cmd("hypridle & hyprsunset")
+	-- NOTE: Hyprland Items
+	hl.exec_cmd("hypridle & hyprsunset & waybar & hyprpaper")
 	hl.exec_cmd("nm-applet")
-	hl.exec_cmd("waybar & hyprpaper")
+	-- NOTE: Applications
+	hl.exec_cmd("spotify-launcher & pavucontrol & keepassxc")
 end)
-
--- Set Dark Theme across the board

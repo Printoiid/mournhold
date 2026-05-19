@@ -15,7 +15,6 @@ local suppressMaximizeRule = hl.window_rule({
 	suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
-
 hl.window_rule({
 	-- Fix some dragging issues with XWayland
 	name = "fix-xwayland-drags",
@@ -30,29 +29,24 @@ hl.window_rule({
 
 	no_focus = true,
 })
-
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
 -- Hyprland-run windowrule
 hl.window_rule({
 	name = "move-hyprland-run",
 	match = { class = "hyprland-run" },
-
 	move = "20 monitor_h-120",
 	float = true,
 })
+-- NOTE: Special Workspace
+hl.window_rule({
+	monitor = "DP-1",
+	workspace = "special:magic silent",
+	match = { class = "org.keepassxc.KeePassXC|org.pulseaudio.pavucontrol|Spotify" },
+})
 
+-- NOTE: Steam Games
 hl.window_rule({
 	name = "Steam Games",
-	match = {
-		class = "bg3",
-	},
+	match = { class = "bg3" },
 	float = false,
 	monitor = "DP-1",
 })

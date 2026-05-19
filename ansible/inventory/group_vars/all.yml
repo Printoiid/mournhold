@@ -87,6 +87,11 @@ pacman_packages:
   - package: "unrar"
   - package: "xdg-desktop-portal-hyprland"
   - package: "xorg-xrandr"
+  # System Theme
+  - package: "adw-gtk-theme"
+  - package: "qt6ct"
+  - package: "kvantum"
+  - package: "breeze-icons"
   # Fonts
   - package: "otf-font-awesome"
   - package: "ttf-mononoki-nerd"
