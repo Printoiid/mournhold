@@ -23,7 +23,7 @@ neovim_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/neovim/co
 kitty_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/kitty/config"
 hyprland_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/hyprland"
 rofi_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/rofi"
-dunst_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/dunst"
+# dunst_repo_config_path: "{{ mournhold_path }}/ansible/playbooks/roles/dunst"
 
 # Role - Packages
 ## Debian - Linux Mint
