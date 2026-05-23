@@ -58,6 +58,7 @@ pacman_packages:
   - package: "qmk"
   - package: "tree"
   - package: "fastfetch"
+  - package: "nwg-look"
   # Screenshot stuff
   - package: "grim"
   - package: "slurp"

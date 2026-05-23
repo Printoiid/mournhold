@@ -1,4 +1,4 @@
---------------------------------
+-------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
@@ -43,10 +43,18 @@ hl.window_rule({
 	match = { class = "org.keepassxc.KeePassXC|org.pulseaudio.pavucontrol|Spotify" },
 })
 
--- NOTE: Steam Games
+-- NOTE: Steam Games (With Steam prefix)
 hl.window_rule({
 	name = "Steam Games",
-	match = { class = "bg3" },
+	match = { class = "^(steam_app_.*)$" },
+	float = false,
+	monitor = "DP-1",
+})
+
+-- NOTE: Steam Games (Without Steam prefix)
+hl.window_rule({
+	name = "Non prefixed steam games",
+	match = { class = "bg3|TPM.x86_64" },
 	float = false,
 	monitor = "DP-1",
 })
