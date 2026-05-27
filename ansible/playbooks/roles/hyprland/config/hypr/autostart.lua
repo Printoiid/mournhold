@@ -20,6 +20,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle & hyprsunset & waybar & hyprpaper")
 	hl.exec_cmd("nm-applet")
 	-- NOTE: Applications
-	hl.exec_cmd("spotify-launcher & pavucontrol")
+	hl.exec_cmd("spotify-launcher & pavucontrol & keepassxc")
 	hl.exec_cmd("xrandr --output DP-1 --primary")
 end)
