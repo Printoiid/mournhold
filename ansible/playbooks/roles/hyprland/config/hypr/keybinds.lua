@@ -21,7 +21,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager)) -- NOTE: Nautilus
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- NOTE: dwindle only
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lock)) -- NOTE: Lock the computer
 hl.bind(
-	"CONTROL + SHIFT + 3",
+	"CONTROL + SHIFT + S",
 	hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png')
 ) -- NOTE: Screenshot, place into clipboard
 
@@ -31,12 +31,11 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
--- NOTE: Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
+-- NOTE: Switch workspaces/move applications to workspaces
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind("CTRL + SHIFT + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- NOTE: Example special workspace (scratchpad)
