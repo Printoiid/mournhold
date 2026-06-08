@@ -29,3 +29,11 @@ hl.monitor({
 	scale = "1",
 	transform = 0,
 })
+
+hl.monitor({
+	output = "DP-2",
+	mode = "1920x1080p",
+	position = "-1080x0",
+	scale = "1",
+	transform = 1,
+})

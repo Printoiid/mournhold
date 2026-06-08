@@ -14,7 +14,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'") -- for GTK3 apps
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'") -- for GTK4 apps
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'") -- for GTK4 apps
-
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.env("QT_QPA_PLATFORMTHEME", "kde") -- for Qt apps# Theme
 	-- NOTE: Hyprland Items
 	hl.exec_cmd("hypridle & hyprsunset & waybar & hyprpaper")

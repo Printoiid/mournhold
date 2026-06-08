@@ -34,13 +34,17 @@ hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 -- NOTE: Switch workspaces/move applications to workspaces
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind("CTRL + SHIFT + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- NOTE: Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- NOTE: Keepass special workspace
+hl.bind(mainMod .. " + V", hl.dsp.workspace.toggle_special("keepass"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.move({ workspace = "special:keepass" }))
+
+-- NOTE: SPOTIFY/SOUND special workspace
+hl.bind(mainMod .. " + B", hl.dsp.workspace.toggle_special("media"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.window.move({ workspace = "special:media" }))
 
 -- NOTE: Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

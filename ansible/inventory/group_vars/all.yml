@@ -59,6 +59,7 @@ pacman_packages:
   - package: "tree"
   - package: "fastfetch"
   - package: "nwg-look"
+  - package: "polkit-gnome" # External Drive Permissions and Management
   # Screenshot stuff
   - package: "grim"
   - package: "slurp"
@@ -77,6 +78,7 @@ pacman_packages:
   - package: "vlc-plugin-ffmpeg"
   - package: "vivaldi"
   - package: "nicotine+"
+  - package: "godot"
   # Hyprland
   - package: "hyprpaper"
   - package: "hypridle"
